@@ -1,0 +1,30 @@
+$black: #110D0D;
+$blue: #61dafb;
+$white: white;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&display=swap');
+
+
+.baner{
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+    background-size: cover;
+    position: relative;
+    background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.baner__title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(0,50%);
+    font-size: 110px;
+    color: $white;
+    font-family: 'Playfair';
+}

@@ -80,27 +80,7 @@ else{
                      </div>
                      <div className="Start__sectionup">
                      <div className="Start__sectiondescribe">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum rem provident iure. Tenetur architecto tempora voluptatibus libero nesciunt repudiandae quo dicta ratione nihil nostrum! Ea officiis quia deleniti esse consectetur.
-                    <div className="swiper"> <Swiper slidesPerView={3} spaceBetween={30} slidesPerGroup={3} loop={true} loopFillGroupWithBlank={true} pagination={{
-  "clickable": true
-}} navigation={true} 
-observer={true}
- noSwiping={false}
-allowTouchMove= {true}
-observeParents= {true}
-className="mySwiper">
-  <SwiperSlide>
-  <iframe style={{ border: "0", width: "350px", height: "350px"}} src="https://bandcamp.com/EmbeddedPlayer/album=2608927152/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/transparent=true/" seamless><a href="https://bandcamp.com/EmbeddedPlayer/album=2608927152/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/transparent=true/">one</a></iframe>
-  </SwiperSlide>
-  <SwiperSlide>
-  <iframe style={{ border: "0", width: "350px", height: "350px"}} src="https://bandcamp.com/EmbeddedPlayer/album=2608927152/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/transparent=true/" seamless><a href="https://bandcamp.com/EmbeddedPlayer/album=2608927152/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/transparent=true/">one</a></iframe>
-  </SwiperSlide>
-  <SwiperSlide>
-  <iframe style={{ border: "0", width: "350px", height: "350px"}} src="https://bandcamp.com/EmbeddedPlayer/album=2608927152/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/transparent=true/" seamless><a href="https://bandcamp.com/EmbeddedPlayer/album=2608927152/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/transparent=true/">one</a></iframe>
-  </SwiperSlide>
-  <SwiperSlide>
-  <iframe style={{ border: "0", width: "350px", height: "350px"}} src="https://bandcamp.com/EmbeddedPlayer/album=2608927152/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/transparent=true/" seamless><a href="https://bandcamp.com/EmbeddedPlayer/album=2608927152/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/transparent=true/">one</a></iframe>
-  </SwiperSlide>
-  </Swiper></div>
+                    <div className="swiper"></div>
                          </div> </div>
                  </div>
                  <div className="Start__sectionall">

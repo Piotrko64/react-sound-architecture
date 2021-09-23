@@ -84,4 +84,5 @@ else{
         </div>
     );
 }
+
 export default Start;

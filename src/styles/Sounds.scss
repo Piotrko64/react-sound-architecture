@@ -6,25 +6,24 @@ $white: white;
 .Sounds{
     padding: 20px;
     .Sounds__grid{
-        
-        grid-template-columns: 420px 420px 420px;
+        display: grid;
+        grid-template-columns: auto auto auto;
         grid-auto-rows: auto;
         margin-top: 40px;
-    margin-bottom: 40px;
+        margin-bottom: 40px;
         display: grid;
         justify-content: center;
-        border-left: 2px solid white;;
-        border-right: 2px solid white;;
         max-width: 1260px;
         margin-left: auto;
         margin-right: auto;
+        grid-gap: 30px;
         .Sounds__one{
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
             box-sizing: border-box;
-            padding: 15px;
+           
             .Sounds__tag{
                 display: grid;
                 grid-template-columns: repeat(3,33%);
@@ -86,7 +85,7 @@ padding-right: 30px;
     background-color: $black;
 }
 .Sounds__one:nth-child(odd){
-background-color: $blue;
+// background-color: $blue;
 }
 @media(max-width:1400px) {
     

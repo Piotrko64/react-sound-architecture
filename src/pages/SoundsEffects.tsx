@@ -223,23 +223,23 @@ setTimeout(()=>{
 {thisArray.map( (sound:any)=>(
     <div className="Sounds__one">
     <iframe style={{ border: "0", width: "350px", height: "350px"}} src={sound.iframe}seamless><a href={sound.href}>{sound.title} </a></iframe>
-    <div className="Sounds__describe">{
+    {/* <div className="Sounds__describe">{
         sound.title
     }<br/>
     {
         sound.data
     }
     {
-        <div className="Sounds__tag">{
-            sound.tag.map((thistag:any)=>(
-                <div>#{thistag}</div>
-            ))
-        }
+        // <div className="Sounds__tag">{
+        //     sound.tag.map((thistag:any)=>(
+        //         <div>#{thistag}</div>
+        //     ))
+        // }
         
-        </div>
+        // </div>
         
     }
-    </div>
+    </div> */}
 </div>
 )
     

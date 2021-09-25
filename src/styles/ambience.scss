@@ -19,7 +19,7 @@ $blacksecond: #110D0D;
         display: flex;
         justify-content: space-around;
         align-items: center;
-        
+        flex-direction: column;
         height: 100%;
         padding-top: 40px;
         padding-bottom: 40px;
@@ -119,11 +119,11 @@ padding-right: 30px;
     border-radius: 30px;
 }
 .yt__container:nth-child(even){
-    flex-direction: row;
+    
     
 }
 .yt__container:nth-child(odd){
-    flex-direction: row-reverse;
+    
     background: rgb(34, 34, 34);
 }
 .showtag{

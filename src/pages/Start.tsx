@@ -1,4 +1,5 @@
 import {useEffect} from 'react';
+import Swiper_Designed from '../components/Swiper_Designed';
 import mylogo from '../img/logosawhite.webp';
 import back1 from '../img/background.jpg';
 import arleft from '../img/leftar.webp';
@@ -44,15 +45,19 @@ else{
             <div className="Start__signature--down">Website for your sounds, ambience and music</div>
              </div></div></div>
              <div className="Start__content" >
-                 <h1>What me make</h1>
+                 <div className="Start__h1">What me make</div>
                  <div className="Start__sectionall">
                      <div className="Start__sectiontitle padding" style={{backgroundImage: `url(${back1})`}}>
-                         Sounds Liblary<img className="Start__imgarrow" src={arrow}/>
+                         Sounds Library<img className="Start__imgarrow" src={arrow}/>
                      </div>
                      <div className="Start__sectionup">
-                         <div className="Start__sectiondescribe">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum rem provident iure. Tenetur architecto tempora voluptatibus libero nesciunt repudiandae quo dicta ratione nihil nostrum! Ea officiis quia deleniti esse consectetur.
+                         <div className="Start__sectiondescribe">
+                             <div className="describe">
+                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum rem provident iure. Tenetur architecto tempora voluptatibus libero nesciunt repudiandae quo dicta ratione nihil nostrum! Ea officiis quia deleniti esse consectetur.
+                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum rem provident iure. Tenetur architecto tempora voluptatibus libero nesciunt repudiandae quo dicta ratione nihil nostrum! Ea officiis quia deleniti esse consectetur.
+                            
+                             </div>
                          <br/>
-                         <iframe className="iframe" style={{width:"1120", height:"720"}} src="https://www.youtube.com/embed/y8EvClrhZVc" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                          </div>
                      </div>
                  </div>
@@ -61,17 +66,30 @@ else{
                          Designed Ambience <img className="Start__imgarrow" src={arrow}/>
                      </div>
                      <div className="Start__sectionup">
-                     <div className="Start__sectiondescribe">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum rem provident iure. Tenetur architecto tempora voluptatibus libero nesciunt repudiandae quo dicta ratione nihil nostrum! Ea officiis quia deleniti esse consectetur.
-                    <div className="swiper"></div>
-                         </div> </div>
+                     <div className="Start__sectiondescribe">
+                     <div className="describe">
+                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum rem provident iure. Tenetur architecto tempora voluptatibus libero nesciunt repudiandae quo dicta ratione nihil nostrum! Ea officiis quia deleniti esse consectetur.
+                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum rem provident iure. Tenetur architecto tempora voluptatibus libero nesciunt repudiandae quo dicta ratione nihil nostrum! Ea officiis quia deleniti esse consectetur.
+                            
+                             </div>
+                             <div className="iframes">
+                             <iframe className="iframe" style={{width:"700", height:"394"}} src="https://www.youtube.com/embed/y8EvClrhZVc" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                             <iframe className="iframe" style={{width:"700", height:"394"}} src="https://www.youtube.com/embed/y8EvClrhZVc" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                             </div>
+                    </div> </div>
                  </div>
                  <div className="Start__sectionall">
                      <div className="Start__sectiontitle padding" style={{backgroundImage: `url(${back1})`}}>
                          Music<img className="Start__imgarrow" src={arrow}/>
                      </div>
                      <div className="Start__sectionup">
-                     <div className="Start__sectiondescribe">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum rem provident iure. Tenetur architecto tempora voluptatibus libero nesciunt repudiandae quo dicta ratione nihil nostrum! Ea officiis quia deleniti esse consectetur.
-                         </div> </div>
+                     <div className="Start__sectiondescribe">
+                     <div className="describe">
+                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum rem provident iure. Tenetur architecto tempora voluptatibus libero nesciunt repudiandae quo dicta ratione nihil nostrum! Ea officiis quia deleniti esse consectetur.
+                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum rem provident iure. Tenetur architecto tempora voluptatibus libero nesciunt repudiandae quo dicta ratione nihil nostrum! Ea officiis quia deleniti esse consectetur.
+                            
+                             </div>
+                     </div> </div>
                  </div>
                  
              </div>

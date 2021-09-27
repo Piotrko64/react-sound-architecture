@@ -6,7 +6,7 @@ $white: white;
 
 
 .baner{
-    height: 300px;
+    height: 250px;
     width: 100%;
     object-fit: cover;
     background-size: cover;
@@ -24,7 +24,10 @@ $white: white;
     justify-content: center;
     align-items: center;
     transform: translate(0,50%);
-    font-size: 110px;
+    font-size: 55px;
+    margin-left: auto;
+    margin-right: auto;
     color: $white;
-    font-family: 'Playfair';
+    font-family: 'Abril Fatface', cursive;
+    font-weight: 400;
 }

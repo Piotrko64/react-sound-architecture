@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import '../styles/ambience.scss'
 import Winter from '../img/winter.webp'
 import Baner from '../components/baner';
-
+import arrow from '../img/arrow.png'
 
 
   let arrayTag:any= [];
@@ -96,16 +96,18 @@ const Ambience = () => {
             
             
             let [thisArray, setthisArray] = useState(mymusic);
-            let [TextShow, setTextShow] = useState("Show Tags");
+            // let [TextShow, setTextShow] = useState(`Tags<img src=${arrow}/>`);
 
             
            let buttonTag:any;
            let showGrid:any;
            let grid:any;
+           let arrowshow:any;
             useEffect(() => {
                 buttonTag= document.querySelectorAll('.yt__buttontag')!;
                 showGrid= document.querySelector('.showtag')!;
                 grid= document.querySelector('.yt__tags')!;
+                arrowshow = document.querySelector('.showtag__img');
 })
                 
 
@@ -115,24 +117,27 @@ const Ambience = () => {
         
         <Baner title="Ambience" image={Winter}/>
         <div className="showtag" onClick={()=>{
-            TextShow==="Show Tags" ? setTextShow("Hide Tags") : setTextShow("Show Tags")
+            
             console.log(grid.scrollHeight)
             if(grid.style.display!=="grid"){
+                // zmiana strzałki
             grid.style.display="grid";
             grid.style.opacity="1";
             grid.style.maxHeight=grid.scrollHeight+"px";
                 console.log(grid.scrollHeight);
+                arrowshow.classList.add('active')
                 
             }
 else{
 
 grid.style.opacity="0";
 grid.style.maxHeight="0px";
+arrowshow.classList.remove('active')
 setTimeout(()=>{
     grid.style.display="none";
 },400)
 }
-        }}>{TextShow}</div>
+        }}>Tags <img className="showtag__img"src={arrow}/></div>
         <div className="yt__tags">
 
                     {/* <button className="yt__buttontag yt__Allbutton" onClick={()=>{
@@ -225,7 +230,7 @@ setthisArray(mymusic)
             
             <div className="yt__allcontainer">
             {
-                thisArray.map((music: { Id: React.Key | null | undefined; iframe: string | undefined; title: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined; describe: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined; tag: any[]; })=>( <><div className="yt__container padding" key={music.Id}>
+                thisArray.map((music: { Id: React.Key | null | undefined; iframe: string | undefined; title: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined; describe: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined; tag: any[]; })=>( <><div className="yt__container" key={music.Id}>
                     <div className="yt__iframe"><iframe width="700" height="393.75" src={music.iframe} title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                     </div>
                     <div className="yt__describe">
@@ -254,7 +259,7 @@ setthisArray(mymusic)
                         })
                     setTimeout(()=>{
                         if(arr.title===arrayTag[0]){
-                            buttonTag[index+1].classList.add('activetag');
+                            buttonTag[index].classList.add('activetag');
                             console.log(buttonTag[index])
                         }
                     },2)

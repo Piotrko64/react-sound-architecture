@@ -1,28 +1,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400&display=swap');
-$black: #110D0D;
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+$black: #0f0f0f;
 $blue: #222222;
 $white: white;
 
-$blacksecond: #110D0D;
 .yt{
     min-height: 500px;
-    background: $blacksecond;
+    background: $black;
     h3{
         margin-top: 0;
     }
     .yt__allcontainer{
         display: grid;
         grid-template-columns: 50% 50%;
+        max-width: 1450px;
+        margin-left: auto;
+        margin-right: auto;
         grid-auto-rows: auto;
+        justify-content: space-between;
+        
+        align-items: baseline;
+       
+    }
+    .yt__container:nth-child(odd){
+        align-items: flex-start;
+    }
+    .yt__container:nth-child(even){
+        align-items: flex-end;
     }
     .yt__container{
         display: flex;
         justify-content: space-around;
-        align-items: center;
+        
         flex-direction: column;
         
-        padding-top: 40px;
-        padding-bottom: 40px;
+        padding-top: 20px;
+        padding-bottom: 20px;
         .yt__describe{
             
             line-height: 1.2;
@@ -48,7 +61,7 @@ $blacksecond: #110D0D;
                     
                     }
                     .tag:hover{
-                        color: $blue;
+                        color: rgb(150, 150, 150);
                         cursor: pointer;
                 }
                 
@@ -69,14 +82,16 @@ $blacksecond: #110D0D;
             display: none;
             box-sizing: border-box;
             grid-template-columns: repeat(10,auto);
-            grid-auto-rows: 50px;
+            grid-auto-rows: 40px;
             justify-content: space-between;
             margin: 20px;
             grid-gap: 20px;
             color: $white;
             background: $black;
             font-family: 'Jost', sans-serif;
-            
+            max-width: 1450px;
+            margin-left: auto;
+            margin-right: auto;
             .activetag{
                 color: black;
                 background-color: white;
@@ -84,9 +99,9 @@ $blacksecond: #110D0D;
             button{
                 
                 background: transparent;
-                font-size: 26px;
-    padding-left: 30px;
-    padding-right: 30px;
+                font-size: 24px;
+    padding-left: 20px;
+    padding-right: 20px;
                 border: none;
                 outline: none;
                 font-weight: 300;
@@ -94,8 +109,8 @@ $blacksecond: #110D0D;
                 cursor: pointer;
                 transition: all .3s ease;
                 color: white;
-                border: 2px solid white;
-                border-radius: 30px;
+                border: 1px solid white;
+                // border-radius: 30px;
                 }
                
             
@@ -115,24 +130,23 @@ padding-right: 30px;
     cursor: pointer;
     transition: all .3s ease;
     color: white;
-    border: 2px solid white;
-    border-radius: 30px;
+    border: 1px solid white;
+  
 }
 
 .showtag{
    background: transparent;
-                font-size: 26px;
-    padding-left: 30px;
-    padding-right: 30px;
+                font-size: 38px;
+    padding-left: 20px;
+    padding-right: 20px;
                 border: none;
                 outline: none;
                 font-weight: 300;
-                font-family: 'Jost', sans-serif;
+                font-family: 'Abril Fatface', cursive;
                 cursor: pointer;
                 transition: all .3s ease;
                 color: white;
-                border: 2px solid white;
-                border-radius: 30px;
+                
                 display: flex;
                 width: 120px;
                 text-align: center;
@@ -141,8 +155,21 @@ padding-right: 30px;
                 margin-right: auto;
                 margin-left: auto;
                 margin-top: 30px;
-                margin-bottom: 30px
-                
+                margin-bottom: 30px;
+                .showtag__img{
+                    height: 33px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    
+                    transform: translate(5px, 3px) rotateX(0deg);
+                    transition: all .3s ease;
+                    transform-origin: center;
+                }
+                .showtag__img.active{
+                    
+                    transform: translate(5px, 3px) rotateX(180deg);
+                }
 }
 
 @media(max-width:1400px) {

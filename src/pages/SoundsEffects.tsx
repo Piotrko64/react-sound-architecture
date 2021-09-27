@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Baner from '../components/baner';
 import '../styles/Sounds.scss';
+import arrow from '../img/arrow.png'
 import imgmusic from '../img/background.jpg'
 let arrayTag:any= [];
   let arrayTagFilter:any= [];
@@ -128,19 +129,21 @@ const SoundsEffects = () => {
                                 },
                             ];
                             let [thisArray, setthisArray] = useState(sounds);
-                            let [TextShow, setTextShow] = useState("Show Tags");
+                            
 
             
                             let buttonTag:any;
                             let allButton: any;
                             let showGrid:any;
                             let grid:any;
+                            let arrowshow:any;
                             const mymusicDuplicate = [...sounds];
                              useEffect(() => {
                                 buttonTag= document.querySelectorAll('.Sound__buttontag');
                                 allButton = document.querySelector('.Sound__buttontag');
                                 showGrid= document.querySelector('.showtag')!;
                                 grid= document.querySelector('.Sounds__tags')!;
+                                arrowshow = document.querySelector('.showtag__img');
                  })
     return (
 
@@ -148,12 +151,13 @@ const SoundsEffects = () => {
         
             <Baner title="Sounds Effects"/>
             <div className="showtag" onClick={()=>{
-            TextShow==="Show Tags" ? setTextShow("Hide Tags") : setTextShow("Show Tags")
+            
             
             if(grid.style.display!=="grid"){
             grid.style.display="grid";
             grid.style.opacity="1";
             grid.style.maxHeight=grid.scrollHeight+"px";
+            arrowshow.classList.add('active')
                
                 
             }
@@ -161,11 +165,12 @@ else{
 
 grid.style.opacity="0";
 grid.style.maxHeight="0px";
+arrowshow.classList.remove('active')
 setTimeout(()=>{
     grid.style.display="none";
 },400)
 }
-        }}>{TextShow}</div>
+        }}>Tags <img className="showtag__img"src={arrow}/></div>
         <div className="Sounds padding">
             <div className="Sounds__tags">
                 
@@ -222,7 +227,7 @@ setTimeout(()=>{
             <div className="Sounds__grid">
 {thisArray.map( (sound:any)=>(
     <div className="Sounds__one">
-    <iframe style={{ border: "0", width: "350px", height: "350px"}} src={sound.iframe}seamless><a href={sound.href}>{sound.title} </a></iframe>
+    <iframe style={{ border: "0", width: "463.33px", height: "463.33px"}} src={sound.iframe}seamless><a href={sound.href}>{sound.title} </a></iframe>
     {/* <div className="Sounds__describe">{
         sound.title
     }<br/>

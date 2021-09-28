@@ -73,7 +73,8 @@ btnline.forEach(line=>{
     })))
     
 }, [])
-    return (
+    return (<>
+    <div className="nav__paddingtop"></div>
         <nav className="nav padding">
          <div className="nav__btn">
                 <div className="nav__line nav__line--first"></div>
@@ -99,6 +100,7 @@ btnline.forEach(line=>{
             </div>
             
         </nav>
+        </>
     );
 }
 

@@ -1,10 +1,12 @@
 import React from 'react';
+import musicback from '../img/notes.webp';
+import Baner from '../components/baner';
 
 const Music = () => {
     return (
-        <div>
-            ambience
-        </div>
+        <>
+           <Baner title="Music" image={musicback}/>
+        </>
     );
 }
 

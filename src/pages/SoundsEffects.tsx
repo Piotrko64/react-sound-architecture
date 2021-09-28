@@ -3,7 +3,7 @@ import Baner from '../components/baner';
 import '../styles/Sounds.scss';
 import '../styles/loading.scss';
 import arrow from '../img/arrow.png'
-import imgmusic from '../img/background.jpg'
+import soundback from '../img/piano.webp'
 let arrayTag:any= [];
   let arrayTagFilter:any= [];
   let arrayTagFilterNew:any= [];
@@ -150,7 +150,7 @@ const SoundsEffects = () => {
 
         <>
         
-            <Baner title="Sounds Effects"/>
+            <Baner title="Sounds Effects" image={soundback}/>
             <div className="showtag" onClick={()=>{
             
             

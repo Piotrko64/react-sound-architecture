@@ -6,6 +6,12 @@ import arleft from '../img/leftar.webp';
 import arright from '../img/rightar.webp';
 import arrow from '../img/arrow.png';
 
+import musicback from '../img/notes.webp';
+import soundback from '../img/piano.webp';
+import ambienceback from '../img/ambience.webp'
+
+
+
 const Start = () => {
     useEffect(() => {
         const up = document.querySelectorAll('.Start__sectiontitle');
@@ -47,7 +53,7 @@ else{
              <div className="Start__content" >
                  <div className="Start__h1">What me make</div>
                  <div className="Start__sectionall">
-                     <div className="Start__sectiontitle padding" style={{backgroundImage: `url(${back1})`}}>
+                     <div className="Start__sectiontitle padding" style={{backgroundImage: `url(${soundback})`}}>
                          Sounds Library<img className="Start__imgarrow" src={arrow}/>
                      </div>
                      <div className="Start__sectionup">
@@ -62,7 +68,7 @@ else{
                      </div>
                  </div>
                  <div className="Start__sectionall">
-                     <div className="Start__sectiontitle padding" style={{backgroundImage: `url(${back1})`}}>
+                     <div className="Start__sectiontitle padding" style={{backgroundImage: `url(${ambienceback})`}}>
                          Designed Ambience <img className="Start__imgarrow" src={arrow}/>
                      </div>
                      <div className="Start__sectionup">
@@ -79,7 +85,7 @@ else{
                     </div> </div>
                  </div>
                  <div className="Start__sectionall">
-                     <div className="Start__sectiontitle padding" style={{backgroundImage: `url(${back1})`}}>
+                     <div className="Start__sectiontitle padding" style={{backgroundImage: `url(${musicback})`}}>
                          Music<img className="Start__imgarrow" src={arrow}/>
                      </div>
                      <div className="Start__sectionup">

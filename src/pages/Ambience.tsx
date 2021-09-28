@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import '../styles/ambience.scss'
-import Winter from '../img/winter.webp'
+import ambienceback from '../img/Ambience2.png'
 import Baner from '../components/baner';
 import arrow from '../img/arrow.png'
 // import dataAmbience from "../jsonfolder/ambiencefiles.json";
@@ -125,7 +125,7 @@ const Ambience = () => {
         
         <>
         
-        <Baner title="Ambience" image={Winter}/>
+        <Baner title="Ambience" image={ambienceback}/>
         <div className="showtag" onClick={()=>{
             
             if(grid.style.display!=="grid"){

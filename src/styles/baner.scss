@@ -6,15 +6,17 @@ $white: white;
 
 
 .baner{
-    height: 250px;
+
+    height: 330px;
     width: 100%;
     object-fit: cover;
-    background-size: cover;
+    background-size: contain;
+  
     position: relative;
     background-attachment: fixed;
-  background-position: center;
+  background-position: 0% 5%;
   background-repeat: no-repeat;
-  background-size: cover;
+ 
   display: flex;
     justify-content: center;
     align-items: center;

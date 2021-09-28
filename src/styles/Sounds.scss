@@ -1,4 +1,4 @@
-$black: #110D0D;
+$black: #0f0f0f;
 $blue: #222222;
 $white: white;
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
@@ -24,7 +24,10 @@ $white: white;
             align-items: center;
             flex-direction: column;
             box-sizing: border-box;
-           
+           position: relative;
+           iframe{
+               z-index: 9;
+           }
             .Sounds__tag{
                 display: grid;
                 grid-template-columns: repeat(3,33%);

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Baner from '../components/baner';
 import '../styles/Sounds.scss';
+import '../styles/loading.scss';
 import arrow from '../img/arrow.png'
 import imgmusic from '../img/background.jpg'
 let arrayTag:any= [];
@@ -182,7 +183,7 @@ setTimeout(()=>{
                             
                             if(arrayTag.indexOf(tag.title)===-1){
                                 arrayTag.push(tag.title);
-                                allButton.classList.remove('activetag');
+                                
                             }
                             else{
                                 deleteTag = arrayTag.indexOf(tag.title);
@@ -204,11 +205,18 @@ setTimeout(()=>{
 
                             });
                             
-                           arrayTagFilterNew=arrayTagFilterNew.concat(arrayTagFilter);
+                            if(arrayTag.length>0){
+                                arrayTagFilterNew=arrayTagFilterNew.concat(arrayTagFilter);
+                                
+                                setthisArray(arrayTagFilterNew);
+                            }
+                            else{
+                                
+setthisArray(sounds)
+                            }
                             
                             
                             
-                            setthisArray(arrayTagFilterNew);
                             
                             window.scrollTo(
                                 {
@@ -227,6 +235,14 @@ setTimeout(()=>{
             <div className="Sounds__grid">
 {thisArray.map( (sound:any)=>(
     <div className="Sounds__one">
+        
+    <div className="loading"> 
+    <div className="loading__stripes">
+    <div className="loading__stripe loading__stripe--first"></div>
+    <div className="loading__stripe loading__stripe--second"></div>
+    <div className="loading__stripe loading__stripe--third"></div>
+    </div>
+    </div>
     <iframe style={{ border: "0", width: "463.33px", height: "463.33px"}} loading="lazy" src={sound.iframe}seamless><a href={sound.href}>{sound.title} </a></iframe>
     {/* <div className="Sounds__describe">{
         sound.title
@@ -251,17 +267,7 @@ setTimeout(()=>{
 )}
 
             </div>
-            <div className="padding">
-           {/* {arrayTag.length===0 ? setthisArray(mymusicDuplicate) : false} */}
-
-                {thisArray.length===0 ? <><div>"There is nothing here :("</div><button className="yt__buttontagback" onClick={()=>{setthisArray(mymusicDuplicate); 
-                arrayTag=[];
-                arrayTagFilterNew=[];
-                buttonTag.forEach((el:any) => {
-                    el.classList.remove('activetag');
-                });
-                allButton.classList.add('activetag');
-                }}>Back</button></>: ""}</div>
+            
         </div>
         </>
     );

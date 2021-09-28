@@ -3,6 +3,7 @@ import '../styles/ambience.scss'
 import Winter from '../img/winter.webp'
 import Baner from '../components/baner';
 import arrow from '../img/arrow.png'
+// import dataAmbience from "../jsonfolder/ambiencefiles.json";
 
 
   let arrayTag:any= [];
@@ -13,10 +14,18 @@ import arrow from '../img/arrow.png'
   let counter:any = [];
   let i = 0;
   let a = 0;
+  const apiambience = 'http://piotrko100music.ct8.pl/jsonfolder/ambiencefiles.json'
+
 const Ambience = () => {
     
+        fetch(apiambience,{
+            
+            
+        })
+        .then(response=>console.log(response))
+        .then(data=> console.log(data))
     
-    const mymusic =[{
+    let mymusic =[{
         Id: 0,
         iframe: "https://www.youtube.com/embed/Zh3JGIMWdnE",
         title: "White Noise, Waterfall, Nature Sounds, Sleep Sound",
@@ -94,7 +103,7 @@ const Ambience = () => {
                 },
             ]as any;
             
-            
+           mymusic=mymusic.reverse();
             let [thisArray, setthisArray] = useState(mymusic);
             // let [TextShow, setTextShow] = useState(`Tags<img src=${arrow}/>`);
 
@@ -108,6 +117,7 @@ const Ambience = () => {
                 showGrid= document.querySelector('.showtag')!;
                 grid= document.querySelector('.yt__tags')!;
                 arrowshow = document.querySelector('.showtag__img');
+              
 })
                 
 
@@ -118,13 +128,12 @@ const Ambience = () => {
         <Baner title="Ambience" image={Winter}/>
         <div className="showtag" onClick={()=>{
             
-            console.log(grid.scrollHeight)
             if(grid.style.display!=="grid"){
                 // zmiana strzałki
             grid.style.display="grid";
             grid.style.opacity="1";
             grid.style.maxHeight=grid.scrollHeight+"px";
-                console.log(grid.scrollHeight);
+                
                 arrowshow.classList.add('active')
                 
             }
@@ -195,16 +204,19 @@ All
                                 
 
                             });
+                            
                             if(arrayTag.length>0){
                                 arrayTagFilterNew=arrayTagFilterNew.concat(arrayTagFilter);
+                                arrayTagFilterNew=arrayTagFilterNew.reverse()
                                 setthisArray(arrayTagFilterNew);
                             }
                             else{
+                                
 setthisArray(mymusic)
                             }
                            
                             
-                            console.log(arrayTagFilterNew);
+                            arrayTagFilterNew=arrayTagFilterNew.reverse();
                             window.scrollTo(
                                 {
                                     top: 150,
@@ -231,7 +243,7 @@ setthisArray(mymusic)
             <div className="yt__allcontainer">
             {
                 thisArray.map((music: { Id: React.Key | null | undefined; iframe: string | undefined; title: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined; describe: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined; tag: any[]; })=>( <><div className="yt__container" key={music.Id}>
-                    <div className="yt__iframe"><iframe width="700" height="393.75" src={music.iframe} title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                    <div className="yt__iframe"><iframe width="700" height="393.75" loading="lazy" src={music.iframe} title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                     </div>
                     <div className="yt__describe">
                         <h3>{music.title}</h3>
@@ -251,7 +263,7 @@ setthisArray(mymusic)
                     });
                     
                    arrayTagFilterNew=arrayTagFilterNew.concat(arrayTagFilter);
-                    
+                   arrayTagFilterNew=arrayTagFilterNew.reverse();
                     
                     mytags.forEach((arr:any,index:any)=>{
                         buttonTag.forEach((el: any) => {
@@ -260,13 +272,14 @@ setthisArray(mymusic)
                     setTimeout(()=>{
                         if(arr.title===arrayTag[0]){
                             buttonTag[index].classList.add('activetag');
-                            console.log(buttonTag[index])
+                           
                         }
                     },2)
                     
                     })
+
                     // buttonTag[].classList.toggle('activetag');
-                    
+                    arrayTagFilterNew=arrayTagFilterNew.reverse();
                     setthisArray(arrayTagFilterNew);
                     
 
@@ -292,6 +305,10 @@ setthisArray(mymusic)
 
 export default Ambience;
 function activetag(activetag: any) {
+    throw new Error('Function not implemented.');
+}
+
+function res(res: any): ((reason: any) => PromiseLike<never>) | null | undefined {
     throw new Error('Function not implemented.');
 }
 

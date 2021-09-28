@@ -10,7 +10,7 @@ let arrayTag:any= [];
   let i = 0;
 const SoundsEffects = () => {
     const sounds =[{
-        Id: 1,
+        Id: 6,
         iframe: "https://bandcamp.com/EmbeddedPlayer/album=2608927152/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/transparent=true/",
         href: "https://soundarchitecture.bandcamp.com/album/windy-marina-ambience",
         title: "Windy Marina Ambience",
@@ -19,7 +19,7 @@ const SoundsEffects = () => {
         tag: ['windy','marina']
         },
         {
-            Id: 2,
+            Id: 5,
             iframe: "https://bandcamp.com/EmbeddedPlayer/album=2608927152/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/transparent=true/",
             href: "https://soundarchitecture.bandcamp.com/album/windy-marina-ambience",
             title: "Small Town Rain, Street Rain",
@@ -29,7 +29,7 @@ const SoundsEffects = () => {
             }
             ,
             {
-                Id: 3,
+                Id: 4,
                 iframe: "https://bandcamp.com/EmbeddedPlayer/album=2608927152/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/transparent=true/",
                 href: "https://soundarchitecture.bandcamp.com/album/windy-marina-ambience",
                 title: "Small Town Rain, Street Rain",
@@ -39,7 +39,7 @@ const SoundsEffects = () => {
                 }
                 ,
                 {
-                    Id: 4,
+                    Id: 3,
                     iframe: "https://bandcamp.com/EmbeddedPlayer/album=2608927152/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/transparent=true/",
                     href: "https://soundarchitecture.bandcamp.com/album/windy-marina-ambience",
                     title: "Small Town Rain, Street Rain",
@@ -49,7 +49,7 @@ const SoundsEffects = () => {
                     }
                     ,
                     {
-                        Id: 5,
+                        Id: 2,
                         iframe: "https://bandcamp.com/EmbeddedPlayer/album=2608927152/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/transparent=true/",
                         href: "https://soundarchitecture.bandcamp.com/album/windy-marina-ambience",
                         title: "Small Town Rain, Street Rain",
@@ -59,7 +59,7 @@ const SoundsEffects = () => {
                         }
                         ,
                         {
-                            Id: 6,
+                            Id: 1,
                             iframe: "https://bandcamp.com/EmbeddedPlayer/album=2608927152/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/transparent=true/",
                             href: "https://soundarchitecture.bandcamp.com/album/windy-marina-ambience",
                             title: "Small Town Rain, Street Rain",
@@ -69,7 +69,7 @@ const SoundsEffects = () => {
                             }
                             ,
                             {
-                                Id: 7,
+                                Id: 0,
                                 iframe: "https://bandcamp.com/EmbeddedPlayer/album=2608927152/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/transparent=true/",
                                 href: "https://soundarchitecture.bandcamp.com/album/windy-marina-ambience",
                                 title: "Small Town Rain, Street Rain",
@@ -227,7 +227,7 @@ setTimeout(()=>{
             <div className="Sounds__grid">
 {thisArray.map( (sound:any)=>(
     <div className="Sounds__one">
-    <iframe style={{ border: "0", width: "463.33px", height: "463.33px"}} src={sound.iframe}seamless><a href={sound.href}>{sound.title} </a></iframe>
+    <iframe style={{ border: "0", width: "463.33px", height: "463.33px"}} loading="lazy" src={sound.iframe}seamless><a href={sound.href}>{sound.title} </a></iframe>
     {/* <div className="Sounds__describe">{
         sound.title
     }<br/>

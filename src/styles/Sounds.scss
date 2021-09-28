@@ -41,22 +41,25 @@ $white: white;
 }
 .Sounds__tags{
     
-        display: none;
-        opacity: 0;
-        font-size: 0.8em;
-        transition: opacity 0.3s ease, max-height 0.4s ease;
-        max-height: 0px;
-        grid-template-columns: repeat(10,auto);
-        grid-auto-rows: 50px;
-        justify-content: space-between;
-        padding: 20px;
-        grid-gap: 20px;
-        color: $white;
-        background: $black;
-        font-family: 'Jost', sans-serif;
-        max-width: 1450px;
-        margin-left: auto;
-        margin-right: auto;
+    transition: opacity 0.3s ease, max-height 0.4s ease;
+    opacity: 1;
+    max-height: 0px;
+    height: 200px;
+    background: $black;
+    font-size: 0.8em;
+    display: none;
+    box-sizing: border-box;
+    grid-template-columns: repeat(10,auto);
+    grid-auto-rows: 40px;
+    justify-content: space-between;
+    
+    grid-gap: 20px;
+    color: $white;
+    background: $black;
+    font-family: 'Jost', sans-serif;
+    max-width: 1450px;
+    margin-left: auto;
+    margin-right: auto;
         
         .activetag{
             color: black;
@@ -98,7 +101,7 @@ padding-right: 20px;
         grid-template-columns: repeat(8,auto);
         grid-auto-rows: 50px;
         justify-content: space-between;
-        padding: 20px;
+        
         grid-gap: 20px;
         
         

@@ -20,7 +20,16 @@ $white: white;
         justify-content: space-between;
         
         align-items: baseline;
-       
+       .yt__iframe{
+           height: 100%;
+           width: 100%;
+           position: relative;
+           z-index: 9;
+           iframe{
+            position: relative;
+            z-index: 9;
+           }
+       }
     }
     .yt__container:nth-child(odd){
         align-items: flex-start;
@@ -84,7 +93,7 @@ $white: white;
             grid-template-columns: repeat(10,auto);
             grid-auto-rows: 40px;
             justify-content: space-between;
-            margin: 20px;
+            
             grid-gap: 20px;
             color: $white;
             background: $black;

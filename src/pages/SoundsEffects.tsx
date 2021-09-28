@@ -141,7 +141,7 @@ const SoundsEffects = () => {
                             const mymusicDuplicate = [...sounds];
                              useEffect(() => {
                                 buttonTag= document.querySelectorAll('.Sound__buttontag');
-                                allButton = document.querySelector('.Sound__buttontag');
+                               
                                 showGrid= document.querySelector('.showtag')!;
                                 grid= document.querySelector('.Sounds__tags')!;
                                 arrowshow = document.querySelector('.showtag__img');
@@ -164,12 +164,12 @@ const SoundsEffects = () => {
             }
 else{
 
-grid.style.opacity="0";
-grid.style.maxHeight="0px";
-arrowshow.classList.remove('active')
-setTimeout(()=>{
-    grid.style.display="none";
-},400)
+    grid.style.opacity="0";
+    grid.style.maxHeight="0px";
+    arrowshow.classList.remove('active')
+    setTimeout(()=>{
+        grid.style.display="none";
+    },400)
 }
         }}>Tags <img className="showtag__img"src={arrow}/></div>
         <div className="Sounds padding">

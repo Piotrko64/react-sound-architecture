@@ -243,7 +243,7 @@ setthisArray(mymusic)
             <div className="yt__allcontainer">
             {
                 thisArray.map((music: { Id: React.Key | null | undefined; iframe: string | undefined; title: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined; describe: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined; tag: any[]; })=>( <><div className="yt__container" key={music.Id}>
-                    <div className="yt__iframe"><iframe width="700" height="393.75" loading="lazy" src={music.iframe} title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                    <div className="yt__iframe"><iframe width="700" height="393.75" loading="lazy" src={music.iframe} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                     </div>
                     <div className="yt__describe">
                         <h3>{music.title}</h3>

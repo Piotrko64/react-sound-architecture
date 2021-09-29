@@ -49,6 +49,10 @@ useEffect(() => {
                 newHover.style.width = widthli;
                 
             });
+
+            li.addEventListener('click',()=>{
+                window.scroll(0,0);
+            })
             
         });
     
@@ -93,7 +97,10 @@ btnline.forEach(line=>{
            
             </div>
         </ul>   
-        <div className="nav__logo"> <NavLink to="/"><img src={mylogo} className="nav__logoimg"/></NavLink> </div>
+        <div className="nav__logo"> <NavLink to="/"><img src={mylogo} className="nav__logoimg" onClick={()=>{ window.scroll({
+            top:0,
+            behavior: 'smooth'
+        })}}/></NavLink> </div>
         
             <div className="nav__hiperlinks"> 
             <a href="https://www.youtube.com/channel/UCseRS2xV0cIl4Mm44b4rqvw" target="_blank"><img src={ytlogo}/></a><a href="https://soundarchitecture.bandcamp.com/releases" target="_blank"><img src={bandlogo}/></a>

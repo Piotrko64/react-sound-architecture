@@ -6,9 +6,9 @@ import arleft from '../img/leftar.webp';
 import arright from '../img/rightar.webp';
 import arrow from '../img/arrow.png';
 
-import musicback from '../img/notes.webp';
-import soundback from '../img/piano.webp';
-import ambienceback from '../img/ambience.webp'
+import musicback from '../img/notesstart.jpg';
+import soundback from '../img/pianostart.jpg';
+import ambienceback from '../img/ambiencestart.jpg'
 
 
 

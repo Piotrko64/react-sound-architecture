@@ -14,16 +14,43 @@ import arrow from '../img/arrow.png'
   let counter:any = [];
   let i = 0;
   let a = 0;
-  const apiambience = 'http://piotrko100music.ct8.pl/jsonfolder/ambiencefiles.json'
+
+
+
+// // API AMBIENCE
+
+
+//   const apiambience = 'http://piotrkosa12345.ct8.pl/jsonfolder/ambiencefiles.json';
+//   let mymusic:any[];
+
+//   fetch(apiambience)
+//   .then(response=>response.json())
+//   .then(data=> 
+//       mymusic=data
+//   );
+
+
+// //  API AMBIENCE TAGS
+
+
+
+// const apiambiencetags = 'http://piotrkosa12345.ct8.pl/jsonfolder/ambiencetags.json';
+// let mytags:any[];
+
+//   fetch(apiambiencetags)
+//   .then(response=>response.json())
+//   .then(data=> {
+//     mytags=data
+//     console.log(mytags)
+//   }
+      
+//   );
+
 
 const Ambience = () => {
     
-        fetch(apiambience,{
-            
-            
-        })
-        .then(response=>console.log(response))
-        .then(data=> console.log(data))
+       
+
     
     let mymusic =[{
         Id: 0,

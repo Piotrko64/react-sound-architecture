@@ -9,6 +9,36 @@ let arrayTag:any= [];
   let arrayTagFilterNew:any= [];
   let deleteTag;
   let i = 0;
+
+// // API SOUNDS
+
+
+// const apisounds = 'http://piotrkosa12345.ct8.pl/jsonfolder/soundsfiles.json';
+// let sounds:any[];
+
+// fetch(apisounds)
+// .then(response=>response.json())
+// .then(data=> 
+//     sounds=data
+// );
+
+
+// //  API SOUNDS TAGS
+
+
+
+// const apiambiencetags = 'http://piotrkosa12345.ct8.pl/jsonfolder/soundstags.json';
+// let mytags:any[];
+
+// fetch(apiambiencetags)
+// .then(response=>response.json())
+// .then(data=> {
+//   mytags=data
+//   console.log(mytags)
+// }
+    
+// );
+
 const SoundsEffects = () => {
     const sounds =[{
         Id: 6,

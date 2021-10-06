@@ -273,7 +273,7 @@ setthisArray(sounds)
     <div className="loading__stripe loading__stripe--third"></div>
     </div>
     </div>
-    <iframe style={{ border: "0", width: "463.33px", height: "463.33px"}} loading="lazy" src={sound.iframe}seamless><a href={sound.href}>{sound.title} </a></iframe>
+    <iframe style={{ border: "0"}} loading="lazy" src={sound.iframe}seamless><a href={sound.href}>{sound.title} </a></iframe>
     {/* <div className="Sounds__describe">{
         sound.title
     }<br/>

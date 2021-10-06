@@ -17,7 +17,7 @@ $white: white;
         
         margin-left: auto;
         margin-right: auto;
-        grid-gap: 30px;
+        grid-gap: 40px;
         .Sounds__one{
             display: flex;
             justify-content: center;
@@ -27,6 +27,8 @@ $white: white;
            position: relative;
            iframe{
                z-index: 9;
+               height: 440px;
+               width: 440px
            }
             .Sounds__tag{
                 display: grid;
@@ -93,33 +95,67 @@ padding-right: 20px;
 }
 
 @media(max-width:1400px) {
+    .Sounds{
+        .Sounds__tags{
+        
+            
+            grid-template-columns: repeat(8,auto);
+            grid-auto-rows: 50px;
+            justify-content: space-between;
+            max-width: 1200px;
+            grid-gap: 20px;
+            padding: 15px;
+            grid-gap: 10px;
+            
+            
+            
+            button{
+                
+                background: transparent;
+                font-size: 24px;
+    padding-left: 20px;
+    padding-right: 20px;
+                
+                }
+            } 
+        .Sounds__grid{
+            max-width: 1200px;
+            grid-gap: 20px;
+            .Sounds__one{
+        
+                iframe{
+                    
+                    height: 380px;
+                    width: 380px
+                }}
+        }
+        
+    }
     
-            
-    .Sounds__tags{
-        
-        display: grid;
-        grid-template-columns: repeat(8,auto);
-        grid-auto-rows: 50px;
-        justify-content: space-between;
-        
-        grid-gap: 20px;
-        
-        
-        
-        button{
-            
-            background: transparent;
-            font-size: 24px;
-padding-left: 20px;
-padding-right: 20px;
-            
-            }
-        } 
+    
 }
-@media(max-width:1200px) {
+@media(max-width:1250px) {
+    .Sounds{
+         
+        .Sounds__grid{
+            max-width: 1200px;
+            grid-gap: 40px;
+            grid-template-columns: 400px 400px;
+            justify-content: space-around;
+            .Sounds__one{
+                height: 380px;
+                width: 380px;
+                iframe{
+                    
+                    height: 380px;
+                    width: 380px
+                }}
+        }
+        
+    }
+    
 .Sounds__tags{
         
-display: grid;
 grid-template-columns: repeat(6,auto);
 grid-auto-rows: 50px;
 justify-content: space-between;
@@ -128,32 +164,74 @@ grid-gap: 20px;
 }
 }
 @media(max-width:1000px) {
-.Sounds__tags{
+    .Sounds{
+        .Sounds__tags{
             
-    display: grid;
-    grid-template-columns: repeat(5,auto);
-    grid-auto-rows: 50px;
-    justify-content: space-between;
-    padding: 20px;
-    grid-gap: 20px;
-}
+            
+            grid-template-columns: repeat(5,auto);
+            grid-auto-rows: 50px;
+            justify-content: space-between;
+            padding: 20px;
+            grid-gap: 20px;
+        }   
+        .Sounds__grid{
+            
+            grid-template-columns: 400px ;
+            
+            
+        }
+        
+    }
+
 }
 @media(max-width: 800px) {
-    .Sounds__tags{
+    .Sounds{
+        .Sounds__tags{
                 
-        display: grid;
-        grid-template-columns: repeat(4,auto);
-        grid-auto-rows: 45px;
-        justify-content: space-between;
-        padding: 20px;
-        grid-gap: 20px;
-        button{
             
-            background: transparent;
-            font-size: 22px;
-padding-left: 20px;
-padding-right: 20px;
+            grid-template-columns: repeat(4,auto);
+            grid-auto-rows: 45px;
+            justify-content: space-between;
+            padding: 0px;
             
+            button{
+                
+                background: transparent;
+                font-size: 22px;
+    padding-left: 20px;
+    padding-right: 20px;
+                
+                }
+        }
+    }
+    
+    }
+    @media(max-width: 500px) {
+        .Sounds{
+            .Sounds__tags{
+                
+                max-width: 380px;
+                grid-gap: 10px;
+                button{
+                        
+                    background: transparent;
+                    font-size: 22px;
+        padding-left: 10px;
+        padding-right: 10px;
+                    
+                    }
             }
-    }
-    }
+            .Sounds__grid{
+                grid-template-columns: 360px;
+                
+                .Sounds__one{
+                    height: 360px;
+                    width: 360px;
+                iframe{
+                    height: 360px;
+                    width: 360px;
+                }
+            }
+            }
+        }
+        }

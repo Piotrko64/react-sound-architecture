@@ -87,7 +87,7 @@ btnline.forEach(line=>{
             </div>
          <ul className="nav__ul">
             
-            <li><NavLink to="/Music">Music</NavLink></li>
+            <li><a style={{color: "gray"}}>Music</a></li>
             <li><NavLink to="/SoundsEffects">Sounds Effects</NavLink></li>
             <li><NavLink to="/Ambience">Ambience</NavLink></li> 
             <div className="nav__hiperplus"> 

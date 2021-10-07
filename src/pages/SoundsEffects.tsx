@@ -169,6 +169,34 @@ const SoundsEffects = () => {
                             let grid:any;
                             let arrowshow:any;
                             const mymusicDuplicate = [...sounds];
+                            let counterTags:number[]=[];
+           let counterForTag=0;
+           let thisForEachTag:any;
+           let thisForEachMusic:any;
+           let goodArrayTag:any=[]
+           mytags.forEach((tag:any=0)=>(
+            counterForTag=0,
+            thisForEachTag=tag,
+            
+               
+               sounds.forEach((mus:any)=>(
+                thisForEachMusic=mus,
+                // console.log(thisForEachMusic),
+                // console.log("e"+thisForEachMusic.tag),
+                // console.log(thisForEachTag.title),
+                // console.log(thisForEachMusic.tag.indexOf(thisForEachTag.title)),
+                
+                thisForEachMusic.tag.indexOf(thisForEachTag.title)!==-1 ? counterForTag++ : false
+                ,console.log(counterForTag)
+
+                   
+               )),
+               counterTags.push(counterForTag),
+               console.log(counterTags)
+           ))
+           
+           console.log(counterTags);
+           goodArrayTag=counterTags;
                              useEffect(() => {
                                 buttonTag= document.querySelectorAll('.Sound__buttontag');
                                
@@ -254,7 +282,7 @@ setthisArray(sounds)
                                     behavior: 'smooth'
                                     
                                   }
-                            )}}> {tag.title} </button>
+                            )}}>{tag.title}<span>({goodArrayTag[tag.id]})</span></button>
                             </>
                         ))
                     }

@@ -140,7 +140,7 @@ const Ambience = () => {
            let showGrid:any;
            let grid:any;
            let arrowshow:any;
-           let counterTags=[5];
+           let counterTags:any=[];
            let counterForTag=0;
            let thisForEachTag:any;
            let thisForEachMusic:any;
@@ -165,7 +165,7 @@ const Ambience = () => {
                counterTags.push(counterForTag),
                console.log(counterTags)
            ))
-           counterTags.shift();
+           
            console.log(counterTags);
            goodArrayTag=counterTags;
 
@@ -289,7 +289,7 @@ setthisArray(mymusic)
                         
                         }
                             
-                            }> {tag.title}<span>{goodArrayTag[tag.id]}</span></button>
+                            }> {tag.title}<span>({goodArrayTag[tag.id]})</span></button>
                             </>
                         ))
                     }

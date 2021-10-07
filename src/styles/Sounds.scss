@@ -209,7 +209,7 @@ grid-gap: 20px;
     @media(max-width: 500px) {
         .Sounds{
             .Sounds__tags{
-                
+                grid-template-columns: repeat(3,auto);
                 max-width: 380px;
                 grid-gap: 10px;
                 button{
@@ -218,18 +218,19 @@ grid-gap: 20px;
                     font-size: 22px;
         padding-left: 10px;
         padding-right: 10px;
+        text-align: right;
                     
                     }
             }
             .Sounds__grid{
-                grid-template-columns: 360px;
+                grid-template-columns: 380px;
                 
                 .Sounds__one{
-                    height: 360px;
-                    width: 360px;
+                    height: 380px;
+                    width: 380px;
                 iframe{
-                    height: 360px;
-                    width: 360px;
+                    height: 380px;
+                    width: 380px;
                 }
             }
             }

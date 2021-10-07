@@ -3,6 +3,7 @@ import '../styles/ambience.scss'
 import ambienceback from '../img/Ambience2.png'
 import Baner from '../components/baner';
 import arrow from '../img/arrow.png'
+import Music from './Music';
 // import dataAmbience from "../jsonfolder/ambiencefiles.json";
 
 
@@ -66,7 +67,7 @@ const Ambience = () => {
             title: "Small Town Rain, Street Rain",
             describe: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum soluta ab maiores ut earum explicabo fugit beatae omnis et id, quam perspiciatis delectus dolore hic corrupti",
             data: "2021-06-09",
-            tag: ['rain']
+            tag: ['rain','windy','birds']
             },
             {
                 Id: 2,
@@ -139,11 +140,45 @@ const Ambience = () => {
            let showGrid:any;
            let grid:any;
            let arrowshow:any;
+           let counterTags=[5];
+           let counterForTag=0;
+           let thisForEachTag:any;
+           let thisForEachMusic:any;
+           let goodArrayTag:any=[]
+           mytags.forEach((tag:any=0)=>(
+            counterForTag=0,
+            thisForEachTag=tag,
+            
+               
+               mymusic.forEach((mus:any)=>(
+                thisForEachMusic=mus,
+                // console.log(thisForEachMusic),
+                // console.log("e"+thisForEachMusic.tag),
+                // console.log(thisForEachTag.title),
+                // console.log(thisForEachMusic.tag.indexOf(thisForEachTag.title)),
+                
+                thisForEachMusic.tag.indexOf(thisForEachTag.title)!==-1 ? counterForTag++ : false
+                ,console.log(counterForTag)
+
+                   
+               )),
+               counterTags.push(counterForTag),
+               console.log(counterTags)
+           ))
+           counterTags.shift();
+           console.log(counterTags);
+           goodArrayTag=counterTags;
+
             useEffect(() => {
                 buttonTag= document.querySelectorAll('.yt__buttontag')!;
                 showGrid= document.querySelector('.showtag')!;
                 grid= document.querySelector('.yt__tags')!;
                 arrowshow = document.querySelector('.showtag__img');
+
+
+
+
+
               
 })
                 
@@ -254,7 +289,7 @@ setthisArray(mymusic)
                         
                         }
                             
-                            }> {tag.title} {counter[tag.id]}</button>
+                            }> {tag.title}<span>{goodArrayTag[tag.id]}</span></button>
                             </>
                         ))
                     }

@@ -133,6 +133,16 @@ $white: white;
                 color: white;
                 border: 1px solid white;
                 // border-radius: 30px;
+                
+                span{
+                    font-size: 0.8em;
+                    color: gray;
+                    padding-left: 5px;
+                    font-weight: 400;
+                }
+                }
+                button:hover{
+                    color: gray;
                 }
                
             
@@ -346,6 +356,7 @@ padding-right: 30px;
                 
                 }
                 .yt__tags{
+                    grid-template-columns: repeat(3,auto);
                             max-width: 380px;
                     grid-auto-rows: 40px;
                     padding: 0px;
@@ -355,7 +366,7 @@ padding-right: 30px;
                         font-size: 22px;
             padding-left: 10px;
             padding-right: 10px;
-                        
+            text-align: right;
                         }
                 }
                 }

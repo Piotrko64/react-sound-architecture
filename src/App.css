@@ -1,3 +1,19 @@
+
+body::-webkit-scrollbar {
+  width: 12px;
+  background-color: #0f0f0f;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: white;
+  transition: all 3s ease;
+  cursor: pointer;
+  
+}
+body::-webkit-scrollbar-thumb:hover {
+  
+  
+}
 .padding{
   padding-left: 30px;
   padding-right: 30px;

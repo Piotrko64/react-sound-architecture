@@ -128,7 +128,7 @@ main{
       font-weight: 300;
     }
     .iframes{
-      
+      padding-top: 50px;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
@@ -430,8 +430,10 @@ color: red;
       // Start page
       .Start__content .Start__sectionup .Start__sectiondescribe{
         padding: 10px;
+        padding-top: 20px;
+        padding-bottom: 20px;
         .iframes{
-          padding-top: 10px;
+          padding-top: 0px;
           iframe{
             height: 254px;
             width: 450px;
@@ -497,12 +499,14 @@ color: red;
         // Start page
         .Start__content .Start__sectionup .Start__sectiondescribe{
           padding: 5px;
+          padding-bottom: 0px;
           .iframes{
-            padding-top: 5px;
+            padding-bottom: 15px;
+            margin-top: 15px;
             iframe{
               height: 213px;
               width: 380px;
-              margin: 5px;
+              margin: 15px;
               margin-bottom: 0;
             }
           }

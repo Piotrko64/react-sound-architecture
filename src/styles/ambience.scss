@@ -20,22 +20,34 @@ $white: white;
         justify-content: space-between;
         
         align-items: baseline;
+        
        .yt__iframe{
            height: 100%;
            width: 100%;
            position: relative;
            z-index: 9;
+           
+           
            iframe{
             position: relative;
             z-index: 9;
            }
        }
+       
     }
     .yt__container:nth-child(odd){
         align-items: flex-start;
+        .yt__iframe{
+            display: flex;
+            justify-content: flex-start;
+        }
     }
     .yt__container:nth-child(even){
         align-items: flex-end;
+        .yt__iframe{
+            display: flex;
+            justify-content: flex-end;
+        }
     }
     .yt__container{
         display: flex;

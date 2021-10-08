@@ -11,6 +11,7 @@ $lrmax: 80px;
     display: flex;
     justify-content: center;
 align-items: center;
+max-width: 650px;
 .loading__stripes{
     display: flex;
     justify-content: center;
@@ -58,4 +59,9 @@ height: $lr;
 height: $lrmax;
     }
     
+}
+@media(max-width: 1400px){
+    .loading{
+        max-width: 630px;
+    }
 }

@@ -64,7 +64,7 @@ else{
                              Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum rem provident iure. Tenetur architecto tempora voluptatibus libero nesciunt repudiandae quo dicta ratione nihil nostrum! Ea officiis quia deleniti esse consectetur.
                             
                              </div>
-                         <br/>
+                         
                          </div>
                      </div>
                  </div>
@@ -82,8 +82,8 @@ else{
                             
                              </div>
                              <div className="iframes">
-                             <iframe className="iframe" style={{width:"700", height:"394"}} src="https://www.youtube.com/embed/y8EvClrhZVc" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-                             <iframe className="iframe" style={{width:"700", height:"394"}} src="https://www.youtube.com/embed/y8EvClrhZVc" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                             <iframe className="iframe"  src="https://www.youtube.com/embed/y8EvClrhZVc" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                             <iframe className="iframe"  src="https://www.youtube.com/embed/y8EvClrhZVc" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                              </div>
                     </div> </div>
                  </div>

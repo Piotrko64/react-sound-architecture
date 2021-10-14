@@ -107,10 +107,10 @@ else{
                  
              </div>
              <div className="Prefooter">
-                 <img src={arleft}/>
+                <div> <img src={arleft}/></div>
                  <div className="Prefooter__text">
                      Check on Bandcamp and Youtube</div>
-                 <img src={arright}/>
+                 <div><img src={arright}/></div>
             </div>
         </div>
     );

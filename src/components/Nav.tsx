@@ -87,9 +87,11 @@ btnline.forEach(line=>{
             </div>
          <ul className="nav__ul">
             
+
             <li><a style={{color: "gray"}}>Music</a></li>
             <li><NavLink to="/SoundsEffects">Sounds Effects</NavLink></li>
             <li><NavLink to="/Ambience">Ambience</NavLink></li> 
+
             <div className="nav__hiperplus"> 
             <a href="https://www.youtube.com/channel/UCseRS2xV0cIl4Mm44b4rqvw" target="_blank"><img src={ytlogo}/></a>
             <br></br>

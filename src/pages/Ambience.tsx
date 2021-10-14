@@ -50,6 +50,34 @@ import Music from './Music';
 
 const Ambience = () => {
     
+    // // API AMBIENCE
+
+
+//   const apiambience = 'http://piotrkosa12345.ct8.pl/jsonfolder/ambiencefiles.json';
+//   let mymusic:any[];
+
+//   fetch(apiambience)
+//   .then(response=>response.json())
+//   .then(data=> 
+//       mymusic=data
+//   );
+
+
+// //  API AMBIENCE TAGS
+
+
+
+// const apiambiencetags = 'http://piotrkosa12345.ct8.pl/jsonfolder/ambiencetags.json';
+// let mytags:any[];
+
+//   fetch(apiambiencetags)
+//   .then(response=>response.json())
+//   .then(data=> {
+//     mytags=data
+//     console.log(mytags)
+//   }
+      
+//   );
        
 
     
@@ -145,29 +173,34 @@ const Ambience = () => {
            let thisForEachTag:any;
            let thisForEachMusic:any;
            let goodArrayTag:any=[]
-           mytags.forEach((tag:any=0)=>(
-            counterForTag=0,
-            thisForEachTag=tag,
-            
-               
-               mymusic.forEach((mus:any)=>(
-                thisForEachMusic=mus,
-                // console.log(thisForEachMusic),
-                // console.log("e"+thisForEachMusic.tag),
-                // console.log(thisForEachTag.title),
-                // console.log(thisForEachMusic.tag.indexOf(thisForEachTag.title)),
-                
-                thisForEachMusic.tag.indexOf(thisForEachTag.title)!==-1 ? counterForTag++ : false
-                ,console.log(counterForTag)
 
+           function counterAll(){
+            mytags.forEach((tag:any=0)=>(
+                counterForTag=0,
+                thisForEachTag=tag,
+                
                    
-               )),
-               counterTags.push(counterForTag),
-               console.log(counterTags)
-           ))
+                   mymusic.forEach((mus:any)=>(
+                    thisForEachMusic=mus,
+                    // console.log(thisForEachMusic),
+                    // console.log("e"+thisForEachMusic.tag),
+                    // console.log(thisForEachTag.title),
+                    // console.log(thisForEachMusic.tag.indexOf(thisForEachTag.title)),
+                    
+                    thisForEachMusic.tag.indexOf(thisForEachTag.title)!==-1 ? counterForTag++ : false
+                    ,console.log(counterForTag)
+    
+                       
+                   )),
+                   counterTags.push(counterForTag),
+                   console.log(counterTags)
+               ))
+               
+               console.log(counterTags);
+               goodArrayTag=counterTags;
+           }
            
-           console.log(counterTags);
-           goodArrayTag=counterTags;
+           counterAll();
 
             useEffect(() => {
                 buttonTag= document.querySelectorAll('.yt__buttontag')!;

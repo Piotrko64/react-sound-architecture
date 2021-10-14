@@ -188,7 +188,8 @@ color: red;
 }
 .Prefooter{
   padding-top: 70px;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   justify-content: center;
   padding-bottom: 40px;
   .Prefooter__text{
@@ -198,11 +199,22 @@ color: red;
   font-family: 'Fredericka the Great', cursive;
   text-align: center;
   font-size: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  
+  }
+  div{
+    display: grid;
+    justify-content: center;
+    align-items: center;
   }
   img{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     height: 150px;
-    padding-left: 30px;
-    padding-right: 30px;
+    
     transform: translate(0px, 20px);
 
 
@@ -473,7 +485,7 @@ color: red;
         font-size: 26px;
         }
         img{
-          height: 50px;
+          height: 65px;
           padding-left: 0;
           padding-right: 0;
         }
@@ -549,7 +561,7 @@ color: red;
           font-size: 24px;
           }
           img{
-            height: 40px;
+            height: 60px;
             
           }
         }

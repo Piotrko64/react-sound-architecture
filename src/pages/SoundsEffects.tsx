@@ -173,30 +173,35 @@ const SoundsEffects = () => {
            let counterForTag=0;
            let thisForEachTag:any;
            let thisForEachMusic:any;
-           let goodArrayTag:any=[]
-           mytags.forEach((tag:any=0)=>(
-            counterForTag=0,
-            thisForEachTag=tag,
-            
-               
-               sounds.forEach((mus:any)=>(
-                thisForEachMusic=mus,
-                // console.log(thisForEachMusic),
-                // console.log("e"+thisForEachMusic.tag),
-                // console.log(thisForEachTag.title),
-                // console.log(thisForEachMusic.tag.indexOf(thisForEachTag.title)),
-                
-                thisForEachMusic.tag.indexOf(thisForEachTag.title)!==-1 ? counterForTag++ : false
-                ,console.log(counterForTag)
+           let goodArrayTag:any=[];
 
+           function counterAll(){
+            mytags.forEach((tag:any=0)=>(
+                counterForTag=0,
+                thisForEachTag=tag,
+                
                    
-               )),
-               counterTags.push(counterForTag),
-               console.log(counterTags)
-           ))
+                   sounds.forEach((mus:any)=>(
+                    thisForEachMusic=mus,
+                    // console.log(thisForEachMusic),
+                    // console.log("e"+thisForEachMusic.tag),
+                    // console.log(thisForEachTag.title),
+                    // console.log(thisForEachMusic.tag.indexOf(thisForEachTag.title)),
+                    
+                    thisForEachMusic.tag.indexOf(thisForEachTag.title)!==-1 ? counterForTag++ : false
+                    ,console.log(counterForTag)
+    
+                       
+                   )),
+                   counterTags.push(counterForTag),
+                   console.log(counterTags)
+               ))
+               
+               console.log(counterTags);
+               goodArrayTag=counterTags;
+           };
+           counterAll();
            
-           console.log(counterTags);
-           goodArrayTag=counterTags;
                              useEffect(() => {
                                 buttonTag= document.querySelectorAll('.Sound__buttontag');
                                

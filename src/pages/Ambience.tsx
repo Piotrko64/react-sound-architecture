@@ -12,9 +12,9 @@ import Music from './Music';
   let arrayTagFilterNew:any= [];
   
   let deleteTag;
-  let counter:any = [];
+  
   let i = 0;
-  let a = 0;
+  
 
 
 
@@ -410,11 +410,5 @@ setthisArray(mymusic)
 }
 
 export default Ambience;
-function activetag(activetag: any) {
-    throw new Error('Function not implemented.');
-}
 
-function res(res: any): ((reason: any) => PromiseLike<never>) | null | undefined {
-    throw new Error('Function not implemented.');
-}
 

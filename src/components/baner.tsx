@@ -1,8 +1,8 @@
 import React from 'react';
 import '../styles/baner.scss';
-import Music from '../pages/Music';
+
 import imgmusic from '../img/background.jpg';
-import '../styles/baner.scss'
+
 const Baner = (props:any) => {
 
     return (

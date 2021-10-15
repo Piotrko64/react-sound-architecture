@@ -93,19 +93,19 @@ btnline.forEach(line=>{
             <li><NavLink to="/Ambience">Ambience</NavLink></li> 
 
             <div className="nav__hiperplus"> 
-            <a href="https://www.youtube.com/channel/UCseRS2xV0cIl4Mm44b4rqvw" target="_blank"><img src={ytlogo}/></a>
+            <a href="https://www.youtube.com/channel/UCseRS2xV0cIl4Mm44b4rqvw" target="_blank"><img src={ytlogo} alt="YouTube"/></a>
             <br></br>
-            <a href="https://soundarchitecture.bandcamp.com/releases" target="_blank"><img src={bandlogo}/></a>
+            <a href="https://soundarchitecture.bandcamp.com/releases" target="_blank"><img src={bandlogo} alt="bandcamp Sound Architecture"/></a>
            
             </div>
         </ul>   
-        <div className="nav__logo"> <NavLink to="/"><img src={mylogo} className="nav__logoimg" onClick={()=>{ window.scroll({
+        <div className="nav__logo"> <NavLink to="/"><img src={mylogo} alt="logo Sound Architecture" className="nav__logoimg" onClick={()=>{ window.scroll({
             top:0,
             behavior: 'smooth'
         })}}/></NavLink> </div>
         
             <div className="nav__hiperlinks"> 
-            <a href="https://www.youtube.com/channel/UCseRS2xV0cIl4Mm44b4rqvw" target="_blank"><img src={ytlogo}/></a><a href="https://soundarchitecture.bandcamp.com/releases" target="_blank"><img src={bandlogo}/></a>
+            <a href="https://www.youtube.com/channel/UCseRS2xV0cIl4Mm44b4rqvw" target="_blank"><img src={ytlogo} alt="youtube SA"/></a><a href="https://soundarchitecture.bandcamp.com/releases" target="_blank"><img src={bandlogo} alt="bandcamp SA"/></a>
             </div>
             
         </nav>

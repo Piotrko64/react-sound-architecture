@@ -1,14 +1,13 @@
 import {useEffect} from 'react';
-import Swiper_Designed from '../components/Swiper_Designed';
 import mylogo from '../img/logosawhite.webp';
-import back1 from '../img/background.jpg';
+import back1 from '../img/background.webp';
 import arleft from '../img/leftar.webp';
 import arright from '../img/rightar.webp';
 import arrow from '../img/arrow.png';
 
-import musicback from '../img/notesstart.jpg';
-import soundback from '../img/pianostart.jpg';
-import ambienceback from '../img/ambiencestart.jpg'
+import musicback from '../img/notesstart.webp';
+import soundback from '../img/pianostart.webp';
+import ambienceback from '../img/ambiencestart.webp'
 
 
 
@@ -82,8 +81,8 @@ else{
                             
                              </div>
                              <div className="iframes">
-                             <iframe className="iframe"  src="https://www.youtube.com/embed/y8EvClrhZVc" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-                             <iframe className="iframe"  src="https://www.youtube.com/embed/y8EvClrhZVc" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                             <iframe className="iframe"  loading="lazy" src="https://www.youtube.com/embed/y8EvClrhZVc" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                             <iframe className="iframe"  loading="lazy" src="https://www.youtube.com/embed/y8EvClrhZVc" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                              </div>
                     </div> </div>
                  </div>

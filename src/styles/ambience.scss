@@ -149,7 +149,7 @@ $white: white;
                 font-weight: 300;
                 font-family: 'Jost', sans-serif;
                 cursor: pointer;
-                transition: all .3s ease;
+                transition: all .3s ease, display 0.001s ease;
                 color: white;
                 border: 1px solid white;
                 // border-radius: 30px;

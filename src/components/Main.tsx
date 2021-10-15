@@ -1,15 +1,16 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import '../styles/main.scss';
 
 // pages
 import Start from '../pages/Start';
 import Music from '../pages/Music';
-
+import ErrorComponent from './ErrorComponent';
 import SoundsEffects from '../pages/SoundsEffects';
 import Ambience from '../pages/Ambience';
 
 const Main = () => {
+    
     return (
         <main>
             
@@ -19,7 +20,7 @@ const Main = () => {
             
             <Route path="/SoundsEffects" exact  component={SoundsEffects}/>
             <Route path="/Ambience" exact  component={Ambience}/>
-            
+            <Route component={ErrorComponent}/>
             </Switch>
             
         </main>

@@ -53,7 +53,7 @@ else{
                  <div className="Start__h1">What me make</div>
                  <div className="Start__sectionall">
                      <div className="Start__sectiontitle padding" style={{backgroundImage: `url(${soundback})`}}>
-                     <div className="Start__onlytitle">Sounds Library<img className="Start__imgarrow" src={arrow}/>
+                     <div className="Start__onlytitle">Sounds Library<img className="Start__imgarrow" alt="arrow Sounds" src={arrow}/>
                      </div>
                      </div>
                      <div className="Start__sectionup">
@@ -70,7 +70,7 @@ else{
                  <div className="Start__sectionall">
                         <div className="Start__sectiontitle padding" style={{backgroundImage: `url(${ambienceback})`}}>
                         <div className="Start__onlytitle">
-                         Designed Ambience <img className="Start__imgarrow" src={arrow}/>
+                         Designed Ambience <img className="Start__imgarrow" src={arrow} alt="arrow Sounds Architecture"/>
                         </div>
                         </div>
                      <div className="Start__sectionup">
@@ -91,7 +91,7 @@ else{
                         <div className="Start__onlytitle">  
                          Music
                         
-                        <img className="Start__imgarrow" src={arrow}/>
+                        <img className="Start__imgarrow" src={arrow} alt="Architecture of Sounds"/>
                         </div>
                      </div>
                      <div className="Start__sectionup">
@@ -106,10 +106,10 @@ else{
                  
              </div>
              <div className="Prefooter">
-                <div> <img src={arleft}/></div>
+                <div> <img src={arleft} alt="left"/></div>
                  <div className="Prefooter__text">
                      Check on Bandcamp and Youtube</div>
-                 <div><img src={arright}/></div>
+                 <div><img src={arright} alt="right"/></div>
             </div>
         </div>
     );

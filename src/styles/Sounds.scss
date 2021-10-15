@@ -243,3 +243,33 @@ grid-gap: 20px;
             }
         }
         }
+        @media(max-width: 450px) {
+            .Sounds{
+                .Sounds__tags{
+                    grid-template-columns: repeat(3,auto);
+                    max-width: 340px;
+                    grid-gap: 10px;
+                    button{
+                            
+                        
+                        font-size: 20px;
+            padding-left: 5px;
+            padding-right: 5px;
+            
+                        
+                        }
+                }
+                .Sounds__grid{
+                    grid-template-columns: 340px;
+                    
+                    .Sounds__one{
+                        height: 340px;
+                        width: 340px;
+                    iframe{
+                        height: 340px;
+                        width: 340px;
+                    }
+                }
+                }
+            }
+            }

@@ -390,3 +390,34 @@ padding-right: 30px;
                         }
                 }
                 }
+                @media(max-width: 450px) {
+                    .yt{
+    
+                        .yt__allcontainer{
+                            grid-template-columns: 340px;
+                            .yt__describe{
+                                max-width: 340px;
+                                font-size: 0.70em;
+                            }
+                            .yt__iframe{
+                            iframe{
+                                height: 190px;
+                            }}
+                        }
+                    
+                    }
+                    .yt__tags{
+                        grid-template-columns: repeat(3,auto);
+                                max-width: 340px;
+                        grid-auto-rows: 40px;
+                        padding: 0px;
+                        button{
+                            
+                            background: transparent;
+                            font-size: 20px;
+                padding-left: 5px;
+                padding-right: 5px;
+                
+                            }
+                    }
+                    }

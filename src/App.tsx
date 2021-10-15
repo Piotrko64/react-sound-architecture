@@ -3,7 +3,7 @@ import Nav from './components/Nav';
 import Main from './components/Main';
 import Footer from './components/Footer';
 import './App.css';
-import { BrowserRouter as Router, NavLink, Redirect, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router} from 'react-router-dom';
 
 function App() {
   return (

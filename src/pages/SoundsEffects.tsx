@@ -4,184 +4,161 @@ import '../styles/Sounds.scss';
 import '../styles/loading.scss';
 import arrow from '../img/arrow.png'
 import soundback from '../img/piano.webp'
-let arrayTag:any= [];
-  let arrayTagFilter:any= [];
-  let arrayTagFilterNew:any= [];
-  let deleteTag;
-  let i = 0;
+  let arrayTag:Array<any>= [];
+  let arrayTagFilter:Array<any>= [];
+  let arrayTagFilterNew:Array<any>= [];
+  let deleteTag:number;
+  let i:number = 0;
 
-// // API SOUNDS
-
-
-// const apisounds = 'http://piotrkosa12345.ct8.pl/jsonfolder/soundsfiles.json';
-// let sounds:any[];
-
-// fetch(apisounds)
-// .then(response=>response.json())
-// .then(data=> 
-//     sounds=data
-// );
-
-
-// //  API SOUNDS TAGS
-
-
-
-// const apiambiencetags = 'http://piotrkosa12345.ct8.pl/jsonfolder/soundstags.json';
-// let mytags:any[];
-
-// fetch(apiambiencetags)
-// .then(response=>response.json())
-// .then(data=> {
-//   mytags=data
-//   console.log(mytags)
-// }
-    
-// );
+  const controller = new AbortController();
+  const { signal } = controller;
 
 const SoundsEffects = () => {
-    const sounds =[{
-        Id: 6,
-        iframe: "https://bandcamp.com/EmbeddedPlayer/album=2608927152/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/transparent=true/",
-        href: "https://soundarchitecture.bandcamp.com/album/windy-marina-ambience",
-        title: "Windy Marina Ambience",
-        describe: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum soluta ab maiores ut earum explicabo fugit beatae omnis et id, quam perspiciatis delectus dolore hic corrupti aliquam modi nesciunt repudiandae?",
-        data: "2021-06-45",
-        tag: ['windy','marina']
-        },
-        {
-            Id: 5,
-            iframe: "https://bandcamp.com/EmbeddedPlayer/album=2608927152/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/transparent=true/",
-            href: "https://soundarchitecture.bandcamp.com/album/windy-marina-ambience",
-            title: "Small Town Rain, Street Rain",
-            describe: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum soluta ab maiores ut earum explicabo fugit beatae omnis et id, quam perspiciatis delectus dolore hic corrupti",
-            data: "2021-06-09",
-            tag: ['rain','town']
-            }
-            ,
-            {
-                Id: 4,
-                iframe: "https://bandcamp.com/EmbeddedPlayer/album=2608927152/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/transparent=true/",
-                href: "https://soundarchitecture.bandcamp.com/album/windy-marina-ambience",
-                title: "Small Town Rain, Street Rain",
-                describe: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum soluta ab maiores ut earum explicabo fugit beatae omnis et id, quam perspiciatis delectus dolore hic corrupti",
-                data: "2021-06-09",
-                tag: ['rain','town','rain']
-                }
-                ,
-                {
-                    Id: 3,
-                    iframe: "https://bandcamp.com/EmbeddedPlayer/album=2608927152/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/transparent=true/",
-                    href: "https://soundarchitecture.bandcamp.com/album/windy-marina-ambience",
-                    title: "Small Town Rain, Street Rain",
-                    describe: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum soluta ab maiores ut earum explicabo fugit beatae omnis et id, quam perspiciatis delectus dolore hic corrupti",
-                    data: "2021-06-09",
-                    tag: ['rain', 'town' , 'street']
-                    }
-                    ,
-                    {
-                        Id: 2,
-                        iframe: "https://bandcamp.com/EmbeddedPlayer/album=2608927152/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/transparent=true/",
-                        href: "https://soundarchitecture.bandcamp.com/album/windy-marina-ambience",
-                        title: "Small Town Rain, Street Rain",
-                        describe: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum soluta ab maiores ut earum explicabo fugit beatae omnis et id, quam perspiciatis delectus dolore hic corrupti",
-                        data: "2021-06-09",
-                        tag: ['rain', 'town' , 'street']
-                        }
-                        ,
-                        {
-                            Id: 1,
-                            iframe: "https://bandcamp.com/EmbeddedPlayer/album=2608927152/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/transparent=true/",
-                            href: "https://soundarchitecture.bandcamp.com/album/windy-marina-ambience",
-                            title: "Small Town Rain, Street Rain",
-                            describe: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum soluta ab maiores ut earum explicabo fugit beatae omnis et id, quam perspiciatis delectus dolore hic corrupti",
-                            data: "2021-06-09",
-                            tag: ['rain', 'harbours' , 'street']
-                            }
-                            ,
-                            {
-                                Id: 0,
-                                iframe: "https://bandcamp.com/EmbeddedPlayer/album=2608927152/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/transparent=true/",
-                                href: "https://soundarchitecture.bandcamp.com/album/windy-marina-ambience",
-                                title: "Small Town Rain, Street Rain",
-                                describe: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum soluta ab maiores ut earum explicabo fugit beatae omnis et id, quam perspiciatis delectus dolore hic corrupti",
-                                data: "2021-06-09",
-                                tag: ['rain', 'town' , 'birds']
-                                }];
-                                const mytags=[{
-                                    id: 0,
-                                    title: "windy"
-                                },
-                                {
-                                    id: 1,
-                                    title: "rain"
-                                },
-                                {
-                                    id: 2,
-                                    title: "water"
-                                },
-                                {
-                                    id: 3,
-                                    title: "town"
-                                },
-                                {
-                                    id: 4,
-                                    title: "harbours"
-                                },
-                                {
-                                    id: 5,
-                                    title: "birds"
-                                },
+    let [sounds, setsounds] = useState<any[]>([]);
+    let [thisArray, setthisArray] = useState<any[]>([]);
+    let [mytags, setmytags] = useState<any[]>([]);
+    let [type] = useState('type');
+    // const sounds =[{
+    //     Id: 6,
+    //     iframe: "https://bandcamp.com/EmbeddedPlayer/album=2608927152/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/transparent=true/",
+    //     href: "https://soundarchitecture.bandcamp.com/album/windy-marina-ambience",
+    //     title: "Windy Marina Ambience",
+    //     describe: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum soluta ab maiores ut earum explicabo fugit beatae omnis et id, quam perspiciatis delectus dolore hic corrupti aliquam modi nesciunt repudiandae?",
+    //     data: "2021-06-45",
+    //     tag: ['windy','marina']
+    //     },
+    //     {
+    //         Id: 5,
+    //         iframe: "https://bandcamp.com/EmbeddedPlayer/album=2608927152/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/transparent=true/",
+    //         href: "https://soundarchitecture.bandcamp.com/album/windy-marina-ambience",
+    //         title: "Small Town Rain, Street Rain",
+    //         describe: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum soluta ab maiores ut earum explicabo fugit beatae omnis et id, quam perspiciatis delectus dolore hic corrupti",
+    //         data: "2021-06-09",
+    //         tag: ['rain','town']
+    //         }
+    //         ,
+    //         {
+    //             Id: 4,
+    //             iframe: "https://bandcamp.com/EmbeddedPlayer/album=2608927152/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/transparent=true/",
+    //             href: "https://soundarchitecture.bandcamp.com/album/windy-marina-ambience",
+    //             title: "Small Town Rain, Street Rain",
+    //             describe: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum soluta ab maiores ut earum explicabo fugit beatae omnis et id, quam perspiciatis delectus dolore hic corrupti",
+    //             data: "2021-06-09",
+    //             tag: ['rain','town','rain']
+    //             }
+    //             ,
+    //             {
+    //                 Id: 3,
+    //                 iframe: "https://bandcamp.com/EmbeddedPlayer/album=2608927152/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/transparent=true/",
+    //                 href: "https://soundarchitecture.bandcamp.com/album/windy-marina-ambience",
+    //                 title: "Small Town Rain, Street Rain",
+    //                 describe: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum soluta ab maiores ut earum explicabo fugit beatae omnis et id, quam perspiciatis delectus dolore hic corrupti",
+    //                 data: "2021-06-09",
+    //                 tag: ['rain', 'town' , 'street']
+    //                 }
+    //                 ,
+    //                 {
+    //                     Id: 2,
+    //                     iframe: "https://bandcamp.com/EmbeddedPlayer/album=2608927152/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/transparent=true/",
+    //                     href: "https://soundarchitecture.bandcamp.com/album/windy-marina-ambience",
+    //                     title: "Small Town Rain, Street Rain",
+    //                     describe: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum soluta ab maiores ut earum explicabo fugit beatae omnis et id, quam perspiciatis delectus dolore hic corrupti",
+    //                     data: "2021-06-09",
+    //                     tag: ['rain', 'town' , 'street']
+    //                     }
+    //                     ,
+    //                     {
+    //                         Id: 1,
+    //                         iframe: "https://bandcamp.com/EmbeddedPlayer/album=2608927152/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/transparent=true/",
+    //                         href: "https://soundarchitecture.bandcamp.com/album/windy-marina-ambience",
+    //                         title: "Small Town Rain, Street Rain",
+    //                         describe: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum soluta ab maiores ut earum explicabo fugit beatae omnis et id, quam perspiciatis delectus dolore hic corrupti",
+    //                         data: "2021-06-09",
+    //                         tag: ['rain', 'harbours' , 'street']
+    //                         }
+    //                         ,
+    //                         {
+    //                             Id: 0,
+    //                             iframe: "https://bandcamp.com/EmbeddedPlayer/album=2608927152/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/transparent=true/",
+    //                             href: "https://soundarchitecture.bandcamp.com/album/windy-marina-ambience",
+    //                             title: "Small Town Rain, Street Rain",
+    //                             describe: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum soluta ab maiores ut earum explicabo fugit beatae omnis et id, quam perspiciatis delectus dolore hic corrupti",
+    //                             data: "2021-06-09",
+    //                             tag: ['rain', 'town' , 'birds']
+    //                             }];
+    //                             const mytags=[{
+    //                                 id: 0,
+    //                                 title: "windy"
+    //                             },
+    //                             {
+    //                                 id: 1,
+    //                                 title: "rain"
+    //                             },
+    //                             {
+    //                                 id: 2,
+    //                                 title: "water"
+    //                             },
+    //                             {
+    //                                 id: 3,
+    //                                 title: "town"
+    //                             },
+    //                             {
+    //                                 id: 4,
+    //                                 title: "harbours"
+    //                             },
+    //                             {
+    //                                 id: 5,
+    //                                 title: "birds"
+    //                             },
                                 
-                                {
-                                    id: 6,
-                                    title: "marina"
-                                },
-                                {
-                                    id: 7,
-                                    title: "street"
-                                },
+    //                             {
+    //                                 id: 6,
+    //                                 title: "marina"
+    //                             },
+    //                             {
+    //                                 id: 7,
+    //                                 title: "street"
+    //                             },
                                 
-                                {
-                                    id: 8,
-                                    title: "light"
-                                },
-                                
-                                
-                                {
-                                    id: 9,
-                                    title: "day"
-                                },
+    //                             {
+    //                                 id: 8,
+    //                                 title: "light"
+    //                             },
                                 
                                 
-                                {
-                                    id: 10,
-                                    title: "night"
-                                },
-                            ];
-                            let [thisArray, setthisArray] = useState(sounds);
-                            
+    //                             {
+    //                                 id: 9,
+    //                                 title: "day"
+    //                             },
+                                
+                                
+    //                             {
+    //                                 id: 10,
+    //                                 title: "night"
+    //                             },
+    //                         ];
+                          
 
             
                             let buttonTag:any;
-                            let allButton: any;
-                            let showGrid:any;
-                            let grid:any;
+                            
+                            let showGrid:HTMLElement;
+                            let grid:HTMLElement;
                             let arrowshow:any;
-                            const mymusicDuplicate = [...sounds];
-                            let counterTags:number[]=[];
-           let counterForTag=0;
+                            
+            let counterTags:any=[];
+           let counterForTag:number=0;
            let thisForEachTag:any;
            let thisForEachMusic:any;
-           let goodArrayTag:any=[];
+           let [goodArrayTag, setgoodArrayTag] = useState([]);
 
            function counterAll(){
-            mytags.forEach((tag:any=0)=>(
+            mytags.forEach((tag:number=0)=>(
                 counterForTag=0,
                 thisForEachTag=tag,
                 
                    
-                   sounds.forEach((mus:any)=>(
+                   thisArray.forEach((mus:any)=>(
                     thisForEachMusic=mus,
                     // console.log(thisForEachMusic),
                     // console.log("e"+thisForEachMusic.tag),
@@ -193,22 +170,65 @@ const SoundsEffects = () => {
     
                        
                    )),
-                   counterTags.push(counterForTag),
-                   console.log(counterTags)
+                   counterTags.push(counterForTag)
+                   
                ))
                
-               console.log(counterTags);
-               goodArrayTag=counterTags;
+               
+               setgoodArrayTag(counterTags);
            };
-           counterAll();
+           
            
                              useEffect(() => {
                                 buttonTag= document.querySelectorAll('.Sound__buttontag');
                                
                                 showGrid= document.querySelector('.showtag')!;
                                 grid= document.querySelector('.Sounds__tags')!;
-                                arrowshow = document.querySelector('.showtag__img');
-                 })
+                                arrowshow = document.querySelector('.showtag__img')!;
+                 });
+
+
+
+                 useEffect(() => {
+                    const apisounds:string = 'http://piotrkosa12345.ct8.pl/jsonfolder/soundsfiles.json';
+                
+            
+                    fetch(apisounds)
+                        .then(response => response.json())
+                        .then(data => {
+                            
+                                setthisArray(data);
+                                setsounds(data);
+                             
+                            
+                        }
+                        );
+            
+                        const apiambiencetags:string = 'http://piotrkosa12345.ct8.pl/jsonfolder/soundstags.json';
+                
+            
+                    fetch(apiambiencetags)
+                        .then(response => response.json())
+                        .then(data => {
+                            
+                                setmytags(data);
+                                
+                               counterAll();
+                            
+                        }
+                        );
+                        counterAll();
+                },[type]);
+                useEffect(()=>{
+
+    
+
+
+                    counterAll();
+                
+                },[thisArray, sounds, mytags])
+
+                
     return (
 
         <>
@@ -217,8 +237,8 @@ const SoundsEffects = () => {
             <div className="showtag" onClick={()=>{
             
             
-            if(grid.style.display!=="grid"){
-            grid.style.display="grid";
+            if(grid.style.display!=="block"){
+            grid.style.display="block";
             grid.style.opacity="1";
             grid.style.maxHeight=grid.scrollHeight+"px";
             arrowshow.classList.add('active')
@@ -239,9 +259,9 @@ else{
             <div className="Sounds__tags">
                 
             {
-                        mytags.map(tag=>(
+                        mytags.map((tag:any)=>(
                             <>
-                            <button className="Sound__buttontag" key={tag.id} onClick={ () => {
+                            <button style={{display: goodArrayTag[tag.id]===0?  "none" : ""}} className="Sound__buttontag" key={tag.id} onClick={ () => {
                             buttonTag[tag.id].classList.toggle('activetag');
                             
                             if(arrayTag.indexOf(tag.title)===-1){

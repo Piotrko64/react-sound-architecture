@@ -1,7 +1,6 @@
 import React from 'react';
 import '../styles/baner.scss';
 
-import imgmusic from '../img/background.jpg';
 
 const Baner = (props:any) => {
 

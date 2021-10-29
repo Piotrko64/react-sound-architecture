@@ -14,7 +14,7 @@ body {
   -webkit-tap-highlight-color: transparent;
   overflow-x: hidden;
   scroll-behavior: smooth;
-  
+  background: #0f0f0f;
 }
 
 code {

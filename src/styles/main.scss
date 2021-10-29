@@ -10,6 +10,13 @@ main{
     
     background-color: $black;
 }
+p{
+  min-height: 100vh;
+  background: $black;
+  h1{
+    font-size: 3em;
+  }
+}
 // Start page
 .Start__background{
     background-attachment: fixed;

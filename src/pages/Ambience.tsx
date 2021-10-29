@@ -10,13 +10,12 @@ import Music from './Music';
   let arrayTag:any= [];
   let arrayTagFilter:any= [];
   let arrayTagFilterNew:any= [];
-  
+
   let deleteTag;
   
   let i = 0;
-  let just = true;
-  const controller = new AbortController();
-  const { signal } = controller;
+  
+
 
 
   
@@ -24,6 +23,7 @@ import Music from './Music';
 function Ambience(): JSX.Element {
     let [mymusic, setmymusic] = useState<any[]>([]);
     let [thisArray, setthisArray] = useState<any[]>([]);
+    let [mytags, setmytags] = useState<any[]>([]);
     let [type] = useState('type');
     // Counter tags
     let counterTags: any = [];
@@ -36,7 +36,7 @@ function Ambience(): JSX.Element {
             counterForTag = 0,
             thisForEachTag = tag,
 
-console.log(thisArray),
+
             thisArray.forEach((mus: any) => (
                 thisForEachMusic = mus,
                 // console.log(thisForEachMusic),
@@ -99,57 +99,58 @@ console.log(thisArray),
     //             data: "2021-06-09",
     //             tag: ['water','windy']
     //             }];
-    const mytags: any[] = [{
-        id: 0,
-        title: "windy"
-    },
-    {
-        id: 1,
-        title: "rain"
-    },
-    {
-        id: 2,
-        title: "water"
-    },
-    {
-        id: 3,
-        title: "town"
-    },
-    {
-        id: 4,
-        title: "harbours"
-    },
-    {
-        id: 5,
-        title: "birds"
-    },
+    
+    // const mytags: any[] = [{
+    //     id: 0,
+    //     title: "windy"
+    // },
+    // {
+    //     id: 1,
+    //     title: "rain"
+    // },
+    // {
+    //     id: 2,
+    //     title: "water"
+    // },
+    // {
+    //     id: 3,
+    //     title: "town"
+    // },
+    // {
+    //     id: 4,
+    //     title: "harbours"
+    // },
+    // {
+    //     id: 5,
+    //     title: "birds"
+    // },
 
-    {
-        id: 6,
-        title: "marina"
-    },
-    {
-        id: 7,
-        title: "street"
-    },
+    // {
+    //     id: 6,
+    //     title: "marina"
+    // },
+    // {
+    //     id: 7,
+    //     title: "street"
+    // },
 
-    {
-        id: 8,
-        title: "light"
-    },
-
-
-    {
-        id: 9,
-        title: "day"
-    },
+    // {
+    //     id: 8,
+    //     title: "light"
+    // },
 
 
-    {
-        id: 10,
-        title: "night"
-    },
-    ] as any;
+    // {
+    //     id: 9,
+    //     title: "day"
+    // },
+
+
+    // {
+    //     id: 10,
+    //     title: "night"
+    // },
+    // ] as any;
  
     
 
@@ -187,18 +188,33 @@ console.log(thisArray),
                 
                     setthisArray(data);
                     setmymusic(data);
+                   
+            }
+            );
+
+            const apiambiencetags = 'http://piotrkosa12345.ct8.pl/jsonfolder/ambiencetags.json';
+    
+
+        fetch(apiambiencetags)
+            .then(response => response.json())
+            .then(data => {
+                
+                    setmytags(data);
                     
-                    
-                    
-                console.log(just+data+thisArray);
+                   counterAll();
                 
             }
             );
-            
+            counterAll();
     },[type]);
 useEffect(()=>{
+
+    
+
+
     counterAll();
-},[thisArray,mymusic])
+
+},[thisArray, mymusic, mytags])
 
 
     
@@ -211,9 +227,9 @@ useEffect(()=>{
             <Baner title="Ambience" image={ambienceback} />
             <div className="showtag" onClick={() => {
 
-                if (grid.style.display !== "grid") {
+                if (grid.style.display !== "block") {
                     // zmiana strzałki
-                    grid.style.display = "grid";
+                    grid.style.display = "block";
                     grid.style.opacity = "1";
                     grid.style.maxHeight = grid.scrollHeight + "px";
 
@@ -252,14 +268,7 @@ All
                         <button style={{display: goodArrayTag[tag.id]===0?  "none" : ""}}className="yt__buttontag" key={tag.id} onClick={() => {
 
                             buttonTag[tag.id].classList.toggle('activetag');
-                            //     if(
-                            //         allButton.classList[2]==='activetag'
-                            //     ){
-                            //         allButton.classList.remove('activetag');
-                            //         setthisArray([]);
-                            //    arrayTagFilterNew=[];
-                            //     }
-                            // allButton.classList.remove('activetag')
+                            
                             if (arrayTag.indexOf(tag.title) === -1) {
                                 arrayTag.push(tag.title);
                                 // allButton.classList.remove('activetag');
@@ -286,9 +295,8 @@ All
 
                             if (arrayTag.length > 0) {
                                 arrayTagFilterNew = arrayTagFilterNew.concat(arrayTagFilter);
-                                arrayTagFilterNew = arrayTagFilterNew.reverse();
                                 setthisArray(arrayTagFilterNew);
-                                console.log(thisArray);
+                                
                             }
                             else {
 
@@ -296,7 +304,6 @@ All
                             }
 
 
-                            arrayTagFilterNew = arrayTagFilterNew.reverse();
                             window.scrollTo(
                                 {
                                     top: 150,
@@ -378,8 +385,7 @@ All
                     </div></>)
                     )}
                     <div className="padding">
-                        {/* {arrayTag.length===0 ? setthisArray(mymusicDuplicate) : false} */}
-
+                        
                     </div>
 
                 </div>

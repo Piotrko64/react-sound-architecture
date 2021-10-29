@@ -118,16 +118,16 @@ $white: white;
             transition: opacity 0.3s ease, max-height 0.4s ease;
             opacity: 1;
             max-height: 0px;
-            height: 200px;
+            
             background: $black;
             font-size: 0.8em;
             display: none;
             box-sizing: border-box;
-            grid-template-columns: repeat(10,auto);
-            grid-auto-rows: 40px;
+            
+            
             justify-content: space-between;
             
-            grid-gap: 20px;
+            
             color: $white;
             background: $black;
             font-family: 'Jost', sans-serif;
@@ -152,6 +152,7 @@ $white: white;
                 transition: all .3s ease, display 0.001s ease;
                 color: white;
                 border: 1px solid white;
+                margin: 0px 2px 2px 0px;
                 // border-radius: 30px;
                 
                 span{
@@ -252,11 +253,10 @@ padding-right: 30px;
             .yt__tags{
                 
                 
-                grid-template-columns: repeat(8,auto);
-                grid-auto-rows: 50px;
+                
                 justify-content: space-between;
                 padding: 15px;
-                grid-gap: 10px;
+                
                 
                 
                 
@@ -290,8 +290,7 @@ padding-right: 30px;
     .yt__tags{
                 
         
-        grid-template-columns: repeat(6,auto);
-        grid-auto-rows: 50px;
+        
         justify-content: space-between;
         
         
@@ -320,8 +319,7 @@ padding-right: 30px;
         .yt__tags{
                     
             
-            grid-template-columns: repeat(5,auto);
-            grid-auto-rows: 50px;
+            
             justify-content: space-between;
             padding: 10px;
         }
@@ -346,8 +344,7 @@ padding-right: 30px;
             .yt__tags{
                         
                 
-                grid-template-columns: repeat(4,auto);
-                grid-auto-rows: 45px;
+                
                 padding: 10px;
                 button{
                     
@@ -376,9 +373,7 @@ padding-right: 30px;
                 
                 }
                 .yt__tags{
-                    grid-template-columns: repeat(3,auto);
-                            max-width: 380px;
-                    grid-auto-rows: 40px;
+                    max-width: 380px;
                     padding: 0px;
                     button{
                         
@@ -407,9 +402,9 @@ padding-right: 30px;
                     
                     }
                     .yt__tags{
-                        grid-template-columns: repeat(3,auto);
+                        
                                 max-width: 340px;
-                        grid-auto-rows: 40px;
+                        
                         padding: 0px;
                         button{
                             
@@ -417,7 +412,7 @@ padding-right: 30px;
                             font-size: 20px;
                 padding-left: 5px;
                 padding-right: 5px;
-                
+                border: 0.8px solid white;
                             }
                     }
                     }

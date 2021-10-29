@@ -4,7 +4,7 @@ $white: white;
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
 
 .Sounds{
-    
+    min-height: 500px;
     .Sounds__grid{
         display: grid;
         grid-template-columns: auto auto auto;
@@ -32,12 +32,11 @@ $white: white;
                width: 440px
            }
             .Sounds__tag{
-                display: grid;
-                grid-template-columns: repeat(3,33%);
-                grid-auto-rows: auto;
+                display: block;
+                
                 font-size: 0.9em;
                 justify-content: center;
-                grid-auto-flow: row;
+                
             }
         }
         
@@ -47,16 +46,15 @@ $white: white;
     transition: opacity 0.3s ease, max-height 0.4s ease;
     opacity: 1;
     max-height: 0px;
-    height: 200px;
+    
     background: $black;
     font-size: 0.8em;
     display: none;
     box-sizing: border-box;
-    grid-template-columns: repeat(10,auto);
-    grid-auto-rows: 40px;
+   
     justify-content: space-between;
     
-    grid-gap: 20px;
+    
     color: $white;
     background: $black;
     font-family: 'Jost', sans-serif;
@@ -82,6 +80,7 @@ padding-right: 20px;
             transition: all .3s ease;
             color: white;
             border: 1px solid white;
+            margin: 0px 2px 2px 0px;
             span{
                 font-size: 0.9em;
                 
@@ -106,13 +105,12 @@ padding-right: 20px;
         .Sounds__tags{
         
             
-            grid-template-columns: repeat(8,auto);
-            grid-auto-rows: 50px;
+            
             justify-content: space-between;
             max-width: 1200px;
-            grid-gap: 20px;
+            
             padding: 15px;
-            grid-gap: 10px;
+            
             
             
             
@@ -163,11 +161,10 @@ padding-right: 20px;
     
 .Sounds__tags{
         
-grid-template-columns: repeat(6,auto);
-grid-auto-rows: 50px;
+    
 justify-content: space-between;
 padding: 20px;
-grid-gap: 20px;
+
 }
 }
 @media(max-width:1000px) {
@@ -175,8 +172,7 @@ grid-gap: 20px;
         .Sounds__tags{
             
             
-            grid-template-columns: repeat(5,auto);
-            grid-auto-rows: 50px;
+            
             justify-content: space-between;
             padding: 20px;
             grid-gap: 20px;
@@ -196,8 +192,7 @@ grid-gap: 20px;
         .Sounds__tags{
                 
             
-            grid-template-columns: repeat(4,auto);
-            grid-auto-rows: 45px;
+            
             justify-content: space-between;
             padding: 0px;
             
@@ -216,9 +211,8 @@ grid-gap: 20px;
     @media(max-width: 500px) {
         .Sounds{
             .Sounds__tags{
-                grid-template-columns: repeat(3,auto);
                 max-width: 380px;
-                grid-gap: 10px;
+                
                 button{
                         
                     background: transparent;
@@ -246,21 +240,20 @@ grid-gap: 20px;
         @media(max-width: 450px) {
             .Sounds{
                 .Sounds__tags{
-                    grid-template-columns: repeat(3,auto);
                     max-width: 340px;
-                    grid-gap: 10px;
+                    margin-left: auto;
+                    margin-right: auto;
                     button{
                             
                         
                         font-size: 20px;
             padding-left: 5px;
             padding-right: 5px;
-            
+            border: 0.8px solid white;
                         
                         }
                 }
                 .Sounds__grid{
-                    grid-template-columns: 340px;
                     
                     .Sounds__one{
                         height: 340px;

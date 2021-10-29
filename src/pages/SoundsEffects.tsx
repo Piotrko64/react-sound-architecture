@@ -140,8 +140,6 @@ const SoundsEffects = () => {
 
             
                             let buttonTag:any;
-                            
-                            let showGrid:HTMLElement;
                             let grid:HTMLElement;
                             let arrowshow:any;
                             
@@ -181,7 +179,6 @@ const SoundsEffects = () => {
                              useEffect(() => {
                                 buttonTag= document.querySelectorAll('.Sound__buttontag');
                                
-                                showGrid= document.querySelector('.showtag')!;
                                 grid= document.querySelector('.Sounds__tags')!;
                                 arrowshow = document.querySelector('.showtag__img')!;
                  });

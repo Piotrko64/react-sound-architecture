@@ -7,13 +7,13 @@ import arrow from '../img/arrow.png'
 // import dataAmbience from "../jsonfolder/ambiencefiles.json";
 
 
-  let arrayTag:any= [];
-  let arrayTagFilter:any= [];
-  let arrayTagFilterNew:any= [];
+  let arrayTag:Array<any>= [];
+  let arrayTagFilter:Array<any>= [];
+  let arrayTagFilterNew:Array<any>= [];
 
-  let deleteTag;
+  let deleteTag:number;
   
-  let i = 0;
+  let i:number = 0;
   
 
 
@@ -24,15 +24,15 @@ function Ambience(): JSX.Element {
     let [mymusic, setmymusic] = useState<any[]>([]);
     let [thisArray, setthisArray] = useState<any[]>([]);
     let [mytags, setmytags] = useState<any[]>([]);
-    let [type] = useState('type');
+    let [type] = useState<string>('type');
     // Counter tags
     let counterTags: any = [];
-    let counterForTag = 0;
+    let counterForTag:number = 0;
     let thisForEachTag: any;
     let thisForEachMusic: any;
     let [goodArrayTag, setgoodArrayTag] = useState([]);
     function counterAll() {
-        mytags.forEach((tag: any =1) => (
+        mytags.forEach((tag: number=1) => (
             counterForTag = 0,
             thisForEachTag = tag,
 

@@ -1,4 +1,4 @@
-import {useEffect} from 'react';
+import {useEffect, useState} from 'react';
 import mylogo from '../img/logosawhite.webp';
 import back1 from '../img/background.webp';
 import arleft from '../img/leftar.webp';
@@ -12,7 +12,36 @@ import ambienceback from '../img/ambiencestart.webp'
 
 
 const Start = () => {
+    let [type] = useState();
+    let [newAmb, setNewAmb] = useState<any[]>([
+        {
+iframe:"https://www.youtube.com/embed/y8EvClrhZVc"
+        },
+        {
+            iframe:"https://www.youtube.com/embed/E5LclqEUKO0"
+        }
+    ]);
+    useEffect(()=>{
+        const apisounds:string = 'http://piotrkosa12345.ct8.pl/jsonfolder/ambiencefiles.json';
+                
+            
+        fetch(apisounds)
+            .then(response => response.json())
+            .then(data => {
+                setNewAmb(data)
+                console.log(data);
+                console.log(newAmb)
+            });
+    },[type])
+    
+    
     useEffect(() => {
+        // Fetch for 2 the most new iframe ambience
+       
+                                
+                             
+                            
+                        
         const up = document.querySelectorAll('.Start__sectiontitle');
         const arrow = document.querySelectorAll('.Start__imgarrow')!;
         const down = document.querySelectorAll('.Start__sectionup') as unknown as HTMLCollectionOf<HTMLElement>;
@@ -81,8 +110,8 @@ else{
                             
                              </div>
                              <div className="iframes">
-                             <iframe className="iframe"  loading="lazy" src="https://www.youtube.com/embed/y8EvClrhZVc" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-                             <iframe className="iframe"  loading="lazy" src="https://www.youtube.com/embed/y8EvClrhZVc" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                             <iframe className="iframe"  loading="lazy" src={newAmb[0].iframe} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                             <iframe className="iframe"  loading="lazy" src={newAmb[1].iframe} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                              </div>
                     </div> </div>
                  </div>

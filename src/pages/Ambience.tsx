@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import '../styles/ambience.scss'
-import ambienceback from '../img/Ambience2.png'
+import ambienceback from '../img/Ambience2.webp'
 import Baner from '../components/baner';
 import arrow from '../img/arrow.png'
-import Music from './Music';
+
 // import dataAmbience from "../jsonfolder/ambiencefiles.json";
 
 
@@ -341,7 +341,7 @@ All
                         <div className="yt__describe">
                             <h3>{music.title}</h3>
                             <div className="yt__describesmall">{music.describe}</div>
-                            <span className="yt__tag">{music.tag.map((tags) => (<div className="tag" onClick={() => {
+                            <div className="yt__tag">{music.tag.map((tags) => (<div className="tag" onClick={() => {
 
                                 arrayTag = [tags];
 
@@ -379,7 +379,7 @@ All
 
 
                                 window.scrollTo(0, 0);
-                            } }>#{tags} </div>))}</span>
+                            } }>#{tags} </div>))}</div>
                         </div>
 
                     </div></>)

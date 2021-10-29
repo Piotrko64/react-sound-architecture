@@ -10,8 +10,7 @@ import soundback from '../img/piano.webp'
   let deleteTag:number;
   let i:number = 0;
 
-  const controller = new AbortController();
-  const { signal } = controller;
+
 
 const SoundsEffects = () => {
     let [sounds, setsounds] = useState<any[]>([]);

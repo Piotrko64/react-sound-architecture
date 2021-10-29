@@ -33,6 +33,7 @@ p{
   overflow: hidden;
   z-index: 2;
   font-weight: 400;
+  background-image: url("../img/background.webp");
   .Start__signature{
       position: absolute;
       bottom: 15px;
@@ -519,12 +520,16 @@ color: red;
         .Start__content .Start__sectionup .Start__sectiondescribe{
           padding: 5px;
           padding-bottom: 0px;
+          
+          .describe{
+            font-size: 19.2px;
+          }
           .iframes{
             padding-bottom: 15px;
             margin-top: 15px;
             iframe{
-              height: 213px;
-              width: 380px;
+              height: 190px;
+              width: 340px;
               margin: 15px;
               margin-bottom: 0;
             }
@@ -536,6 +541,7 @@ color: red;
           justify-content: center;
           align-items: center;
           text-align: center;
+          background-image: url("../img/backgroundmobile.webp");
         .Start__signature{
             position: sticky;
             display: flex;

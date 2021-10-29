@@ -1,6 +1,7 @@
-import {useEffect, useState} from 'react';
+import {useEffect, lazy, Suspense} from 'react';
+
 import mylogo from '../img/logosawhite.webp';
-import back1 from '../img/background.webp';
+
 import arleft from '../img/leftar.webp';
 import arright from '../img/rightar.webp';
 import arrow from '../img/arrow.png';
@@ -11,36 +12,13 @@ import ambienceback from '../img/ambiencestart.webp'
 
 
 
+const YT = lazy(() => import("./YT"));
 const Start = () => {
-    let [type] = useState();
-    let [newAmb, setNewAmb] = useState<any[]>([
-        {
-iframe:"https://www.youtube.com/embed/y8EvClrhZVc"
-        },
-        {
-            iframe:"https://www.youtube.com/embed/E5LclqEUKO0"
-        }
-    ]);
-    useEffect(()=>{
-        const apisounds:string = 'http://piotrkosa12345.ct8.pl/jsonfolder/ambiencefiles.json';
-                
-            
-        fetch(apisounds)
-            .then(response => response.json())
-            .then(data => {
-                setNewAmb(data)
-                console.log(data);
-                console.log(newAmb)
-            });
-    },[type])
     
     
     useEffect(() => {
         // Fetch for 2 the most new iframe ambience
        
-                                
-                             
-                            
                         
         const up = document.querySelectorAll('.Start__sectiontitle');
         const arrow = document.querySelectorAll('.Start__imgarrow')!;
@@ -71,7 +49,7 @@ else{
     }, []);
     return (
         <div className="Start ">
-            <div className="Start__background padding" style={{backgroundImage:  `url(${back1})` }}> 
+            <div className="Start__background padding"> 
             <div className="Start__signature"> 
             <div className="Start__logo"> <img src={mylogo} alt="logo__SA" className="Start__logoimg"/> </div>
             <div className="Start__column">
@@ -110,8 +88,10 @@ else{
                             
                              </div>
                              <div className="iframes">
-                             <iframe className="iframe"  loading="lazy" src={newAmb[0].iframe} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-                             <iframe className="iframe"  loading="lazy" src={newAmb[1].iframe} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                             <Suspense fallback={<div>Wczytywanie...</div>}>
+                             <YT value={0}/>
+                             <YT value={1}/>
+                             </Suspense>
                              </div>
                     </div> </div>
                  </div>

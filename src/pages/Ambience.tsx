@@ -179,20 +179,20 @@ function Ambience(): JSX.Element {
     });
 
     useEffect(() => {
-        const apiambience = 'http://piotrkosa12345.ct8.pl/jsonfolder/ambiencefiles.json';
+        const apiambience = 'https://apiforsa.herokuapp.com/read/onlyAMB';
     
 
         fetch(apiambience)
             .then(response => response.json())
             .then(data => {
                 
-                    setthisArray(data);
+                    setthisArray(data.reverse());
                     setmymusic(data);
                    
             }
             );
 
-            const apiambiencetags = 'http://piotrkosa12345.ct8.pl/jsonfolder/ambiencetags.json';
+            const apiambiencetags = 'https://apiforsa.herokuapp.com/read/tagsAMB';
     
 
         fetch(apiambiencetags)
@@ -200,7 +200,7 @@ function Ambience(): JSX.Element {
             .then(data => {
                 
                     setmytags(data);
-                    
+                    console.log(data)
                    counterAll();
                 
             }

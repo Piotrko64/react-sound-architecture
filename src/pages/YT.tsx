@@ -11,15 +11,15 @@ iframe:"https://www.youtube.com/embed/y8EvClrhZVc"
         }
     ]);
     useEffect(()=>{
-        const apisounds:string = 'http://piotrkosa12345.ct8.pl/jsonfolder/ambiencefiles.json';
+        const apisounds:string = 'https://apiforsa.herokuapp.com/read/onlyAMB';
                 
             
         fetch(apisounds)
             .then(response => response.json())
             .then(data => {
-                setNewAmb(data)
+                setNewAmb(data.reverse())
                 console.log(data);
-                console.log(newAmb)
+                console.log(newAmb[0].iframe.toString())
             });
     },[type]);
     return(

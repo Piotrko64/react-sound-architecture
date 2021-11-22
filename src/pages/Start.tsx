@@ -57,7 +57,7 @@ else{
             <div className="Start__signature--down">Website for your sounds, ambience and music</div>
              </div></div></div>
              <div className="Start__content" >
-                 <div className="Start__h1">What me make</div>
+                 
                  <div className="Start__sectionall">
                      <div className="Start__sectiontitle padding" style={{backgroundImage: `url(${soundback})`}}>
                      <div className="Start__onlytitle">Sounds Library<img className="Start__imgarrow" alt="arrow Sounds" src={arrow}/>

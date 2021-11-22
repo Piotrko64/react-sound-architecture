@@ -1,9 +1,24 @@
-import React from 'react';
+import React, {useState} from 'react';
 import '../styles/footer.scss'
 import mylogo from '../img/logosawhite.webp';
 import bigyt from '../img/yt.webp';
 import bigband from '../img/band.webp';
+import ReactTooltip from 'react-tooltip';
+
+
 const Footer = () => {
+    const [iscopy, setiscopy] = useState('Click to copy');
+    
+    const copyText=()=>{
+        const timeCopy=()=>{
+            setiscopy('Click to copy')
+        }
+        
+        navigator.clipboard.writeText('soundarchitecture@outlook.com');
+        setiscopy('Email has been copied!')
+        
+        setTimeout(timeCopy, 3000)
+    }
     return (
         <footer className="footer">
            <div className="grid__up1">
@@ -12,7 +27,17 @@ const Footer = () => {
            <div className="grid__up2">
                License Agreement
                <br/>
-               E-mail Contact
+               
+                <div className="footer__email" data-tip={iscopy}>
+                 <div className="copyText" onClick={()=>{
+                     
+                     copyText()
+                    }}>Email</div> 
+                </div>
+                
+                <ReactTooltip className="tooltip" getContent={()=>`${iscopy}`}/>
+
+               
            </div>
            <div className="grid__up3">
            <a href="https://soundarchitecture.bandcamp.com/releases" target="_blank"><img src={bigband} alt="Bandcamp"/></a>

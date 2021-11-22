@@ -4,7 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
 
 $black: #0f0f0f;
-$blue: #61dafb;
+$blacksecond: #110D0D;
 $white: white;
 main{
     
@@ -195,18 +195,19 @@ color: red;
   object-fit: cover;
 }
 .Prefooter{
-  padding-top: 70px;
+  
+  padding-top: 50px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 14% 830px 14%;
   justify-content: center;
-  padding-bottom: 40px;
+  padding-bottom: 65px;
   .Prefooter__text{
     display: flex;
   justify-content: center;
   align-items: flex-start;
   font-family: 'Fredericka the Great', cursive;
   text-align: center;
-  font-size: 50px;
+  font-size: 45px;
   margin-left: auto;
   margin-right: auto;
   
@@ -227,6 +228,13 @@ color: red;
 
 
 
+  }
+}
+@media(max-width:1750px) {
+  .Prefooter{
+  
+    grid-template-columns: 14% 780px 14%;
+    
   }
 }
 @media(max-width:1450px) {
@@ -260,11 +268,11 @@ color: red;
 }
 .Prefooter{
   padding-top: 40px;
- 
+  grid-template-columns: 14% 650px 14%;
   
   .Prefooter__text{
   
-  font-size: 40px;
+  font-size: 45px;
   }
   img{
     height: 110px;
@@ -348,7 +356,7 @@ color: red;
     }
   }
   .Prefooter{
-      
+    grid-template-columns: 14% 500px 14%;
     .Prefooter__text{
     max-width: 350px;
     font-size: 28px;
@@ -417,7 +425,7 @@ color: red;
     }
     }
     .Prefooter{
-      
+      grid-template-columns: 14% 400px 14%;
       .Prefooter__text{
       max-width: 350px;
       font-size: 28px;
@@ -485,6 +493,7 @@ color: red;
       }
       }
       .Prefooter{
+        grid-template-columns: 14% 310px 14%;
         padding-top: 30px;
         
         
@@ -565,9 +574,11 @@ color: red;
         }
         }
         .Prefooter{
+          grid-template-columns: 14% 200px 14%;
           padding-top: 20px;
           justify-content: center;
           align-items: flex-end;
+          padding-bottom: 20px;
           
           .Prefooter__text{
           max-width: 250px;

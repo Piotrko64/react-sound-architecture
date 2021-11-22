@@ -1,7 +1,7 @@
 $black: #000000;
-
 $white: white;
 $blacksecond: #110D0D;
+
 footer{
     background-color: $black;
     display: grid;
@@ -29,6 +29,14 @@ footer{
     }
     .grid__up2{
         grid-area: up2;
+        // tooltip
+.tooltip{
+    font-size: 18px !important;
+}
+        .footer__email:hover{
+text-decoration: underline;
+cursor: pointer;
+        }
     }
     .grid__up3{
         grid-area: up3;

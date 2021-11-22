@@ -4,22 +4,12 @@ import ambienceback from '../img/Ambience2.webp'
 import Baner from '../components/baner';
 import arrow from '../img/arrow.png'
 
-// import dataAmbience from "../jsonfolder/ambiencefiles.json";
-
-
-  let arrayTag:Array<any>= [];
-  let arrayTagFilter:Array<any>= [];
-  let arrayTagFilterNew:Array<any>= [];
-
-  let deleteTag:number;
+    let arrayTag:Array<any>= [];
+    let arrayTagFilter:Array<any>= [];
+    let arrayTagFilterNew:Array<any>= [];
+    let deleteTag:number;
+    let i:number = 0;
   
-  let i:number = 0;
-  
-
-
-
-  
-
 function Ambience(): JSX.Element {
     let [mymusic, setmymusic] = useState<any[]>([]);
     let [thisArray, setthisArray] = useState<any[]>([]);
@@ -39,10 +29,7 @@ function Ambience(): JSX.Element {
 
             thisArray.forEach((mus: any) => (
                 thisForEachMusic = mus,
-                // console.log(thisForEachMusic),
-                // console.log("e"+thisForEachMusic.tag),
-                // console.log(thisForEachTag.title),
-                // console.log(thisForEachMusic.tag.indexOf(thisForEachTag.title)),
+                
                 thisForEachMusic.tag.indexOf(thisForEachTag.title) !== -1 ? counterForTag++ : false
 
 
@@ -58,103 +45,6 @@ function Ambience(): JSX.Element {
     }
 
 
-
-
-
-    
-
-    //   let [mytags, setmytags] = useState([]);
-    //  API AMBIENCE TAGS
-    // const apiambiencetags = 'http://piotrkosa12345.ct8.pl/jsonfolder/ambiencetags.json';
-    // let mytags:any[];
-    //   fetch(apiambiencetags)
-    //   .then(response=>response.json())
-    //   .then(data=> {
-    //     mytags=data
-    //     console.log(mytags)
-    //   }
-    //   );
-    // let mymusic =[{
-    //     Id: 0,
-    //     iframe: "https://www.youtube.com/embed/Zh3JGIMWdnE",
-    //     title: "White Noise, Waterfall, Nature Sounds, Sleep Sound",
-    //     describe: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum soluta ab maiores ut earum explicabo fugit beatae omnis et id, quam perspiciatis delectus dolore hic corrupti aliquam modi nesciunt repudiandae?",
-    //     data: "2021-06-09",
-    //     tag: ['windy']
-    //     },
-    //     {
-    //         Id: 1,
-    //         iframe: "https://www.youtube.com/embed/9Z9xrHg5Szw",
-    //         title: "Small Town Rain, Street Rain",
-    //         describe: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum soluta ab maiores ut earum explicabo fugit beatae omnis et id, quam perspiciatis delectus dolore hic corrupti",
-    //         data: "2021-06-09",
-    //         tag: ['rain','windy','birds']
-    //         },
-    //         {
-    //             Id: 2,
-    //             iframe: "https://www.youtube.com/embed/E5LclqEUKO0",
-    //             title: "Cicadas, Light wind, Water waves, Nature sounds",
-    //             describe: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum soluta ab maiores ut earum explicabo fugit beatae omnis et id, quam perspiciatis delectus dolore hic corrupti lorem Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus atque veniam quisquam pariatur aspernatur cupiditate sequi nihil libero obcaecati perferendis, quos, corporis aliquam officiis quae aliquid. Esse aut quod est."
-    //             ,
-    //             data: "2021-06-09",
-    //             tag: ['water','windy']
-    //             }];
-    
-    // const mytags: any[] = [{
-    //     id: 0,
-    //     title: "windy"
-    // },
-    // {
-    //     id: 1,
-    //     title: "rain"
-    // },
-    // {
-    //     id: 2,
-    //     title: "water"
-    // },
-    // {
-    //     id: 3,
-    //     title: "town"
-    // },
-    // {
-    //     id: 4,
-    //     title: "harbours"
-    // },
-    // {
-    //     id: 5,
-    //     title: "birds"
-    // },
-
-    // {
-    //     id: 6,
-    //     title: "marina"
-    // },
-    // {
-    //     id: 7,
-    //     title: "street"
-    // },
-
-    // {
-    //     id: 8,
-    //     title: "light"
-    // },
-
-
-    // {
-    //     id: 9,
-    //     title: "day"
-    // },
-
-
-    // {
-    //     id: 10,
-    //     title: "night"
-    // },
-    // ] as any;
- 
-    
-
-    // let [TextShow, setTextShow] = useState(`Tags<img src=${arrow}/>`);
     let buttonTag: any;
     let showGrid: any;
     let grid: any;

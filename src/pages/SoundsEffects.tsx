@@ -95,7 +95,7 @@ const SoundsEffects = () => {
                         }
                         );
                         counterAll();
-                },[type]);
+                },[]);
                 useEffect(()=>{
 
     

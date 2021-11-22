@@ -1,0 +1,38 @@
+{
+  "files": {
+    "main.css": "/static/css/main.b129508b.chunk.css",
+    "main.js": "/static/js/main.d840a862.chunk.js",
+    "main.js.map": "/static/js/main.d840a862.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.93f5ec11.js",
+    "runtime-main.js.map": "/static/js/runtime-main.93f5ec11.js.map",
+    "static/js/2.ab09dc83.chunk.js": "/static/js/2.ab09dc83.chunk.js",
+    "static/js/2.ab09dc83.chunk.js.map": "/static/js/2.ab09dc83.chunk.js.map",
+    "static/js/3.120e5cb5.chunk.js": "/static/js/3.120e5cb5.chunk.js",
+    "static/js/3.120e5cb5.chunk.js.map": "/static/js/3.120e5cb5.chunk.js.map",
+    "static/js/4.55be4f35.chunk.js": "/static/js/4.55be4f35.chunk.js",
+    "static/js/4.55be4f35.chunk.js.map": "/static/js/4.55be4f35.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.b129508b.chunk.css.map": "/static/css/main.b129508b.chunk.css.map",
+    "static/js/2.ab09dc83.chunk.js.LICENSE.txt": "/static/js/2.ab09dc83.chunk.js.LICENSE.txt",
+    "static/media/Ambience2.b0b99b34.webp": "/static/media/Ambience2.b0b99b34.webp",
+    "static/media/ambiencestart.2a1a5e63.webp": "/static/media/ambiencestart.2a1a5e63.webp",
+    "static/media/main.scss": "/static/media/backgroundmobile.47d36f14.webp",
+    "static/media/band.558b3474.webp": "/static/media/band.558b3474.webp",
+    "static/media/bandsmall.f84addd3.webp": "/static/media/bandsmall.f84addd3.webp",
+    "static/media/leftar.89abda7f.webp": "/static/media/leftar.89abda7f.webp",
+    "static/media/logosawhite.75a96919.webp": "/static/media/logosawhite.75a96919.webp",
+    "static/media/notes.b4880b1b.webp": "/static/media/notes.b4880b1b.webp",
+    "static/media/notesstart.3fb0821e.webp": "/static/media/notesstart.3fb0821e.webp",
+    "static/media/piano.41b102c8.webp": "/static/media/piano.41b102c8.webp",
+    "static/media/pianostart.7829add7.webp": "/static/media/pianostart.7829add7.webp",
+    "static/media/rightar.cdcbc992.webp": "/static/media/rightar.cdcbc992.webp",
+    "static/media/yt.adb17973.webp": "/static/media/yt.adb17973.webp",
+    "static/media/ytsmall.a1e85ded.webp": "/static/media/ytsmall.a1e85ded.webp"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.93f5ec11.js",
+    "static/js/2.ab09dc83.chunk.js",
+    "static/css/main.b129508b.chunk.css",
+    "static/js/main.d840a862.chunk.js"
+  ]
+}

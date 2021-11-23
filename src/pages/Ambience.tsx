@@ -30,7 +30,7 @@ function Ambience(): JSX.Element {
             thisArray.forEach((mus: any) => (
                 thisForEachMusic = mus,
                 
-                thisForEachMusic.tag.indexOf(thisForEachTag.title) !== -1 ? counterForTag++ : false
+                thisForEachMusic.indexOf(thisForEachTag.title) !== -1 ? counterForTag++ : false
 
 
 
@@ -153,18 +153,18 @@ All
             </button> */}
 
 
-                {mytags.map((tag: any) => (
+                {mytags.map((tag: any, index: any) => (
                     <>
-                        <button style={{display: goodArrayTag[tag.id]===0?  "none" : ""}}className="yt__buttontag" key={tag.id} onClick={() => {
+                        <button style={{display: goodArrayTag[index]===0?  "none" : ""}}className="yt__buttontag" key={index} onClick={() => {
 
-                            buttonTag[tag.id].classList.toggle('activetag');
+                            buttonTag[index].classList.toggle('activetag');
                             
-                            if (arrayTag.indexOf(tag.title) === -1) {
-                                arrayTag.push(tag.title);
+                            if (arrayTag.indexOf(tag) === -1) {
+                                arrayTag.push(tag);
                                 // allButton.classList.remove('activetag');
                             }
                             else {
-                                deleteTag = arrayTag.indexOf(tag.title);
+                                deleteTag = arrayTag.indexOf(tag);
 
                                 arrayTag.splice(deleteTag, 1);
                             }
@@ -201,7 +201,7 @@ All
                                 }
                             );
 
-                        } }> {tag.title}<span>({goodArrayTag[tag.id]})</span></button>
+                        } }> {tag}<span>({goodArrayTag[index]})</span></button>
                     </>
                 ))}
             </div>

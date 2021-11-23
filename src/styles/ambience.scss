@@ -13,7 +13,7 @@ $white: white;
     .yt__allcontainer{
         display: grid;
         grid-template-columns: 50% 50%;
-        max-width: 1450px;
+        max-width: 1300px;
         margin-left: auto;
         margin-right: auto;
         grid-auto-rows: auto;
@@ -48,8 +48,8 @@ $white: white;
            iframe{
             position: relative;
             z-index: 9;
-            width: 650px;
-            height: 367.23px
+            width: 580px;
+            height: 327.68px
            }
        }
        
@@ -82,7 +82,7 @@ $white: white;
             
             line-height: 1.2;
             text-align: left;
-            width: 650px;
+            width: 580px;
             
             box-sizing: border-box;
             display: flex;
@@ -131,7 +131,7 @@ $white: white;
             color: $white;
             background: $black;
             font-family: 'Jost', sans-serif;
-            max-width: 1450px;
+            max-width: 1300px;
             margin-left: auto;
             margin-right: auto;
             .activetag{
@@ -141,7 +141,7 @@ $white: white;
             button{
                 
                 background: transparent;
-                font-size: 24px;
+                font-size: 22px;
     padding-left: 20px;
     padding-right: 20px;
                 border: none;
@@ -171,21 +171,21 @@ $white: white;
             
             
 }
-.yt__buttontagback{
-    background: transparent;
-    font-size: 26px;
-padding-left: 30px;
-padding-right: 30px;
-    border: none;
-    outline: none;
-    font-weight: 300;
-    font-family: 'Jost', sans-serif;
-    cursor: pointer;
-    transition: all .3s ease;
-    color: white;
-    border: 1px solid white;
+// .yt__buttontagback{
+//     background: transparent;
+//     font-size: 26px;
+// padding-left: 30px;
+// padding-right: 30px;
+//     border: none;
+//     outline: none;
+//     font-weight: 300;
+//     font-family: 'Jost', sans-serif;
+//     cursor: pointer;
+//     transition: all .3s ease;
+//     color: white;
+//     border: 1px solid white;
   
-}
+// }
 
 .showtag{
    background: transparent;
@@ -224,27 +224,36 @@ padding-right: 30px;
                     transform: translate(5px, 3px) rotateX(180deg);
                 }
 }
+@media(max-width:1750px) {
+    .yt{
 
+        .yt__allcontainer{
+            
+            max-width: 1250px;
+        }}
+}
 @media(max-width:1450px) {
     .yt{
 
         .yt__allcontainer{
-            grid-template-columns: 600px 600px;
+            grid-template-columns: 540px 540px;
             justify-content: space-around;
+            max-width: 1200px;
             .yt__iframe{
                 
                 iframe{
                 
-                    width: 600px;
-                    height: 337.45px
+                    width: 540px;
+                    height: 305.08px
                    } 
             }
         }
         .yt__container{
-            max-width: 600px;
+            max-width: 540px;
             
             .yt__describe{
-                max-width: 600px;
+                max-width: 540px;
+                font-size: 0.95em;
             }
         }
     }
@@ -256,7 +265,7 @@ padding-right: 30px;
                 
                 justify-content: space-between;
                 padding: 15px;
-                
+                max-width: 1200px;
                 
                 
                 
@@ -277,11 +286,11 @@ padding-right: 30px;
     .yt{
 
         .yt__allcontainer{
-            grid-template-columns: 600px;
+            grid-template-columns: 531px;
             justify-content: center;
             .yt__iframe{
                 iframe{
-                    height: 337.45px;
+                    height: 300px;
                 }
             }
         }
@@ -300,10 +309,10 @@ padding-right: 30px;
         .yt{
 
             .yt__allcontainer{
-                grid-template-columns: 550px;
+                grid-template-columns: 500px;
                 .yt__describe{
-                    max-width: 550px;
-                    font-size: 0.95em;
+                    max-width: 500px;
+                    font-size: 0.90em;
                     .yt__tag{
                         border-top: 1.7px solid white;
                         border-bottom: 1.7px solid white;
@@ -311,7 +320,7 @@ padding-right: 30px;
                 }
                 .yt__iframe{
                     iframe{
-                        height: 310px;
+                        height: 282px;
                     }}
             }
         
@@ -319,7 +328,7 @@ padding-right: 30px;
         .yt__tags{
                     
             
-            
+            max-width: 500px;
             justify-content: space-between;
             padding: 10px;
         }
@@ -344,7 +353,7 @@ padding-right: 30px;
             .yt__tags{
                         
                 
-                
+                max-width: 450px;
                 padding: 10px;
                 button{
                     

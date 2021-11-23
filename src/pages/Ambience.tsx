@@ -20,6 +20,8 @@ function Ambience(): JSX.Element {
     let counterForTag:number = 0;
     let thisForEachTag: any;
     let thisForEachMusic: any;
+    let arrayToPush:any=[]; 
+    let counterToPush=0;
     let [goodArrayTag, setgoodArrayTag] = useState([]);
     function counterAll() {
         mytags.forEach((tag: number=1) => (
@@ -41,7 +43,7 @@ function Ambience(): JSX.Element {
 
 
         setgoodArrayTag(counterTags);
-        console.log(counterTags)
+        
     }
 
 
@@ -49,7 +51,7 @@ function Ambience(): JSX.Element {
     let showGrid: any;
     let grid: any;
     let arrowshow: any;
-
+    let originScrollGrid: String;
 
 
 
@@ -60,7 +62,7 @@ function Ambience(): JSX.Element {
         showGrid = document.querySelector('.showtag')!;
         grid = document.querySelector('.yt__tags')!;
         arrowshow = document.querySelector('.showtag__img');
-
+        originScrollGrid=grid.scrollHeight + "px"
 
 
 
@@ -90,7 +92,7 @@ function Ambience(): JSX.Element {
             .then(data => {
                 
                     setmytags(data);
-                    console.log(data)
+                    
                    counterAll();
                 
             }
@@ -136,14 +138,14 @@ useEffect(()=>{
                     }, 400);
                 }
             } }>Tags <img className="showtag__img" src={arrow} /></div>
-            <div className="yt__tags">
+           <div> <div className="yt__tags">
 
 
 
                 {mytags.map((tag: any, index: number) => (
                     <>
                         <button style={{display: goodArrayTag[index]===0?  "none" : ""}}className="yt__buttontag" key={index} onClick={() => {
-
+                            
                             buttonTag[index].classList.toggle('activetag');
                             
                             if (arrayTag.indexOf(tag) === -1) {
@@ -158,17 +160,9 @@ useEffect(()=>{
 
 
 
-
-                            arrayTagFilterNew = mymusic.filter(ar => {
-                                for (i = 0; i <= arrayTag.length; i++) {
-                                    if (ar.tag.indexOf(arrayTag[i]) >= 0) {
-                                        return true;
-                                    }
-                                }
-                            });
                                 // BETTER SEARCH
-                                let counterToPush=0;
-                                let arrayToPush:any=[]; 
+                                
+                                
                                 for(let a=0; a<=mymusic.length-1; a++){
                                     
                                     counterToPush=0;
@@ -213,7 +207,7 @@ useEffect(()=>{
                         } }> {tag}<span>({goodArrayTag[index]})</span></button>
                     </>
                 ))}
-            </div>
+            </div></div>
             <div className="yt">
                 {/* <div className="yt__describe describealign ">
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque laboriosam ex nisi qui doloribus! Dolorum est et unde magni eaque quis quaerat impedit quas maiores voluptate, similique recusandae dolore? Atque.
@@ -242,19 +236,27 @@ useEffect(()=>{
                             <div className="yt__describesmall">{music.describe}</div>
                             <div className="yt__tag">{music.tag.map((tags) => (<div className="tag" onClick={() => {
 
-                               
-                                let arrayTagSpan = tags;
-                                arrayTagFilterNew = mymusic.filter(ar => {
-                                    for (let i = 0; i <= arrayTagSpan.length; i++) {
-                                        if (ar.tag.indexOf(arrayTagSpan) >= 0) {
-                                            console.log(ar.tag,',,,',arrayTagSpan)
-                                            return true;
+                                arrayTag=[tags]
+                                
+                                for(let a=0; a<=mymusic.length-1; a++){
+                                    
+                                    counterToPush=0;
+                                    for(let i=0; i<=arrayTag.length-1; i++){
+                                        
+                                        if(mymusic[a].tag.indexOf(arrayTag[i])!==-1) 
+                                        {
+                                            counterToPush++;
+                                            
+                                        }
+                                        if(counterToPush===arrayTag.length){
+
+                                            
+                                            arrayToPush.push(mymusic[a]);
                                         }
                                     }
-
-                                        
-                                });
-                                setthisArray(arrayTagFilterNew)
+                                
+                                }
+                                setthisArray(arrayToPush);
 
 
 
@@ -264,12 +266,12 @@ useEffect(()=>{
                                         el.classList.remove('activetag');
                                     });
                                     setTimeout(() => {
-                                        // console.log(arr,arrayTagSpan)
-                                        if (arr === arrayTagSpan) {
+                                        
+                                        if (arr === tags) {
                                             buttonTag[index].classList.add('activetag');
 
                                         }
-                                    }, 2);
+                                    }, 200);
 
                                 });
 

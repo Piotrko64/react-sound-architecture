@@ -30,7 +30,7 @@ function Ambience(): JSX.Element {
             thisArray.forEach((mus: any) => (
                 thisForEachMusic = mus,
                 
-                thisForEachMusic.indexOf(thisForEachTag.title) !== -1 ? counterForTag++ : false
+                thisForEachMusic.tag.indexOf(thisForEachTag) !== -1 ? counterForTag++ : false
 
 
 
@@ -138,22 +138,9 @@ useEffect(()=>{
             } }>Tags <img className="showtag__img" src={arrow} /></div>
             <div className="yt__tags">
 
-                {/* <button className="yt__buttontag yt__Allbutton" onClick={()=>{
-                setthisArray(mymusicDuplicate);
-                arrayTag=[];
-                arrayTagFilterNew=[];
-                setthisArray(mymusicDuplicate);
-                
-                buttonTag.forEach((el:any) => {
-                    el.classList.remove('activetag');
-                });
-                allButton.classList.add('activetag')
-            }}>
-All
-            </button> */}
 
 
-                {mytags.map((tag: any, index: any) => (
+                {mytags.map((tag: any, index: number) => (
                     <>
                         <button style={{display: goodArrayTag[index]===0?  "none" : ""}}className="yt__buttontag" key={index} onClick={() => {
 
@@ -178,14 +165,36 @@ All
                                         return true;
                                     }
                                 }
-
-
-
                             });
+                                // BETTER SEARCH
+                                let counterToPush=0;
+                                let arrayToPush:any=[]; 
+                                for(let a=0; a<=mymusic.length-1; a++){
+                                    
+                                    counterToPush=0;
+                                    for(let i=0; i<=arrayTag.length-1; i++){
+                                        
+                                        if(mymusic[a].tag.indexOf(arrayTag[i])!==-1) 
+                                        {
+                                            counterToPush++;
+                                            
+                                        }
+                                        if(counterToPush===arrayTag.length){
+
+                                            
+                                            arrayToPush.push(mymusic[a]);
+                                        }
+                                    }
+                                
+                                }
+
+
+
+                            
 
                             if (arrayTag.length > 0) {
-                                arrayTagFilterNew = arrayTagFilterNew.concat(arrayTagFilter);
-                                setthisArray(arrayTagFilterNew);
+                                
+                                setthisArray(arrayToPush);
                                 
                             }
                             else {
@@ -233,27 +242,30 @@ All
                             <div className="yt__describesmall">{music.describe}</div>
                             <div className="yt__tag">{music.tag.map((tags) => (<div className="tag" onClick={() => {
 
-                                arrayTag = [tags];
-
+                               
+                                let arrayTagSpan = tags;
                                 arrayTagFilterNew = mymusic.filter(ar => {
-                                    for (i = 0; i <= arrayTag.length; i++) {
-                                        if (ar.tag.indexOf(arrayTag[i]) >= 0) {
+                                    for (let i = 0; i <= arrayTagSpan.length; i++) {
+                                        if (ar.tag.indexOf(arrayTagSpan) >= 0) {
+                                            console.log(ar.tag,',,,',arrayTagSpan)
                                             return true;
                                         }
                                     }
 
-
+                                        
                                 });
+                                setthisArray(arrayTagFilterNew)
 
-                                arrayTagFilterNew = arrayTagFilterNew.concat(arrayTagFilter);
-                                arrayTagFilterNew = arrayTagFilterNew.reverse();
+
 
                                 mytags.forEach((arr: any, index: any) => {
+
                                     buttonTag.forEach((el: any) => {
                                         el.classList.remove('activetag');
                                     });
                                     setTimeout(() => {
-                                        if (arr.title === arrayTag[0]) {
+                                        // console.log(arr,arrayTagSpan)
+                                        if (arr === arrayTagSpan) {
                                             buttonTag[index].classList.add('activetag');
 
                                         }
@@ -261,9 +273,7 @@ All
 
                                 });
 
-                                // buttonTag[].classList.toggle('activetag');
-                                arrayTagFilterNew = arrayTagFilterNew.reverse();
-                                setthisArray(arrayTagFilterNew);
+                                
 
 
 

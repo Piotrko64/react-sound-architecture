@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.b129508b.chunk.css",
-    "main.js": "/static/js/main.d840a862.chunk.js",
-    "main.js.map": "/static/js/main.d840a862.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.93f5ec11.js",
-    "runtime-main.js.map": "/static/js/runtime-main.93f5ec11.js.map",
-    "static/js/2.ab09dc83.chunk.js": "/static/js/2.ab09dc83.chunk.js",
-    "static/js/2.ab09dc83.chunk.js.map": "/static/js/2.ab09dc83.chunk.js.map",
-    "static/js/3.120e5cb5.chunk.js": "/static/js/3.120e5cb5.chunk.js",
-    "static/js/3.120e5cb5.chunk.js.map": "/static/js/3.120e5cb5.chunk.js.map",
-    "static/js/4.55be4f35.chunk.js": "/static/js/4.55be4f35.chunk.js",
-    "static/js/4.55be4f35.chunk.js.map": "/static/js/4.55be4f35.chunk.js.map",
+    "main.css": "/static/css/main.1272e758.chunk.css",
+    "main.js": "/static/js/main.42dc2a60.chunk.js",
+    "main.js.map": "/static/js/main.42dc2a60.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.d02c2044.js",
+    "runtime-main.js.map": "/static/js/runtime-main.d02c2044.js.map",
+    "static/js/2.56874994.chunk.js": "/static/js/2.56874994.chunk.js",
+    "static/js/2.56874994.chunk.js.map": "/static/js/2.56874994.chunk.js.map",
+    "static/js/3.e45dba65.chunk.js": "/static/js/3.e45dba65.chunk.js",
+    "static/js/3.e45dba65.chunk.js.map": "/static/js/3.e45dba65.chunk.js.map",
+    "static/js/4.59092843.chunk.js": "/static/js/4.59092843.chunk.js",
+    "static/js/4.59092843.chunk.js.map": "/static/js/4.59092843.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.b129508b.chunk.css.map": "/static/css/main.b129508b.chunk.css.map",
-    "static/js/2.ab09dc83.chunk.js.LICENSE.txt": "/static/js/2.ab09dc83.chunk.js.LICENSE.txt",
+    "static/css/main.1272e758.chunk.css.map": "/static/css/main.1272e758.chunk.css.map",
+    "static/js/2.56874994.chunk.js.LICENSE.txt": "/static/js/2.56874994.chunk.js.LICENSE.txt",
     "static/media/Ambience2.b0b99b34.webp": "/static/media/Ambience2.b0b99b34.webp",
     "static/media/ambiencestart.2a1a5e63.webp": "/static/media/ambiencestart.2a1a5e63.webp",
     "static/media/main.scss": "/static/media/backgroundmobile.47d36f14.webp",
@@ -30,9 +30,9 @@
     "static/media/ytsmall.a1e85ded.webp": "/static/media/ytsmall.a1e85ded.webp"
   },
   "entrypoints": [
-    "static/js/runtime-main.93f5ec11.js",
-    "static/js/2.ab09dc83.chunk.js",
-    "static/css/main.b129508b.chunk.css",
-    "static/js/main.d840a862.chunk.js"
+    "static/js/runtime-main.d02c2044.js",
+    "static/js/2.56874994.chunk.js",
+    "static/css/main.1272e758.chunk.css",
+    "static/js/main.42dc2a60.chunk.js"
   ]
 }

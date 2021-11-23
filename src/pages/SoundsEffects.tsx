@@ -5,7 +5,7 @@ import '../styles/loading.scss';
 import arrow from '../img/arrow.png'
 import soundback from '../img/piano.webp'
   let arrayTag:Array<any>= [];
-  let arrayTagFilter:Array<any>= [];
+//   let arrayTagFilter:Array<any>= [];
   let arrayTagFilterNew:Array<any>= [];
   let deleteTag:number;
   let i:number = 0;
@@ -37,18 +37,14 @@ const SoundsEffects = () => {
                    
                    thisArray.forEach((mus:any)=>(
                     thisForEachMusic=mus,
-                    // console.log(thisForEachMusic),
-                    // console.log("e"+thisForEachMusic.tag),
-                    // console.log(thisForEachTag.title),
-                    // console.log(thisForEachMusic.tag.indexOf(thisForEachTag.title)),
+                    
                     
                     thisForEachMusic.tag.indexOf(thisForEachTag)!==-1 ? counterForTag++ : false
-                    ,console.log(counterForTag)
+                    
     
                        
                    )),
-                   counterTags.push(counterForTag),
-                   console.log(counterTags)
+                   counterTags.push(counterForTag)
                    
                ))
                
@@ -152,30 +148,36 @@ else{
                                 arrayTag.splice(deleteTag,1);
                             }
                             
-                            
-                            
-                           
-                            arrayTagFilterNew=sounds.filter( ar =>{
-                                for( i=0; i<=arrayTag.length ;i++){
-                                    if(ar.tag.indexOf(arrayTag[i])>=0){
-                                        return true;
-                                    }
-                                }
-                            
-                                
+                                // BETTER SEARCH
+                                let counterToPush=0;
+                                let arrayToPush:any=[]; 
+                                for(let a=0; a<=sounds.length-1; a++){
+                                    
+                                    counterToPush=0;
+                                    for(let i=0; i<=arrayTag.length-1; i++){
+                                        
+                                        if(sounds[a].tag.indexOf(arrayTag[i])!==-1) 
+                                        {
+                                            counterToPush++;
+                                            
+                                        }
+                                            if(counterToPush===arrayTag.length){
 
-                            });
-                            
-                            if(arrayTag.length>0){
-                                arrayTagFilterNew=arrayTagFilterNew.concat(arrayTagFilter);
-                                
-                                setthisArray(arrayTagFilterNew);
-                            }
-                            else{
+                                                arrayToPush.push(sounds[a]);
+                                            }
+                                    }
+                                    
+                                    }
+                                    
+                                if(arrayTag.length>0){
+                                    
+                                    
+                                    setthisArray(arrayToPush);
+                                }
+                                else{
                                 
 setthisArray(sounds)
                             }
-                            
                             
                             
                             

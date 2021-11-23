@@ -25,11 +25,12 @@ const Footer = () => {
            <a href="https://www.youtube.com/channel/UCseRS2xV0cIl4Mm44b4rqvw" target="_blank"><img src={bigyt} alt="youtube Sound Architecture"/></a>
            </div>
            <div className="grid__up2">
-               License Agreement
-               <br/>
+               <div className="grid__underline">Politics private</div> 
+               
+               <div className="grid__underline">License Agreement</div>
                
                 <div className="footer__email" data-tip={iscopy}>
-                 <div className="copyText" onClick={()=>{
+                 <div className="grid__underline copyText" onClick={()=>{
                      
                      copyText()
                     }}>Email</div> 

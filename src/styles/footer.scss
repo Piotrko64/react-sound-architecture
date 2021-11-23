@@ -13,7 +13,7 @@ footer{
     "down1 down1 down1";
     padding-top: 40px;
     padding-bottom: 40px;
-    font-size: 26px;
+    font-size: 24px;
     grid-template-columns: repeat(3, 1fr);
     div{
         display: grid;
@@ -29,14 +29,19 @@ footer{
     }
     .grid__up2{
         grid-area: up2;
+        
         // tooltip
 .tooltip{
     font-size: 18px !important;
 }
-        .footer__email:hover{
-text-decoration: underline;
-cursor: pointer;
-        }
+.grid__underline{
+    text-decoration:underline;  
+}
+.grid__underline:hover{
+    text-decoration:none;
+    cursor: pointer; 
+}
+        
     }
     .grid__up3{
         grid-area: up3;

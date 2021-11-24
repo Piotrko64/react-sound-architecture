@@ -116,6 +116,7 @@ p{
       -180deg
       );
     transition: all .3s ease;
+    height: 30px;
   }
   .Start__onlytitle{
     background-color: rgba(0, 0, 0, 0.74);
@@ -588,6 +589,20 @@ box-shadow: 0px 0px 17px 14px rgba(0, 0, 0, 1);
       @media(max-width:500px) {
         // Start page
         .Start__content .Start__sectionup .Start__sectiondescribe{
+          padding: 10px;
+          padding-top: 20px;
+          padding-bottom: 20px;
+          .iframes--yt{
+            padding-top: 0px;
+            iframe{
+              height: 213px !important;
+              width: 380px !important;
+              margin: 10px;
+              margin-bottom: 0;
+            }
+          }
+        }
+        .Start__content .Start__sectionup .Start__sectiondescribe{
           padding: 5px;
           padding-bottom: 15px;
           .iframes--banddcamp{
@@ -675,30 +690,40 @@ box-shadow: 0px 0px 17px 14px rgba(0, 0, 0, 1);
         }
         }
         @media(max-width: 450px) {
-          .Start__content .Start__sectionup .Start__sectiondescribe{
+          .Start__content {
+            .Start__sectionup .Start__sectiondescribe {
+              
+              .iframes--yt {
+                padding-bottom: 20px;
+                iframe{
+                height: 190px;
+                 width: 340px;
+                 margin-left: auto;
+                 margin-right: auto;
             
-            .iframes--bandcamp{
-             grid-template-columns: 360px;
-              iframe{
-                
-                height: 360px;
-                width: 360px;
-                
-              }
+            
             }}
+              
+              
+              .iframes--bandcamp {
+              padding-bottom: 20px;
+              iframe{
+              height: 320px;
+               width: 320px;
+               margin-left: auto;
+               margin-right: auto;
+          
+          
+          }}}
+          }
           .describe{
             font-size: 17px;
           }
-          .yt{
-
-              .yt__allcontainer{
-               
-                  .yt__iframe{
-                  iframe{
-                      height: 190px;
-                      width: 340px;
-                  }}
-              }
           
-          }
+
+              
+               
+                
+          
+          
         }

@@ -95,6 +95,9 @@ nav
         .nav__hiperplus{
             display: none;
             flex-direction: column;
+            img{
+                padding-top: 20px;
+            }
         }
     }
     .nav__btn{
@@ -153,6 +156,7 @@ nav
         height: 30px;
         cursor: pointer;
         padding-left: 25px;
+
     }
 
 a{

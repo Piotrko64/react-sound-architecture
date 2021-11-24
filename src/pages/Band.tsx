@@ -30,7 +30,7 @@ href: "https://soundarchitecture.bandcamp.com/album/windy-marina-ambience"
     },[type]);
     return(
     <>
-     <iframe style={{ border: "0"}} loading="lazy" src={newAmb[value].iframe}seamless><a href={newAmb[value].href}> </a></iframe>                    
+     <iframe style={{ border: "0"}} loading="lazy" src={newAmb[value].iframe}seamless><a href={newAmb[value].href}> {newAmb[value].title}</a></iframe>                    
     </>
     )
 }

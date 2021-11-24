@@ -31,7 +31,6 @@ const Start = () => {
                     maxHeight=down[index].scrollHeight;
                     down[index].style.opacity="1";
                     down[index].style.maxHeight=maxHeight+"px";
-                    console.log(arrow[index]);
                     arrow[index].classList.add('arrowdown');
                 }
 else{
@@ -70,7 +69,7 @@ else{
                              Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum rem provident iure. Tenetur architecto tempora voluptatibus libero nesciunt repudiandae quo dicta ratione nihil nostrum! Ea officiis quia deleniti esse consectetur.
                             
                              </div>
-                             <div className="iframes --bandcamp">
+                             <div className="iframes--bandcamp">
                              <Suspense fallback={<div>Wczytywanie...</div>}>
                              <Band value={0}/>
                              <Band value={1}/>
@@ -93,7 +92,7 @@ else{
                              Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum rem provident iure. Tenetur architecto tempora voluptatibus libero nesciunt repudiandae quo dicta ratione nihil nostrum! Ea officiis quia deleniti esse consectetur.
                             
                              </div>
-                             <div className="iframes">
+                             <div className="iframes--yt">
                              <Suspense fallback={<div>Wczytywanie...</div>}>
                              <YT value={0}/>
                              <YT value={1}/>

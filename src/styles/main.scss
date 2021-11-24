@@ -7,7 +7,6 @@ $black: #0f0f0f;
 $blacksecond: #110D0D;
 $white: white;
 main{
-    
     background-color: $black;
 }
 p{
@@ -35,6 +34,10 @@ p{
   z-index: 2;
   font-weight: 400;
   background-image: url("../img/background.webp");
+  -webkit-box-shadow: inset 0px -18px 55px -24px rgba(0, 0, 0, 1);
+  -moz-box-shadow: inset 0px -18px 55px -24px rgba(0, 0, 0, 1);
+  box-shadow: inset 0px -18px 55px -24px rgba(0, 0, 0, 1);
+  
   .Start__signature{
       position: absolute;
       left: 50%;
@@ -87,6 +90,7 @@ p{
   justify-content: center;
   flex-direction: column;
   scroll-snap-align: start;
+ 
   .Start__h1{
     display: flex;
     justify-content: center;
@@ -100,6 +104,7 @@ p{
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  
   // background-attachment: fixed;
   
   display: flex;
@@ -132,6 +137,25 @@ p{
     max-width: 1300px;
     margin-left: auto;
     margin-right: auto;
+    .iframes--bandcamp{
+      display: grid;
+          grid-template-columns: 400px 400px 400px;
+          grid-auto-rows: auto;
+          margin-top: 40px;
+          max-width: 1280px;
+          justify-content: space-between;
+          
+          margin-left: auto;
+          margin-right: auto;
+          grid-gap: 40px;
+      iframe{
+        z-index: 9;
+        height: 400px;
+        width: 400px;
+        -webkit-box-shadow: 0px 0px 17px 14px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 0px 0px 17px 14px rgba(0, 0, 0, 1);
+  box-shadow: 0px 0px 17px 14px rgba(0, 0, 0, 1);
+      }}
     iframe{
       width: 580px;
       height: 327.68px;
@@ -143,11 +167,25 @@ p{
       font-size: 22px;
       font-weight: 300;
     }
-    .iframes{
+    .iframes--yt{
       padding-top: 50px;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
+    }
+    .iframes--bancdamp{
+      padding-top: 50px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      iframe{
+        z-index: 9;
+        height: 400px;
+        width: 400px;
+        -webkit-box-shadow: 0px 0px 17px 14px rgba(0, 0, 0, 1);
+-moz-box-shadow: 0px 0px 17px 14px rgba(0, 0, 0, 1);
+box-shadow: 0px 0px 17px 14px rgba(0, 0, 0, 1);
+      }
     }
     .swiper-wrapper{
      flex-direction: row;
@@ -256,21 +294,36 @@ p{
   }
 }
 .Start__content{
+  .Start__sectiondescribe{
+    .iframes--bandcamp{
+      grid-template-columns: 380px 380px 380px;
+      iframe{
+        
+        height: 380px;
+        width: 380px;
+        
+      }
+    }
+  }
   .Start__sectionup .Start__sectiondescribe{
+    
+  .iframes
+  {
     padding: 40px;
+    
     iframe{
       width: 540px;
       height: 305.08px;
       margin: 40px;
       margin-bottom: 0;
     }
-  }
-}
+    
+}}
 // .Start__content .Start__sectiondescribe .iframes{
   
 // }
 }
-@media(max-width:1200px) {
+@media(max-width:1300px) {
   // Start page
   .Start__background{
     
@@ -301,6 +354,22 @@ p{
   }
   
   .Start__content{
+    .Start__sectionup{
+    .Start__sectiondescribe{
+      .iframes--bandcamp{
+        max-width: 800px;
+        grid-gap: 40px;
+        grid-template-columns: 380px 380px;
+        justify-content: space-around;
+        
+            iframe{
+                
+                height: 380px;
+                width: 380px
+            }
+    }}
+    }
+    
     .Start__h1{
       font-size: 50px;
     }
@@ -319,14 +388,15 @@ p{
   .Start__content{
     .Start__sectionup .Start__sectiondescribe{
       padding: 30px;
+      .iframes--yt{
       iframe{
         width: 531px;
         height: 300px;
         margin: 30px
-      }
+      }}
       
     }
-    .Start__sectiondescribe .iframes{
+    .Start__sectiondescribe .iframes--yt{
       padding-top: 30px;
     }
   }
@@ -342,19 +412,34 @@ p{
       padding-right: 15px;
     }
   }
-  .Start__content .Start__sectiondescribe .iframes{
+  .Start__content .Start__sectiondescribe .iframes--yt{
     
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
-  .Start__content .Start__sectiondescribe .iframes{
+  .Start__content .Start__sectiondescribe .iframes--yt{
     padding-top: 30px;
   }
   }
   @media(max-width:900px) {
     // Start page
     .Start__content{
+      .Start__sectionup{
+
+      
+      .Start__sectiondescribe{
+        .iframes--bandcamp{
+          
+          grid-template-columns: 400px;
+          
+           iframe{
+                  
+                  height: 380px;
+                  width: 380px
+              }
+      }
+      }}
       .Start__sectionup .Start__sectiondescribe{
         padding: 20px;
         .iframes{
@@ -436,7 +521,7 @@ p{
         padding: 10px;
         padding-top: 20px;
         padding-bottom: 20px;
-        .iframes{
+        .iframes--yt{
           padding-top: 0px;
           iframe{
             height: 254px;
@@ -504,8 +589,16 @@ p{
         // Start page
         .Start__content .Start__sectionup .Start__sectiondescribe{
           padding: 5px;
-          padding-bottom: 0px;
-          
+          padding-bottom: 15px;
+          .iframes--banddcamp{
+           
+            iframe{
+              
+              height: 360px;
+              width: 360px;
+              
+            }
+          }
           .describe{
             font-size: 18px;
           }
@@ -519,7 +612,7 @@ p{
               margin-bottom: 0;
             }
           }
-        }
+        }}
         
         .Start__background{
           display: flex;
@@ -582,6 +675,17 @@ p{
         }
         }
         @media(max-width: 450px) {
+          .Start__content .Start__sectionup .Start__sectiondescribe{
+            
+            .iframes--bandcamp{
+             grid-template-columns: 360px;
+              iframe{
+                
+                height: 360px;
+                width: 360px;
+                
+              }
+            }}
           .describe{
             font-size: 17px;
           }

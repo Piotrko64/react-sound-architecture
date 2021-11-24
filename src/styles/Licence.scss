@@ -26,7 +26,7 @@ z-index: 9999;
 
 
 .Licence__describe::-webkit-scrollbar {
-    width: 12px;
+    width: 10px;
     background-color: #222222;
   }
   
@@ -85,4 +85,15 @@ z-index: 9999;
     transform: scale(0.9);
     transition: opacity 300ms, transform 300ms;
   }
-  
+  @media(max-width: 1200px) {
+      .Licence{
+          font-size: 0.9em
+      }
+      
+  }
+  @media(max-width: 800px) {
+    .Licence{
+        font-size: 0.85em
+    }
+    
+}

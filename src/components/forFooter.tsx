@@ -46,7 +46,7 @@ Licensee.</li>
 business profits, business interruption resulting from use of the sounds.</strong>
 <h2>CONTACT:</h2>
 For any questions or business contact please message me by bandcamp or this e-mail:
-soundarchitecture@outlook.commercial<br/>
+soundarchitecture@outlook.com<br/>
 <br/>
           <div className="Licence__close" onClick={()=>{props.hideLicence()}}>Close</div>
           </div>

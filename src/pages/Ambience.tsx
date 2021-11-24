@@ -232,7 +232,7 @@ useEffect(()=>{
 
                         </div>
                         <div className="yt__describe">
-                            <h3>{music.title}</h3>
+                            <h4>{music.title}</h4>
                             <div className="yt__describesmall">{music.describe}</div>
                             <div className="yt__tag">{music.tag.map((tags) => (<div className="tag" onClick={() => {
 

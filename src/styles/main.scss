@@ -18,6 +18,7 @@ p{
   }
 }
 // Start page
+
 .Start__background{
     background-attachment: fixed;
   background-position: center;
@@ -36,9 +37,14 @@ p{
   background-image: url("../img/background.webp");
   .Start__signature{
       position: absolute;
-      bottom: 15px;
-    
-      flex-direction: row;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+      text-align: center;
+      flex-direction: column;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
       font-size: 100px;
       display: flex;
       flex-direction: row;
@@ -80,6 +86,7 @@ p{
   display: flex;
   justify-content: center;
   flex-direction: column;
+  scroll-snap-align: start;
   .Start__h1{
     display: flex;
     justify-content: center;
@@ -88,7 +95,7 @@ p{
   }
   .Start__sectiontitle{
     height: 300px;
-    font-size: 55px;
+    font-size: 40px;
     text-shadow: 0px 0px 2px rgba(0,0,0,0.7);
   background-position: center;
   background-repeat: no-repeat;
@@ -108,9 +115,13 @@ p{
   .Start__onlytitle{
     background-color: rgba(0, 0, 0, 0.74);
     padding: 20px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .arrowdown{
-    transform: translate(20%, 10%) rotateX(0deg);
+    transform: translate(20%, 0%) rotateX(0deg);
   }
   }
   .Start__sectiondescribe{
@@ -118,18 +129,15 @@ p{
     display: flex;
     justify-content: center;
     flex-direction: column;
-    max-width: 1450px;
+    max-width: 1300px;
     margin-left: auto;
     margin-right: auto;
     iframe{
-      width: 700px;
-      height: 394px;
+      width: 580px;
+      height: 327.68px;
     }
     .describe{
-      // border-top: 2px solid white;
-      // border-bottom: 2px solid white;
-      // padding-top: 8px;
-      // padding-bottom: 8px;
+      
       text-align: justify;
       font-family: 'Jost';
       font-size: 22px;
@@ -158,42 +166,9 @@ p{
     margin-left: auto;
     margin-right: auto;
     
-    .iframe{
-      height: 400px;
-      width: 700px;
-      
-      
-    }
   }
 }
-.swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  
-  width: 50px;
-  height: 400px !important;
-color: red;
-  /* Center slide text vertically */
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
-  align-items: center;
-}
 
-.swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
 .Prefooter{
   
   padding-top: 50px;
@@ -243,7 +218,7 @@ color: red;
   
 .Start__signature{
     
-    bottom: 15px;
+    
     font-weight: 600;
     
     font-size: 80px;
@@ -284,8 +259,8 @@ color: red;
   .Start__sectionup .Start__sectiondescribe{
     padding: 40px;
     iframe{
-      width: 600px;
-      height: 337.45px;
+      width: 540px;
+      height: 305.08px;
       margin: 40px;
       margin-bottom: 0;
     }
@@ -301,7 +276,7 @@ color: red;
     
   .Start__signature{
       
-      bottom: 15px;
+      
       font-weight: 600;
       
       font-size: 60px;
@@ -345,8 +320,8 @@ color: red;
     .Start__sectionup .Start__sectiondescribe{
       padding: 30px;
       iframe{
-        width: 600px;
-        height: 337.45px;
+        width: 531px;
+        height: 300px;
         margin: 30px
       }
       
@@ -387,6 +362,8 @@ color: red;
           iframe{
             margin: 20px;
             margin-bottom: 0;
+            height: 282px;
+            width: 500px;
           }
         }
       }
@@ -399,11 +376,10 @@ color: red;
       
     .Start__signature{
         
-        bottom: 5px;
+        
         font-weight: 600;
         flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
+        
         font-size: 50px;
         
     }
@@ -531,14 +507,14 @@ color: red;
           padding-bottom: 0px;
           
           .describe{
-            font-size: 19.2px;
+            font-size: 18px;
           }
           .iframes{
             padding-bottom: 15px;
             margin-top: 15px;
             iframe{
-              height: 190px;
-              width: 340px;
+              height: 213px;
+              width: 380px;
               margin: 15px;
               margin-bottom: 0;
             }
@@ -552,7 +528,7 @@ color: red;
           text-align: center;
           background-image: url("../img/backgroundmobile.webp");
         .Start__signature{
-            position: sticky;
+            
             display: flex;
             justify-content: center;
             align-items: center;
@@ -604,4 +580,21 @@ color: red;
             }
           }
         }
+        }
+        @media(max-width: 450px) {
+          .describe{
+            font-size: 17px;
+          }
+          .yt{
+
+              .yt__allcontainer{
+               
+                  .yt__iframe{
+                  iframe{
+                      height: 190px;
+                      width: 340px;
+                  }}
+              }
+          
+          }
         }

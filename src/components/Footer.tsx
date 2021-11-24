@@ -12,7 +12,7 @@ const Footer = (props:any) => {
     
     const copyText=()=>{
         const timeCopy=()=>{
-            setiscopy('Click to copy')
+            setiscopy('Click to copy email')
         }
         
         navigator.clipboard.writeText('soundarchitecture@outlook.com');

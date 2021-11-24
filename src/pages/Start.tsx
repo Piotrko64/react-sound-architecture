@@ -11,7 +11,7 @@ import soundback from '../img/pianostart.webp';
 import ambienceback from '../img/ambiencestart.webp'
 
 
-
+const Band = lazy(() => import("./Band"));
 const YT = lazy(() => import("./YT"));
 const Start = () => {
     
@@ -51,10 +51,10 @@ else{
         <div className="Start ">
             <div className="Start__background padding"> 
             <div className="Start__signature"> 
-            <div className="Start__logo"> <img src={mylogo} alt="logo__SA" className="Start__logoimg"/> </div>
+            {/* <div className="Start__logo"> <img src={mylogo} alt="logo__SA" className="Start__logoimg"/> </div> */}
             <div className="Start__column">
             <div className="Start__signature--up">Sound Architecture</div>
-            <div className="Start__signature--down">Website for your sounds, ambience and music</div>
+            {/* <div className="Start__signature--down">Website for your sounds, ambience and music</div> */}
              </div></div></div>
              <div className="Start__content" >
                  
@@ -70,7 +70,13 @@ else{
                              Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum rem provident iure. Tenetur architecto tempora voluptatibus libero nesciunt repudiandae quo dicta ratione nihil nostrum! Ea officiis quia deleniti esse consectetur.
                             
                              </div>
-                         
+                             <div className="iframes --bandcamp">
+                             <Suspense fallback={<div>Wczytywanie...</div>}>
+                             <Band value={0}/>
+                             <Band value={1}/>
+                             <Band value={2}/>
+                             </Suspense>
+                             </div>
                          </div>
                      </div>
                  </div>

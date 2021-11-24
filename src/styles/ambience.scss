@@ -93,9 +93,9 @@ $white: white;
                 margin-top: 40px;
                 display: flex;
                 padding-top: 10px;
-                padding: 15px;
-            border-top: 2px solid white;
-            border-bottom: 2px solid white;
+                padding-bottom: 10px;
+            border-top: 1.5px solid white;
+            border-bottom: 1.5px solid white;
                 .tag{
                     padding: 2px;
                     cursor: pointer;
@@ -376,7 +376,7 @@ $white: white;
                     .yt__tag{
                         border-top: 1px solid white;
                         border-bottom: 1px solid white;
-                        padding: 5px;
+                        
                         margin-top: 20px;
                         text-align: center;
                         }
@@ -407,7 +407,7 @@ $white: white;
                             grid-template-columns: 340px;
                             .yt__describe{
                                 max-width: 340px;
-                                font-size: 0.70em;
+                                font-size: 0.8em;
                             }
                             .yt__iframe{
                             iframe{

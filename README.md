@@ -3,6 +3,8 @@
 ![image](https://user-images.githubusercontent.com/77500425/150692923-2a84c687-2ad1-4f88-85bd-7613bc102fed.png)
 The project was created with [Cracortan](https://github.com/Cracortan)
 
+Preview link to SA ==> [https://soundarchitecture.netlify.app](https://soundarchitecture.netlify.app)
+
 Pss! Also visit his music pages on [Youtube](https://www.youtube.com/channel/UCseRS2xV0cIl4Mm44b4rqvw) and [bandcamp](https://soundarchitecture.bandcamp.com)
 
 # <p align="center">Give it a try. Visit the website and choose the sound that suits you the best.</p>

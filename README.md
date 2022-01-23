@@ -40,3 +40,5 @@ Hovewer You can check simple [API to fetch data for SA](https://github.com/Piotr
 ![Frame 1](https://user-images.githubusercontent.com/77500425/150696641-f88d83f0-8a63-4b7a-91f2-9c1ba632d615.png)
 
 
+
+I would like to thank **Cracortan** for good cooperation and sharing their work

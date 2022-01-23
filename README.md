@@ -21,7 +21,7 @@ Pss! Also visit his music pages on [Youtube](https://www.youtube.com/channel/UCs
 - Node.js and MongoDB (backend)
 Remember that I share only front-end site.
 
-Hovewer You can check simple API to fetch data for SA - (click this to look)[https://github.com/Piotrko64/API-for-SA]
+Hovewer You can check simple [API to fetch data for SA](https://github.com/Piotrko64/API-for-SA)
 
 
 

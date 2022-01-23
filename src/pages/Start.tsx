@@ -76,7 +76,8 @@ const Start = () => {
                                     movement, impact, swish, designed sounds and
                                     more. All tracks have metadata and are
                                     described with UCS - Universal Category
-                                    System.
+                                    System. <br /> <br />
+                                    <b>Recent releases:</b>
                                 </div>
                                 <div className="iframes--bandcamp">
                                     <Suspense fallback={<div>Loading...</div>}>
@@ -111,6 +112,8 @@ const Start = () => {
                                     noise, rain, water waves, various fauna and
                                     flora and more, from different places on the
                                     world.
+                                    <br /> <br />
+                                    <b>Recent releases:</b>
                                 </div>
                                 <div className="iframes--yt">
                                     <Suspense fallback={<div>Loading...</div>}>
@@ -137,7 +140,12 @@ const Start = () => {
                         </div>
                         <div className="Start__sectionup">
                             <div className="Start__sectiondescribe">
-                                <div className="describe">Soon</div>
+                                <div
+                                    className="describe"
+                                    style={{ textAlign: "center" }}
+                                >
+                                    Soon
+                                </div>
                             </div>{" "}
                         </div>
                     </div>

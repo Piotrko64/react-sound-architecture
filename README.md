@@ -26,7 +26,7 @@ Pss! Also visit his music pages on [Youtube](https://www.youtube.com/channel/UCs
 
 
 Remember that I share only front-end site.
-Hovewer You can check simple [API to fetch data for SA](https://github.com/Piotrko64/API-for-SA)
+Hovewer You can check simple [API to fetch data for SA](https://github.com/Piotrko64/public-API-for-SA)
 
 
 

@@ -41,4 +41,4 @@ Hovewer You can check simple [API to fetch data for SA](https://github.com/Piotr
 
 
 
-I would like to thank **Cracortan** for good cooperation and sharing their work
+I would like to thank Cracortan for good cooperation and sharing their musical works

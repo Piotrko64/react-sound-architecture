@@ -98,6 +98,8 @@ $white: white;
             justify-content: space-between;
             max-width: 1200px;
 
+            padding: 15px;
+
             button {
                 background: transparent;
                 font-size: 24px;
@@ -138,13 +140,14 @@ $white: white;
     .Sounds__tags {
         max-width: 800px;
         justify-content: space-between;
+        padding: 20px;
     }
 }
 @media (max-width: 1000px) {
     .Sounds {
         .Sounds__tags {
             justify-content: space-between;
-
+            padding: 20px;
             grid-gap: 20px;
         }
         .Sounds__grid {

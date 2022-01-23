@@ -198,7 +198,7 @@ $white: white;
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-left: 5px;
+        margin-left: 15px;
         transform: translate(5px, 3px) rotateX(0deg);
         transition: all 0.3s ease;
         transform-origin: center;
@@ -239,7 +239,7 @@ $white: white;
 
     .yt__tags {
         justify-content: space-between;
-
+        padding: 15px;
         max-width: 1200px;
 
         button {
@@ -288,6 +288,7 @@ $white: white;
     .yt__tags {
         max-width: 500px;
         justify-content: space-between;
+        padding: 10px;
     }
 }
 @media (max-width: 800px) {

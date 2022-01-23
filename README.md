@@ -8,6 +8,7 @@ Pss! Also visit his music pages on [Youtube](https://www.youtube.com/channel/UCs
 # <p align="center">Give it a try. Visit the website and choose the sound that suits you the best.</p>
 ![image](https://user-images.githubusercontent.com/77500425/150693926-a29a9197-7a01-427e-9e8c-0b54cfdf850a.png)
 
+![Frame 1](https://user-images.githubusercontent.com/77500425/150696559-ce187048-38a8-4275-8392-1796e87892f3.png)
 
 
 # How start?

@@ -73,7 +73,7 @@ const SoundsEffects = () => {
 
     return (
         <>
-            <Baner title="Sounds Effects" image={soundback} />
+            <Baner title="Sounds Libraries" image={soundback} />
             <div
                 className="showtag"
                 onClick={() => {

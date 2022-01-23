@@ -58,7 +58,7 @@ const Start = () => {
                             style={{ backgroundImage: `url(${soundback})` }}
                         >
                             <div className="Start__onlytitle">
-                                Sounds Library
+                                Sounds Libraries
                                 <img
                                     className="Start__imgarrow"
                                     alt="arrow Sounds"

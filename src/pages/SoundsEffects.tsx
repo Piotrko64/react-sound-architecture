@@ -168,6 +168,7 @@ const SoundsEffects = () => {
                 </div>
 
                 <div className="Sounds__grid">
+                    {!thisArray ? "Loading" : ""}
                     {thisArray.map((sound: any) => (
                         <div className="Sounds__one">
                             <div className="loading">

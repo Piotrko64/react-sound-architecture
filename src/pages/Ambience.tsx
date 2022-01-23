@@ -177,6 +177,7 @@ function Ambience(): JSX.Element {
             </div>
             <div className="yt">
                 <div className="yt__allcontainer">
+                    {!thisArray ? "Loading..." : ""}
                     {thisArray.map(
                         (music: {
                             Id: React.Key | null | undefined;

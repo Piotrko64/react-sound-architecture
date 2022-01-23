@@ -1,72 +1,71 @@
-$black: #110D0D;
+$black: #110d0d;
 $blue: #61dafb;
 $white: white;
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&display=swap");
 
-
-.baner{
-
+.baner {
     height: 330px;
     width: 100%;
     background-size: cover;
     object-fit: cover;
-    
-    text-shadow: 0px 0px 2px rgba(0,0,0,0.7);
+
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.7);
     position: relative;
     background-attachment: scroll;
-  background-position: bottom;
-  background-repeat: no-repeat;
- 
-  display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.baner__title{
+    background-position: center;
+    background-repeat: no-repeat;
+
     display: flex;
     justify-content: center;
     align-items: center;
-    transform: translate(0,50%);
+}
+.baner__title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(0, 50%);
     font-size: 55px;
     margin-left: auto;
     margin-right: auto;
     color: $white;
-    font-family: 'Abril Fatface', cursive;
+    font-family: "Abril Fatface", cursive;
     font-weight: 400;
 }
-@media(max-width: 1200px) {
-  .baner{
-    height: 300px;
-  }
-  .baner__title{
-    font-size: 55px;
-    transform: translate(0,10%);
-  }
+@media (max-width: 1200px) {
+    .baner {
+        height: 300px;
+    }
+    .baner__title {
+        font-size: 55px;
+        transform: translate(0, 10%);
+    }
 }
-@media(max-width: 900px) {
-  .baner{
-    height: 280px;
-  }
-  .baner__title{
-    font-size: 50px;
-    transform: translate(0,20%);
-  }
+@media (max-width: 900px) {
+    .baner {
+        height: 280px;
+    }
+    .baner__title {
+        font-size: 50px;
+        transform: translate(0, 20%);
+    }
 }
-@media(max-width: 700px) {
-  .baner{
-    height: 260px;
-  }
-  .baner__title{
-    font-size: 45px;
-    transform: translate(0,30%);
-  }
+@media (max-width: 700px) {
+    .baner {
+        height: 260px;
+    }
+    .baner__title {
+        font-size: 45px;
+        transform: translate(0, 30%);
+    }
 }
-@media(max-width: 500px) {
-  .baner{
-    height: 200px;
-  
-  .baner__title{
-    font-size: 40px;
-    transform: translate(0,50%);
-  }}
+@media (max-width: 500px) {
+    .baner {
+        height: 200px;
+
+        .baner__title {
+            font-size: 40px;
+            transform: translate(0, 50%);
+        }
+    }
 }

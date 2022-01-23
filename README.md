@@ -1,6 +1,7 @@
 # [Sound Architecture main website](https://soundarchitecture.netlify.app)
 
 The project was created with [Cracortan](https://github.com/Cracortan)
+
 Pss! Also visit his music pages on [Youtube](https://www.youtube.com/channel/UCseRS2xV0cIl4Mm44b4rqvw) and [bandcamp](https://soundarchitecture.bandcamp.com)
 
 # Give it a try. Visit the website and choose the sound that suits you the best.

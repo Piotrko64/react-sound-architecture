@@ -1,6 +1,5 @@
-# <p align="center">
-  [Sound Architecture main website](https://soundarchitecture.netlify.app)
-</p>
+# [Sound Architecture main website](https://soundarchitecture.netlify.app)
+
 ![image](https://user-images.githubusercontent.com/77500425/150692923-2a84c687-2ad1-4f88-85bd-7613bc102fed.png)
 The project was created with [Cracortan](https://github.com/Cracortan)
 

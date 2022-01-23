@@ -1,99 +1,94 @@
 $black: #000000;
 $white: white;
-$blacksecond: #110D0D;
-.background{
-background-color: #110d0d62;
-width:100vw;
-height: 100vh;
-position: fixed;
-top:0;
-cursor:pointer;
-z-index: 999;
+$blacksecond: #0f0f0f;
+.background {
+    background-color: #0f0f0f;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    cursor: pointer;
+    z-index: 999;
 }
-.Licence{
+.Licence {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-left: auto;
     margin-right: auto;
-height: 100%;
-top:0%;
-
-
-width: 100%;
-position: fixed;
-z-index: 9999;
-
-
-.Licence__describe::-webkit-scrollbar {
-    width: 10px;
-    background-color: #222222;
-  }
-  
-  .Licence__describe::-webkit-scrollbar-thumb {
-    background-color: white;
-    transition: all 3s ease;
-    cursor: pointer;
-    
-  }
-.Licence__describe{
-    width: 100%;
-    max-width: 1300px;
     height: 100%;
-    background-color: $blacksecond;
-    padding: 20px;
-    display: flex;
-    overflow: auto;
-    
-    .Licence__close{
-        border: 2px solid white;
-        width: 80px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-left: auto;
-        margin-right: auto;
-        text-align: center;
-        transition: all .3s ease;
+    top: 0%;
+
+    width: 100%;
+    position: fixed;
+    z-index: 9999;
+
+    .Licence__describe::-webkit-scrollbar {
+        width: 10px;
+        background-color: #222222;
+    }
+
+    .Licence__describe::-webkit-scrollbar-thumb {
+        background-color: white;
+        transition: all 3s ease;
         cursor: pointer;
     }
-    .Licence__close:hover{
-        background-color: white;
-        color: black;
+    .Licence__describe {
+        width: 100%;
+        max-width: 1300px;
+        height: 100%;
+        background-color: $blacksecond;
+        padding: 20px;
+        display: flex;
+        overflow: auto;
+
+        .Licence__close {
+            border: 2px solid white;
+            width: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .Licence__close:hover {
+            background-color: white;
+            color: black;
+        }
+        .Licence__text {
+            max-width: 1200px;
+            padding-bottom: 50px;
+            margin: auto;
+        }
     }
-    .Licence__text{
-        max-width: 1200px;
-        padding-bottom: 50px;
-        margin: auto;
-    }
-}
 }
 .alert-enter {
     opacity: 0;
     transform: scale(0.9);
-  }
-  .alert-enter-active {
+}
+.alert-enter-active {
     opacity: 1;
     transform: translateX(0);
     transition: opacity 300ms, transform 300ms;
-  }
-  .alert-exit {
+}
+.alert-exit {
     opacity: 1;
-  }
-  .alert-exit-active {
+}
+.alert-exit-active {
     opacity: 0;
     transform: scale(0.9);
     transition: opacity 300ms, transform 300ms;
-  }
-  @media(max-width: 1200px) {
-      .Licence{
-          font-size: 0.9em
-      }
-      
-  }
-  @media(max-width: 800px) {
-    .Licence{
-        font-size: 0.85em
+}
+@media (max-width: 1200px) {
+    .Licence {
+        font-size: 0.9em;
     }
-    
+}
+@media (max-width: 800px) {
+    .Licence {
+        font-size: 0.85em;
+    }
 }

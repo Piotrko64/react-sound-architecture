@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.498aa106.chunk.css",
-    "main.js": "/static/js/main.ff22b201.chunk.js",
-    "main.js.map": "/static/js/main.ff22b201.chunk.js.map",
+    "main.css": "/static/css/main.bd26a3af.chunk.css",
+    "main.js": "/static/js/main.3f1c4604.chunk.js",
+    "main.js.map": "/static/js/main.3f1c4604.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.4b50e5de.js",
     "runtime-main.js.map": "/static/js/runtime-main.4b50e5de.js.map",
     "static/js/2.5b5c5d43.chunk.js": "/static/js/2.5b5c5d43.chunk.js",
@@ -14,7 +14,7 @@
     "static/js/5.53e7509b.chunk.js": "/static/js/5.53e7509b.chunk.js",
     "static/js/5.53e7509b.chunk.js.map": "/static/js/5.53e7509b.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.498aa106.chunk.css.map": "/static/css/main.498aa106.chunk.css.map",
+    "static/css/main.bd26a3af.chunk.css.map": "/static/css/main.bd26a3af.chunk.css.map",
     "static/js/2.5b5c5d43.chunk.js.LICENSE.txt": "/static/js/2.5b5c5d43.chunk.js.LICENSE.txt",
     "static/media/SFX.de0dd96d.webp": "/static/media/SFX.de0dd96d.webp",
     "static/media/ambience.2eef55ff.webp": "/static/media/ambience.2eef55ff.webp",
@@ -32,7 +32,7 @@
   "entrypoints": [
     "static/js/runtime-main.4b50e5de.js",
     "static/js/2.5b5c5d43.chunk.js",
-    "static/css/main.498aa106.chunk.css",
-    "static/js/main.ff22b201.chunk.js"
+    "static/css/main.bd26a3af.chunk.css",
+    "static/js/main.3f1c4604.chunk.js"
   ]
 }

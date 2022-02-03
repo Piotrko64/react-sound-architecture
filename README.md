@@ -45,7 +45,7 @@ I would like to thank Cracortan for good cooperation and sharing Sound tracks
 
 # Updating
 
-**1.0.5**
+**v1.0.5** 03/02/2022
 
 > Addition of a react-helmet
 

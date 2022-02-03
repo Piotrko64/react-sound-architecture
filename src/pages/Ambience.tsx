@@ -3,10 +3,9 @@ import "../styles/ambience.scss";
 import ambienceback from "../img/ambience.webp";
 import Baner from "../components/baner";
 import arrow from "../img/arrow.png";
-
+import { Helmet } from "react-helmet";
 let arrayTag: Array<any> = [];
 let deleteTag: number;
-let i: number = 0;
 
 function Ambience(): JSX.Element {
     let [mymusic, setmymusic] = useState<any[]>([]);
@@ -45,14 +44,12 @@ function Ambience(): JSX.Element {
     let showGrid: any;
     let grid: any;
     let arrowshow: any;
-    let originScrollGrid: String;
 
     useEffect(() => {
+        // I should use useRef but I would like check operation on the site with querySelector
         buttonTag = document.querySelectorAll(".yt__buttontag")!;
-        showGrid = document.querySelector(".showtag")!;
         grid = document.querySelector(".yt__tags")!;
         arrowshow = document.querySelector(".showtag__img");
-        originScrollGrid = grid.scrollHeight + "px";
     });
 
     useEffect(() => {
@@ -80,6 +77,13 @@ function Ambience(): JSX.Element {
 
     return (
         <>
+            <Helmet>
+                <title>Ambience</title>
+                <meta
+                    name="description"
+                    content="Stereo recordings of various soundscapes featuring everday atmospheres and more exotic sound ambience. Sounds of white noise, rain, water waves, various fauna and flora and more, from different places on the world."
+                />
+            </Helmet>
             <Baner title="Ambience" image={ambienceback} />
             <div
                 className="showtag"
@@ -100,7 +104,7 @@ function Ambience(): JSX.Element {
                     }
                 }}
             >
-                Tags <img className="showtag__img" src={arrow} />
+                Tags <img className="showtag__img" src={arrow} alt="" />
             </div>
             <div>
                 {" "}
@@ -180,22 +184,10 @@ function Ambience(): JSX.Element {
                     {!thisArray ? "Loading..." : ""}
                     {thisArray.map(
                         (music: {
-                            Id: React.Key | null | undefined;
-                            iframe: string | undefined;
-                            title:
-                                | boolean
-                                | React.ReactChild
-                                | React.ReactFragment
-                                | React.ReactPortal
-                                | null
-                                | undefined;
-                            describe:
-                                | boolean
-                                | React.ReactChild
-                                | React.ReactFragment
-                                | React.ReactPortal
-                                | null
-                                | undefined;
+                            Id: React.Key | number;
+                            iframe: string;
+                            title: string;
+                            describe: string;
                             tag: any[];
                         }) => (
                             <>

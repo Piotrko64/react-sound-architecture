@@ -5,7 +5,7 @@ import arrow from "../img/arrow.png";
 import musicback from "../img/notesstart.webp";
 import soundback from "../img/SFX.webp";
 import ambienceback from "../img/ambience.webp";
-
+import { Helmet } from "react-helmet";
 const Band = lazy(() => import("./Band"));
 const YT = lazy(() => import("./YT"));
 const Start = () => {
@@ -39,6 +39,10 @@ const Start = () => {
     }, []);
     return (
         <>
+            <Helmet>
+                <title>Sound Architecture</title>
+                <meta name="description" content="SA" />
+            </Helmet>
             <div className="Start ">
                 <div className="Start__background padding">
                     <div className="Start__signature">

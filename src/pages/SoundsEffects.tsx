@@ -4,6 +4,7 @@ import "../styles/Sounds.scss";
 import "../styles/loading.scss";
 import arrow from "../img/arrow.png";
 import soundback from "../img/SFX.webp";
+import { Helmet } from "react-helmet";
 let arrayTag: Array<any> = [];
 let deleteTag: number;
 
@@ -73,6 +74,13 @@ const SoundsEffects = () => {
 
     return (
         <>
+            <Helmet>
+                <title>Sounds Effects</title>
+                <meta
+                    name="description"
+                    content="Field recordings and foley shared on royalty free license on bandcamp. All the audio is recorded on 96/24 stereo standard. Libraries contain wide variety od sounds featuring movement, impact, swish, designed sounds and more. All tracks have metadata and are described with UCS - Universal Category System."
+                />
+            </Helmet>
             <Baner title="Sounds Libraries" image={soundback} />
             <div
                 className="showtag"
@@ -92,7 +100,7 @@ const SoundsEffects = () => {
                     }
                 }}
             >
-                Tags <img className="showtag__img" src={arrow} />
+                Tags <img className="showtag__img" src={arrow} alt="" />
             </div>
             <div className="Sounds padding">
                 <div className="Sounds__tags">
@@ -179,6 +187,7 @@ const SoundsEffects = () => {
                                 </div>
                             </div>
                             <iframe
+                                title={sound.iframe}
                                 style={{ border: "0" }}
                                 loading="lazy"
                                 src={sound.iframe}

@@ -4,7 +4,7 @@ import ambienceback from "../img/ambience.webp";
 import Baner from "../components/baner";
 import arrow from "../img/arrow.png";
 import { Helmet } from "react-helmet";
-import { forAmbience } from "../jsonfolder/typing/datatype";
+import { forAmbience } from "../typing/datatype";
 
 //Selected user tags
 let arrayTag: Array<string> = [];

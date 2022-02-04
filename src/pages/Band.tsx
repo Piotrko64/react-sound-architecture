@@ -18,7 +18,7 @@ const Band = ({ value }: { value: number }) => {
         },
     ]);
     useEffect(() => {
-        // API AMB
+        // API SE
         const apisounds: string = "https://apiforsa.herokuapp.com/read/onlySE";
         fetch(apisounds)
             .then((response) => response.json())

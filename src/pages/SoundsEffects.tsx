@@ -5,7 +5,7 @@ import "../styles/loading.scss";
 import arrow from "../img/arrow.png";
 import soundback from "../img/SFX.webp";
 import { Helmet } from "react-helmet";
-import { forSounds } from "../jsonfolder/typing/datatype";
+import { forSounds } from "../typing/datatype";
 
 //Selected user tags
 let arrayTag: Array<string> = [];

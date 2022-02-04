@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 import Baner from "../components/baner";
 import "../styles/Sounds.scss";
@@ -7,16 +6,17 @@ import arrow from "../img/arrow.png";
 import soundback from "../img/SFX.webp";
 import { Helmet } from "react-helmet";
 import { forSounds } from "../jsonfolder/typing/datatype";
-let arrayTag: Array<any> = [];
+
+//Selected user tags
+let arrayTag: Array<string> = [];
 let deleteTag: number;
 
 const SoundsEffects = () => {
     // useState
-
     let [sounds, setsounds] = useState<forSounds[]>([]); // original array iframes
     let [thisArray, setthisArray] = useState<forSounds[]>([]); // array to manipulate
 
-    let [mytags, setmytags] = useState<any[]>([]); //original array of tags
+    let [mytags, setmytags] = useState<string[]>([]); //original array of tags
     let [goodArrayTag, setgoodArrayTag] = useState<Array<number>>([]); // array tags to manipulate
 
     // Html elements
@@ -138,13 +138,19 @@ const SoundsEffects = () => {
                                         arrayTag.push(tag);
                                     } else {
                                         deleteTag = arrayTag.indexOf(tag);
-
                                         arrayTag.splice(deleteTag, 1);
                                     }
 
                                     // Search Tags
-                                    let counterToPush = 0;
-                                    let arrayToPush: any = [];
+                                    let counterToPush: number = 0;
+                                    let arrayToPush: Array<forSounds> = [];
+
+                                    console.log(arrayTag);
+                                    // // "for-for SA"
+                                    // Specific iframe display after selected tags. In order for the iframe to be displayed, it must have all tags selected by the user (array: "ArrayTag")
+                                    // After click in tag you can see in console selected tags
+                                    // So if you want listen something with wind theme you can click in this tag and you will see only iframe with wind motive. If you add for example waves tag website display only iframes which have motives with 'wind' AND 'waves'.
+                                    // In this case, iframes that contain only 'waves' will not be displayed
                                     for (
                                         let a = 0;
                                         a <= sounds.length - 1;
@@ -194,7 +200,7 @@ const SoundsEffects = () => {
                     {!thisArray ? "Loading..." : ""}
                 </div>
                 <div className="Sounds__grid">
-                    {thisArray.map((sound: any) => (
+                    {thisArray.map((sound: forSounds) => (
                         <div className="Sounds__one">
                             <div className="loading">
                                 {/* Loading with css */}

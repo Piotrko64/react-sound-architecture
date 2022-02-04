@@ -1,34 +1,43 @@
-import React, { useEffect, useState } from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useEffect, useState } from "react";
 import Baner from "../components/baner";
 import "../styles/Sounds.scss";
 import "../styles/loading.scss";
 import arrow from "../img/arrow.png";
 import soundback from "../img/SFX.webp";
 import { Helmet } from "react-helmet";
+import { forSounds } from "../jsonfolder/typing/datatype";
 let arrayTag: Array<any> = [];
 let deleteTag: number;
 
 const SoundsEffects = () => {
-    let [sounds, setsounds] = useState<any[]>([]);
-    let [thisArray, setthisArray] = useState<any[]>([]);
-    let [mytags, setmytags] = useState<any[]>([]);
+    // useState
 
-    let buttonTag: any;
+    let [sounds, setsounds] = useState<forSounds[]>([]); // original array iframes
+    let [thisArray, setthisArray] = useState<forSounds[]>([]); // array to manipulate
+
+    let [mytags, setmytags] = useState<any[]>([]); //original array of tags
+    let [goodArrayTag, setgoodArrayTag] = useState<Array<number>>([]); // array tags to manipulate
+
+    // Html elements
+    let buttonTag: NodeListOf<HTMLButtonElement>;
     let grid: HTMLElement;
-    let arrowshow: any;
-    let counterTags: any = [];
-    let counterForTag: number = 0;
-    let thisForEachTag: any;
-    let thisForEachMusic: any;
-    let [goodArrayTag, setgoodArrayTag] = useState([]);
+    let arrowshow: HTMLElement;
 
+    // Others
+    let counterTags: Array<number> = []; //Array to counting iframes
+    let counterForTag: number = 0; // let to counting single
+    let thisForEachTag: string; // let for one tag
+    let thisForEachMusic: forSounds;
+
+    // Function for counting iframes
     function counterAll() {
         mytags.forEach(
-            (tag: number = 0) => (
+            (tag: string) => (
                 (counterForTag = 0),
                 (thisForEachTag = tag),
                 thisArray.forEach(
-                    (mus: any) => (
+                    (mus: forSounds) => (
                         (thisForEachMusic = mus),
                         thisForEachMusic.tag.indexOf(thisForEachTag) !== -1
                             ? counterForTag++
@@ -43,6 +52,9 @@ const SoundsEffects = () => {
     }
 
     useEffect(() => {
+        // HTML elements
+        // I should use useRef but I would like check operation on the site with querySelector
+
         buttonTag = document.querySelectorAll(".Sound__buttontag");
         grid = document.querySelector(".Sounds__tags")!;
         arrowshow = document.querySelector(".showtag__img")!;
@@ -85,6 +97,7 @@ const SoundsEffects = () => {
             <div
                 className="showtag"
                 onClick={() => {
+                    // Collapse effect
                     if (grid.style.display !== "block") {
                         grid.style.display = "block";
                         grid.style.opacity = "1";
@@ -102,9 +115,12 @@ const SoundsEffects = () => {
             >
                 Tags <img className="showtag__img" src={arrow} alt="" />
             </div>
+
             <div className="Sounds padding">
                 <div className="Sounds__tags">
-                    {mytags.map((tag: any, index: any) => (
+                    {/* Display tags */}
+
+                    {mytags.map((tag: string, index: number) => (
                         <>
                             <button
                                 style={{
@@ -174,12 +190,14 @@ const SoundsEffects = () => {
                         </>
                     ))}
                 </div>
-
+                <div style={{ textAlign: "center", fontSize: "1.5em" }}>
+                    {!thisArray ? "Loading..." : ""}
+                </div>
                 <div className="Sounds__grid">
-                    {!thisArray ? "Loading" : ""}
                     {thisArray.map((sound: any) => (
                         <div className="Sounds__one">
                             <div className="loading">
+                                {/* Loading with css */}
                                 <div className="loading__stripes">
                                     <div className="loading__stripe loading__stripe--first"></div>
                                     <div className="loading__stripe loading__stripe--second"></div>

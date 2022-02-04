@@ -47,7 +47,7 @@ I would like to thank Cracortan for good cooperation and sharing Sound tracks
 
 **v1.1.0** 04/02/2022
 
-> - Explanation of the '**for-for SA loop**' in Ambience.tsx and Sounds Effects.tsx
+> - Explanation of the '**for-for SA**' loop in Ambience.tsx and Sounds Effects.tsx
 > - Add file with Typescript interface
 > - Better typing of variables
 > - Better comments

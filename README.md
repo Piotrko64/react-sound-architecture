@@ -47,15 +47,15 @@ I would like to thank Cracortan for good cooperation and sharing Sound tracks
 
 **v1.1.0** 04/02/2022
 
-> Explanation of the '**for-for SA loop**' in Ambience.tsx and Sounds Effects.tsx
-> Add file with Typescript interface
-> Better typing of variables
-> Better comments
+> - Explanation of the '**for-for SA loop**' in Ambience.tsx and Sounds Effects.tsx
+> - Add file with Typescript interface
+> - Better typing of variables
+> - Better comments
 
 
 
 **v1.0.5** 03/02/2022
 
-> Addition of a react-helmet
-> Subpages now have their own updated meta description and title
+> - Addition of a react-helmet
+> - Subpages now have their own updated meta description and title
 

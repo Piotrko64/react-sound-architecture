@@ -93,7 +93,7 @@ const SoundsEffects = () => {
                     content="Field recordings and foley shared on royalty free license on bandcamp. All the audio is recorded on 96/24 stereo standard. Libraries contain wide variety od sounds featuring movement, impact, swish, designed sounds and more. All tracks have metadata and are described with UCS - Universal Category System."
                 />
             </Helmet>
-            <Baner title="Sounds Libraries" image={soundback} />
+            <Baner title="Sound Libraries" image={soundback} />
             <div
                 className="showtag"
                 onClick={() => {

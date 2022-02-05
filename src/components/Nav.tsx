@@ -86,7 +86,7 @@ const Nav = () => {
                         <a style={{ color: "gray" }}>Music</a>
                     </li>
                     <li>
-                        <NavLink to="/SoundsEffects">Sound Effects</NavLink>
+                        <NavLink to="/SoundEffects">Sound Effects</NavLink>
                     </li>
                     <li>
                         <NavLink to="/Ambience">Ambience</NavLink>
@@ -96,6 +96,7 @@ const Nav = () => {
                         <a
                             href="https://www.youtube.com/channel/UCseRS2xV0cIl4Mm44b4rqvw"
                             target="_blank"
+                            rel="noreferrer"
                         >
                             <img src={ytlogo} alt="YouTube" />
                         </a>
@@ -103,6 +104,7 @@ const Nav = () => {
                         <a
                             href="https://soundarchitecture.bandcamp.com/releases"
                             target="_blank"
+                            rel="noreferrer"
                         >
                             <img
                                 src={bandlogo}
@@ -132,12 +134,14 @@ const Nav = () => {
                     <a
                         href="https://www.youtube.com/channel/UCseRS2xV0cIl4Mm44b4rqvw"
                         target="_blank"
+                        rel="noreferrer"
                     >
                         <img src={ytlogo} alt="youtube SA" />
                     </a>
                     <a
                         href="https://soundarchitecture.bandcamp.com/releases"
                         target="_blank"
+                        rel="noreferrer"
                     >
                         <img src={bandlogo} alt="bandcamp SA" />
                     </a>

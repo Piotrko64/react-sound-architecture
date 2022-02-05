@@ -87,7 +87,7 @@ const SoundsEffects = () => {
     return (
         <>
             <Helmet>
-                <title>Sounds Effects</title>
+                <title>Sound Effects</title>
                 <meta
                     name="description"
                     content="Field recordings and foley shared on royalty free license on bandcamp. All the audio is recorded on 96/24 stereo standard. Libraries contain wide variety od sounds featuring movement, impact, swish, designed sounds and more. All tracks have metadata and are described with UCS - Universal Category System."

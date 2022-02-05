@@ -14,7 +14,7 @@ const Main = () => {
             <Switch>
                 <Route path="/" exact component={Start} />
                 <Route path="/Music" exact component={Music} />
-                <Route path="/SoundsEffects" exact component={SoundsEffects} />
+                <Route path="/SoundEffects" exact component={SoundsEffects} />
                 <Route path="/Ambience" exact component={Ambience} />
                 <Route component={ErrorComponent} />
             </Switch>

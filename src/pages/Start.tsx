@@ -6,8 +6,8 @@ import musicback from "../img/notesstart.webp";
 import soundback from "../img/SFX.webp";
 import ambienceback from "../img/ambience.webp";
 import { Helmet } from "react-helmet";
-const Band = lazy(() => import("./Band"));
-const YT = lazy(() => import("./YT"));
+const Band = lazy(() => import("../components/microComponentforStart/Band"));
+const YT = lazy(() => import("../components/microComponentforStart/YT"));
 const Start = () => {
     useEffect(() => {
         // Fetch for 2 the most new iframe ambience

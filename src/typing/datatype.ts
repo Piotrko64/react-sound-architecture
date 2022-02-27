@@ -1,7 +1,7 @@
 export interface forSounds {
     Id: React.Key | number;
     iframe: string;
-    href: string;
+    href?: string;
     title: string;
     describe: string;
     tag: string[];
@@ -13,3 +13,4 @@ export interface forAmbience {
     describe: string;
     tag: string[];
 }
+export type SandA = forAmbience[] | forSounds[];

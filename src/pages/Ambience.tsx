@@ -6,6 +6,7 @@ import Baner from "../components/baner";
 import arrow from "../img/arrow.png";
 import { Helmet } from "react-helmet";
 import { forAmbience } from "../typing/datatype";
+import { forforSA } from "./forforSA";
 
 //Selected user tags
 let arrayTag: Array<string> = [];
@@ -33,10 +34,7 @@ function Ambience(): JSX.Element {
     let arrayToPush: Array<forAmbience> = [];
     let counterToPush = 0;
     //Baner usememo
-    const BanerMemo = useMemo(
-        () => <Baner title="Ambience" image={ambienceback} />,
-        []
-    );
+    const BanerMemo = useMemo(() => <Baner title="Ambience" image={ambienceback} />, []);
     // Function for counting iframes
     function counterAll() {
         mytags.forEach(
@@ -45,10 +43,7 @@ function Ambience(): JSX.Element {
                 (thisForEachTag = tag),
                 thisArray.forEach(
                     (mus: forAmbience) => (
-                        (thisForEachMusic = mus),
-                        thisForEachMusic.tag.indexOf(thisForEachTag) !== -1
-                            ? counterForTag++
-                            : false
+                        (thisForEachMusic = mus), thisForEachMusic.tag.indexOf(thisForEachTag) !== -1 ? counterForTag++ : false
                     )
                 ),
                 counterTags.push(counterForTag)
@@ -76,8 +71,7 @@ function Ambience(): JSX.Element {
 
     useEffect(() => {
         // API AMBIENCE
-        const apiambience: string =
-            "https://apiforsa.herokuapp.com/read/onlyAMB";
+        const apiambience: string = "https://apiforsa.herokuapp.com/read/onlyAMB";
         fetch(apiambience)
             .then((response) => response.json())
             .then((data) => {
@@ -132,8 +126,7 @@ function Ambience(): JSX.Element {
                     {mytags.map((tag: string, index: number) => (
                         <button
                             style={{
-                                display:
-                                    goodArrayTag[index] === 0 ? "none" : "",
+                                display: goodArrayTag[index] === 0 ? "none" : "",
                             }}
                             className="yt__buttontag"
                             key={index}
@@ -147,37 +140,7 @@ function Ambience(): JSX.Element {
                                     arrayTag.splice(deleteTag, 1);
                                 }
                                 console.log(arrayTag);
-                                // // "for-for SA"
-                                // Specific iframe display after selected tags. In order for the iframe to be displayed, it must have all tags selected by the user (array: "ArrayTag")
-                                // After click in tag you can see in console selected tags
-                                // So if you want listen something with wind theme you can click in this tag and you will see only iframe with wind motive. If you add for example waves tag website display only iframes which have motives with 'wind' AND 'waves'.
-                                // In this case, iframes that contain only 'waves' will not be displayed
-
-                                for (let a = 0; a <= mymusic.length - 1; a++) {
-                                    counterToPush = 0;
-                                    for (
-                                        let i = 0;
-                                        i <= arrayTag.length - 1;
-                                        i++
-                                    ) {
-                                        if (
-                                            mymusic[a].tag.indexOf(
-                                                arrayTag[i]
-                                            ) !== -1
-                                        ) {
-                                            counterToPush++;
-                                        }
-                                        if (counterToPush === arrayTag.length) {
-                                            arrayToPush.push(mymusic[a]);
-                                        }
-                                    }
-                                }
-
-                                if (arrayTag.length > 0) {
-                                    setthisArray(arrayToPush);
-                                } else {
-                                    setthisArray(mymusic);
-                                }
+                                forforSA(mymusic, counterToPush, arrayTag, arrayToPush, setthisArray);
 
                                 window.scrollTo({
                                     top: 150,
@@ -190,9 +153,7 @@ function Ambience(): JSX.Element {
                         </button>
                     ))}
                 </div>
-                <div style={{ textAlign: "center", fontSize: "1.5em" }}>
-                    {!thisArray ? "Loading..." : ""}
-                </div>
+                <div style={{ textAlign: "center", fontSize: "1.5em" }}>{!thisArray ? "Loading..." : ""}</div>
             </div>
 
             <div className="yt">
@@ -220,9 +181,7 @@ function Ambience(): JSX.Element {
                                 </div>
                                 <div className="yt__describe">
                                     <h4>{music.title}</h4>
-                                    <div className="yt__describesmall">
-                                        {music.describe}
-                                    </div>
+                                    <div className="yt__describesmall">{music.describe}</div>
                                     {/* Tags under iframe */}
                                     <div className="yt__tag">
                                         {music.tag.map((tags) => (
@@ -232,65 +191,18 @@ function Ambience(): JSX.Element {
                                                     showGrid();
                                                     arrayTag = [tags];
 
-                                                    for (
-                                                        let a = 0;
-                                                        a <= mymusic.length - 1;
-                                                        a++
-                                                    ) {
-                                                        counterToPush = 0;
-                                                        for (
-                                                            let i = 0;
-                                                            i <=
-                                                            arrayTag.length - 1;
-                                                            i++
-                                                        ) {
-                                                            if (
-                                                                mymusic[
-                                                                    a
-                                                                ].tag.indexOf(
-                                                                    arrayTag[i]
-                                                                ) !== -1
-                                                            ) {
-                                                                counterToPush++;
+                                                    forforSA(mymusic, counterToPush, arrayTag, arrayToPush, setthisArray);
+
+                                                    mytags.forEach((arr: string, index: number) => {
+                                                        buttonTag.forEach((el: HTMLElement) => {
+                                                            el.classList.remove("activetag");
+                                                        });
+                                                        setTimeout(() => {
+                                                            if (arr === tags) {
+                                                                buttonTag[index].classList.add("activetag");
                                                             }
-                                                            if (
-                                                                counterToPush ===
-                                                                arrayTag.length
-                                                            ) {
-                                                                arrayToPush.push(
-                                                                    mymusic[a]
-                                                                );
-                                                            }
-                                                        }
-                                                    }
-                                                    setthisArray(arrayToPush);
-                                                    mytags.forEach(
-                                                        (
-                                                            arr: string,
-                                                            index: number
-                                                        ) => {
-                                                            buttonTag.forEach(
-                                                                (
-                                                                    el: HTMLElement
-                                                                ) => {
-                                                                    el.classList.remove(
-                                                                        "activetag"
-                                                                    );
-                                                                }
-                                                            );
-                                                            setTimeout(() => {
-                                                                if (
-                                                                    arr === tags
-                                                                ) {
-                                                                    buttonTag[
-                                                                        index
-                                                                    ].classList.add(
-                                                                        "activetag"
-                                                                    );
-                                                                }
-                                                            }, 50);
-                                                        }
-                                                    );
+                                                        }, 50);
+                                                    });
 
                                                     window.scrollTo(0, 0);
                                                 }}

@@ -1,18 +1,14 @@
-import React from 'react';
-import '../styles/baner.scss';
+import "../styles/baner.scss";
 
-
-const Baner = (props:any) => {
-
+const Baner = (props: { image: string; title: string }) => {
     return (
-        <div className="baner" style={{backgroundImage: `url(${props.image})` }}>
-            <div className="baner__title ">
-            {props.title}
-            </div>
+        <div
+            className="baner"
+            style={{ backgroundImage: `url(${props.image})` }}
+        >
+            <div className="baner__title ">{props.title}</div>
         </div>
     );
-}
+};
 
 export default Baner;
-
-

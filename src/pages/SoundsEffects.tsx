@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Baner from "../components/baner";
 import "../styles/Sounds.scss";
 import "../styles/loading.scss";
@@ -30,6 +30,11 @@ const SoundsEffects = () => {
     let thisForEachTag: string; // let for one tag
     let thisForEachMusic: forSounds;
 
+    //Baner usememo
+    const BanerMemo = useMemo(
+        () => <Baner title="Sound Libraries" image={soundback} />,
+        []
+    );
     // Function for counting iframes
     function counterAll() {
         mytags.forEach(
@@ -93,7 +98,7 @@ const SoundsEffects = () => {
                     content="Field recordings and foley shared on royalty free license on bandcamp. All the audio is recorded on 96/24 stereo standard. Libraries contain wide variety od sounds featuring movement, impact, swish, designed sounds and more. All tracks have metadata and are described with UCS - Universal Category System."
                 />
             </Helmet>
-            <Baner title="Sound Libraries" image={soundback} />
+            {BanerMemo}
             <div
                 className="showtag"
                 onClick={() => {
@@ -121,79 +126,68 @@ const SoundsEffects = () => {
                     {/* Display tags */}
 
                     {mytags.map((tag: string, index: number) => (
-                        <>
-                            <button
-                                style={{
-                                    display:
-                                        goodArrayTag[index] === 0 ? "none" : "",
-                                }}
-                                className="Sound__buttontag"
-                                key={index}
-                                onClick={() => {
-                                    buttonTag[index].classList.toggle(
-                                        "activetag"
-                                    );
+                        <button
+                            style={{
+                                display:
+                                    goodArrayTag[index] === 0 ? "none" : "",
+                            }}
+                            className="Sound__buttontag"
+                            key={index}
+                            onClick={() => {
+                                buttonTag[index].classList.toggle("activetag");
 
-                                    if (arrayTag.indexOf(tag) === -1) {
-                                        arrayTag.push(tag);
-                                    } else {
-                                        deleteTag = arrayTag.indexOf(tag);
-                                        arrayTag.splice(deleteTag, 1);
-                                    }
+                                if (arrayTag.indexOf(tag) === -1) {
+                                    arrayTag.push(tag);
+                                } else {
+                                    deleteTag = arrayTag.indexOf(tag);
+                                    arrayTag.splice(deleteTag, 1);
+                                }
 
-                                    // Search Tags
-                                    let counterToPush: number = 0;
-                                    let arrayToPush: Array<forSounds> = [];
+                                // Search Tags
+                                let counterToPush: number = 0;
+                                let arrayToPush: Array<forSounds> = [];
 
-                                    console.log(arrayTag);
-                                    // // "for-for SA"
-                                    // Specific iframe display after selected tags. In order for the iframe to be displayed, it must have all tags selected by the user (array: "ArrayTag")
-                                    // After click in tag you can see in console selected tags
-                                    // So if you want listen something with wind theme you can click in this tag and you will see only iframe with wind motive. If you add for example waves tag website display only iframes which have motives with 'wind' AND 'waves'.
-                                    // In this case, iframes that contain only 'waves' will not be displayed
+                                console.log(arrayTag);
+                                // // "for-for SA"
+                                // Specific iframe display after selected tags. In order for the iframe to be displayed, it must have all tags selected by the user (array: "ArrayTag")
+                                // After click in tag you can see in console selected tags
+                                // So if you want listen something with wind theme you can click in this tag and you will see only iframe with wind motive. If you add for example waves tag website display only iframes which have motives with 'wind' AND 'waves'.
+                                // In this case, iframes that contain only 'waves' will not be displayed
+                                for (let a = 0; a <= sounds.length - 1; a++) {
+                                    counterToPush = 0;
                                     for (
-                                        let a = 0;
-                                        a <= sounds.length - 1;
-                                        a++
+                                        let i = 0;
+                                        i <= arrayTag.length - 1;
+                                        i++
                                     ) {
-                                        counterToPush = 0;
-                                        for (
-                                            let i = 0;
-                                            i <= arrayTag.length - 1;
-                                            i++
+                                        if (
+                                            sounds[a].tag.indexOf(
+                                                arrayTag[i]
+                                            ) !== -1
                                         ) {
-                                            if (
-                                                sounds[a].tag.indexOf(
-                                                    arrayTag[i]
-                                                ) !== -1
-                                            ) {
-                                                counterToPush++;
-                                            }
-                                            if (
-                                                counterToPush ===
-                                                arrayTag.length
-                                            ) {
-                                                arrayToPush.push(sounds[a]);
-                                            }
+                                            counterToPush++;
+                                        }
+                                        if (counterToPush === arrayTag.length) {
+                                            arrayToPush.push(sounds[a]);
                                         }
                                     }
+                                }
 
-                                    if (arrayTag.length > 0) {
-                                        setthisArray(arrayToPush);
-                                    } else {
-                                        setthisArray(sounds);
-                                    }
+                                if (arrayTag.length > 0) {
+                                    setthisArray(arrayToPush);
+                                } else {
+                                    setthisArray(sounds);
+                                }
 
-                                    window.scrollTo({
-                                        top: 150,
-                                        behavior: "smooth",
-                                    });
-                                }}
-                            >
-                                {tag}
-                                <span>({goodArrayTag[index]})</span>
-                            </button>
-                        </>
+                                window.scrollTo({
+                                    top: 150,
+                                    behavior: "smooth",
+                                });
+                            }}
+                        >
+                            {tag}
+                            <span>({goodArrayTag[index]})</span>
+                        </button>
                     ))}
                 </div>
                 <div style={{ textAlign: "center", fontSize: "1.5em" }}>

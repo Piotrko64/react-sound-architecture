@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+/* eslint-disable no-sequences */
+import { useState, useEffect, useMemo } from "react";
 import "../styles/ambience.scss";
 import ambienceback from "../img/ambience.webp";
 import Baner from "../components/baner";
@@ -31,7 +32,11 @@ function Ambience(): JSX.Element {
     // Search Tags
     let arrayToPush: Array<forAmbience> = [];
     let counterToPush = 0;
-
+    //Baner usememo
+    const BanerMemo = useMemo(
+        () => <Baner title="Ambience" image={ambienceback} />,
+        []
+    );
     // Function for counting iframes
     function counterAll() {
         mytags.forEach(
@@ -102,7 +107,7 @@ function Ambience(): JSX.Element {
                     content="Stereo recordings of various soundscapes featuring everday atmospheres and more exotic sound ambience. Sounds of white noise, rain, water waves, various fauna and flora and more, from different places on the world."
                 />
             </Helmet>
-            <Baner title="Ambience" image={ambienceback} />
+            {BanerMemo}
             <div
                 className="showtag"
                 onClick={() => {
@@ -125,75 +130,64 @@ function Ambience(): JSX.Element {
                 <div className="yt__tags">
                     {/* Tags */}
                     {mytags.map((tag: string, index: number) => (
-                        <>
-                            <button
-                                style={{
-                                    display:
-                                        goodArrayTag[index] === 0 ? "none" : "",
-                                }}
-                                className="yt__buttontag"
-                                key={index}
-                                onClick={() => {
-                                    buttonTag[index].classList.toggle(
-                                        "activetag"
-                                    );
+                        <button
+                            style={{
+                                display:
+                                    goodArrayTag[index] === 0 ? "none" : "",
+                            }}
+                            className="yt__buttontag"
+                            key={index}
+                            onClick={() => {
+                                buttonTag[index].classList.toggle("activetag");
 
-                                    if (arrayTag.indexOf(tag) === -1) {
-                                        arrayTag.push(tag);
-                                    } else {
-                                        deleteTag = arrayTag.indexOf(tag);
-                                        arrayTag.splice(deleteTag, 1);
-                                    }
-                                    console.log(arrayTag);
-                                    // // "for-for SA"
-                                    // Specific iframe display after selected tags. In order for the iframe to be displayed, it must have all tags selected by the user (array: "ArrayTag")
-                                    // After click in tag you can see in console selected tags
-                                    // So if you want listen something with wind theme you can click in this tag and you will see only iframe with wind motive. If you add for example waves tag website display only iframes which have motives with 'wind' AND 'waves'.
-                                    // In this case, iframes that contain only 'waves' will not be displayed
+                                if (arrayTag.indexOf(tag) === -1) {
+                                    arrayTag.push(tag);
+                                } else {
+                                    deleteTag = arrayTag.indexOf(tag);
+                                    arrayTag.splice(deleteTag, 1);
+                                }
+                                console.log(arrayTag);
+                                // // "for-for SA"
+                                // Specific iframe display after selected tags. In order for the iframe to be displayed, it must have all tags selected by the user (array: "ArrayTag")
+                                // After click in tag you can see in console selected tags
+                                // So if you want listen something with wind theme you can click in this tag and you will see only iframe with wind motive. If you add for example waves tag website display only iframes which have motives with 'wind' AND 'waves'.
+                                // In this case, iframes that contain only 'waves' will not be displayed
 
+                                for (let a = 0; a <= mymusic.length - 1; a++) {
+                                    counterToPush = 0;
                                     for (
-                                        let a = 0;
-                                        a <= mymusic.length - 1;
-                                        a++
+                                        let i = 0;
+                                        i <= arrayTag.length - 1;
+                                        i++
                                     ) {
-                                        counterToPush = 0;
-                                        for (
-                                            let i = 0;
-                                            i <= arrayTag.length - 1;
-                                            i++
+                                        if (
+                                            mymusic[a].tag.indexOf(
+                                                arrayTag[i]
+                                            ) !== -1
                                         ) {
-                                            if (
-                                                mymusic[a].tag.indexOf(
-                                                    arrayTag[i]
-                                                ) !== -1
-                                            ) {
-                                                counterToPush++;
-                                            }
-                                            if (
-                                                counterToPush ===
-                                                arrayTag.length
-                                            ) {
-                                                arrayToPush.push(mymusic[a]);
-                                            }
+                                            counterToPush++;
+                                        }
+                                        if (counterToPush === arrayTag.length) {
+                                            arrayToPush.push(mymusic[a]);
                                         }
                                     }
+                                }
 
-                                    if (arrayTag.length > 0) {
-                                        setthisArray(arrayToPush);
-                                    } else {
-                                        setthisArray(mymusic);
-                                    }
+                                if (arrayTag.length > 0) {
+                                    setthisArray(arrayToPush);
+                                } else {
+                                    setthisArray(mymusic);
+                                }
 
-                                    window.scrollTo({
-                                        top: 150,
-                                        behavior: "smooth",
-                                    });
-                                }}
-                            >
-                                {tag}
-                                <span>({goodArrayTag[index]})</span>
-                            </button>
-                        </>
+                                window.scrollTo({
+                                    top: 150,
+                                    behavior: "smooth",
+                                });
+                            }}
+                        >
+                            {tag}
+                            <span>({goodArrayTag[index]})</span>
+                        </button>
                     ))}
                 </div>
                 <div style={{ textAlign: "center", fontSize: "1.5em" }}>

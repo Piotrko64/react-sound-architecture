@@ -1,0 +1,223 @@
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
+
+.Sounds {
+    min-height: 500px;
+    .Sounds__grid {
+        display: grid;
+        grid-template-columns: 400px 400px 400px;
+        grid-auto-rows: auto;
+        margin-top: 40px;
+        max-width: 1280px;
+        padding-bottom: 40px;
+
+        justify-content: space-between;
+
+        margin-left: auto;
+        margin-right: auto;
+        grid-gap: 40px;
+        .Sounds__one {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            box-sizing: border-box;
+            position: relative;
+
+            iframe {
+                z-index: 9;
+                height: 400px;
+                width: 400px;
+                -webkit-box-shadow: 0px 0px 17px 14px rgba(0, 0, 0, 1);
+                -moz-box-shadow: 0px 0px 17px 14px rgba(0, 0, 0, 1);
+                box-shadow: 0px 0px 17px 14px rgba(0, 0, 0, 1);
+            }
+            .Sounds__tag {
+                display: block;
+
+                font-size: 0.9em;
+                justify-content: center;
+            }
+        }
+    }
+    .Sounds__tags {
+        transition: opacity 0.3s ease, max-height 0.4s ease;
+        opacity: 1;
+        max-height: 0px;
+
+        background: $black;
+        font-size: 0.8em;
+        display: none;
+        box-sizing: border-box;
+
+        justify-content: space-between;
+
+        color: white;
+        background: $black;
+        font-family: "Jost", sans-serif;
+        max-width: 1280px;
+        margin-left: auto;
+        margin-right: auto;
+
+        .activetag {
+            color: black;
+            background-color: white;
+        }
+        button {
+            background: transparent;
+            font-size: 24px;
+            padding-left: 20px;
+            padding-right: 20px;
+            border: none;
+            outline: none;
+            font-weight: 300;
+            font-family: "Jost", sans-serif;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: white;
+            border: 1px solid white;
+            margin: 0px 2px 2px 0px;
+            span {
+                font-size: 0.9em;
+
+                padding-left: 5px;
+                font-weight: 300;
+            }
+        }
+        button:hover {
+            color: grey;
+        }
+    }
+}
+
+@media (max-width: 1450px) {
+    .Sounds {
+        .Sounds__tags {
+            justify-content: space-between;
+            max-width: 1200px;
+
+            padding: 15px;
+
+            button {
+                background: transparent;
+                font-size: 24px;
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+        }
+        .Sounds__grid {
+            max-width: 1200px;
+            grid-gap: 20px;
+            .Sounds__one {
+                iframe {
+                    height: 380px;
+                    width: 380px;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 1300px) {
+    .Sounds {
+        .Sounds__grid {
+            max-width: 800px;
+            grid-gap: 40px;
+            grid-template-columns: 380px 380px;
+            justify-content: space-around;
+            .Sounds__one {
+                height: 380px;
+                width: 380px;
+                iframe {
+                    height: 380px;
+                    width: 380px;
+                }
+            }
+        }
+    }
+
+    .Sounds__tags {
+        max-width: 800px;
+        justify-content: space-between;
+        padding: 20px;
+    }
+}
+@media (max-width: 1000px) {
+    .Sounds {
+        .Sounds__tags {
+            justify-content: space-between;
+            padding: 20px;
+            grid-gap: 20px;
+        }
+        .Sounds__grid {
+            grid-template-columns: 400px;
+        }
+    }
+}
+@media (max-width: 800px) {
+    .Sounds {
+        .Sounds__tags {
+            justify-content: space-between;
+            padding: 0px;
+
+            button {
+                background: transparent;
+                font-size: 22px;
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+        }
+    }
+}
+@media (max-width: 500px) {
+    .Sounds {
+        .Sounds__tags {
+            max-width: 360px;
+
+            button {
+                background: transparent;
+                font-size: 22px;
+                padding-left: 10px;
+                padding-right: 10px;
+                text-align: right;
+            }
+        }
+        .Sounds__grid {
+            grid-template-columns: 360px;
+
+            .Sounds__one {
+                height: 360px;
+                width: 360px;
+                iframe {
+                    height: 360px;
+                    width: 360px;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 450px) {
+    .Sounds {
+        .Sounds__tags {
+            max-width: 310px;
+            margin-left: auto;
+            margin-right: auto;
+            button {
+                font-size: 20px;
+                padding-left: 5px;
+                padding-right: 5px;
+                border: 0.8px solid white;
+            }
+        }
+        .Sounds__grid {
+            .Sounds__one {
+                height: 310px;
+                width: 310px;
+                margin-left: auto;
+                margin-right: auto;
+                iframe {
+                    height: 310px;
+                    width: 310px;
+                }
+            }
+        }
+    }
+}

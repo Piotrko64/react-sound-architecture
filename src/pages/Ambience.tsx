@@ -1,5 +1,4 @@
-/* eslint-disable no-sequences */
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, useRef } from "react";
 
 import ambienceback from "../img/ambience.webp";
 import Baner from "../components/baner";
@@ -7,6 +6,7 @@ import arrow from "../img/arrow.png";
 import { Helmet } from "react-helmet";
 import { forAmbience } from "../typing/datatype";
 import { forforSA } from "./functions/forforSA";
+import Loading from "../components/Loading";
 
 //Selected user tags
 let arrayTag: Array<string> = [];
@@ -16,14 +16,9 @@ function Ambience(): JSX.Element {
     // useState
     let [mymusic, setmymusic] = useState<forAmbience[]>([]); // original array iframes
     let [thisArray, setthisArray] = useState<forAmbience[]>([]); // array to manipulate
-
+    let [error, seterror] = useState<Boolean>(false);
     let [mytags, setmytags] = useState<string[]>([]);
     let [goodArrayTag, setgoodArrayTag] = useState<Array<number>>([]);
-
-    // Html elements
-    let buttonTag: NodeListOf<HTMLButtonElement>;
-    let grid: HTMLElement;
-    let arrowshow: HTMLElement;
 
     // Others
     let counterTags: Array<number> = []; //Array to counting iframes
@@ -42,7 +37,8 @@ function Ambience(): JSX.Element {
                 (thisForEachTag = tag),
                 thisArray.forEach(
                     (mus: forAmbience) => (
-                        (thisForEachMusic = mus), thisForEachMusic.tag.indexOf(thisForEachTag) !== -1 ? counterForTag++ : false
+                        (thisForEachMusic = mus),
+                        thisForEachMusic.tag.indexOf(thisForEachTag) !== -1 ? counterForTag++ : false
                     )
                 ),
                 counterTags.push(counterForTag)
@@ -54,37 +50,42 @@ function Ambience(): JSX.Element {
 
     // Function to display section with tags
     function showGrid() {
-        grid.style.display = "block";
-        grid.style.opacity = "1";
-        grid.style.maxHeight = grid.scrollHeight + "px";
-        arrowshow.classList.add("active");
+        gridYT.style.display = "block";
+        gridYT.style.opacity = "1";
+        gridYT.style.maxHeight = gridYT.scrollHeight + "px";
+        arrowRef.classList.add("active");
     }
 
-    useEffect(() => {
-        // HTML elements
-        // I should use useRef but I would like check operation on the site with querySelector
-        buttonTag = document.querySelectorAll(".yt__buttontag")!;
-        grid = document.querySelector(".yt__tags")!;
-        arrowshow = document.querySelector(".showtag__img")!;
-    });
-
+    const buttonTagC = useRef<Array<any>>([])!;
+    const buttonTag = buttonTagC.current!;
+    const gridYTC = useRef<HTMLDivElement>(null)!;
+    const gridYT = gridYTC.current!;
+    const arrowRefC = useRef<HTMLImageElement>(null)!;
+    const arrowRef = arrowRefC.current!;
     useEffect(() => {
         // API AMBIENCE
         const apiambience: string = "https://apiforsa.herokuapp.com/read/onlyAMB";
         fetch(apiambience)
             .then((response) => response.json())
+            .catch(() => {
+                seterror(true);
+            })
             .then((data) => {
                 setthisArray(data.reverse());
                 setmymusic(data);
             });
         // API AMBIENCE only tags
-        const apiambiencetags = "https://apiforsa.herokuapp.com/read/tagsAMB";
+        const apiambiencetags: string = "https://apiforsa.herokuapp.com/read/tagsAMB";
         fetch(apiambiencetags)
             .then((response) => response.json())
+            .catch(() => {
+                seterror(true);
+            })
             .then((data) => {
                 setmytags(data);
                 counterAll();
             });
+
         counterAll();
     }, []);
     useEffect(() => {
@@ -105,22 +106,23 @@ function Ambience(): JSX.Element {
                 className="showtag"
                 onClick={() => {
                     // Collapse
-                    if (grid.style.display !== "block") {
+                    if (gridYT.style.display !== "block") {
                         showGrid();
                     } else {
-                        grid.style.opacity = "0";
-                        grid.style.maxHeight = "0px";
-                        arrowshow.classList.remove("active");
+                        gridYT.style.opacity = "0";
+                        gridYT.style.maxHeight = "0px";
+                        arrowRef.classList.remove("active");
                         setTimeout(() => {
-                            grid.style.display = "none";
+                            gridYT.style.display = "none";
                         }, 400);
                     }
                 }}
             >
-                Tags <img className="showtag__img" src={arrow} alt="" />
+                Tags <img className="showtag__img" src={arrow} alt="" ref={arrowRefC} />
             </div>
+            {error ? <div style={{ textAlign: "center" }}>Opss...We have problem to fetch a data!</div> : ""}
             <div>
-                <div className="yt__tags">
+                <div className="yt__tags" ref={gridYTC}>
                     {/* Tags */}
                     {mytags.map((tag: string, index: number) => (
                         <button
@@ -128,7 +130,11 @@ function Ambience(): JSX.Element {
                                 display: goodArrayTag[index] === 0 ? "none" : "",
                             }}
                             className="yt__buttontag"
-                            key={index}
+                            key={tag}
+                            ref={(el) => (buttonTagC.current[index] = el)}
+                            onLoad={() => {
+                                console.log("x");
+                            }}
                             onClick={() => {
                                 buttonTag[index].classList.toggle("activetag");
 
@@ -152,67 +158,61 @@ function Ambience(): JSX.Element {
                         </button>
                     ))}
                 </div>
-                <div style={{ textAlign: "center", fontSize: "1.5em" }}>{!thisArray ? "Loading..." : ""}</div>
+                <div style={{ textAlign: "center", fontSize: "1.5em" }}>
+                    {thisArray === [] ? "Loading..." : ""}
+                </div>
             </div>
 
             <div className="yt">
                 <div className="yt__allcontainer">
                     {thisArray.map((music: forAmbience) => (
-                        <>
-                            <div className="yt__container" key={music.Id}>
-                                <div className="yt__iframe">
-                                    <div className="loading">
-                                        <div className="loading__stripes">
-                                            <div className="loading__stripe loading__stripe--first"></div>
-                                            <div className="loading__stripe loading__stripe--second"></div>
-                                            <div className="loading__stripe loading__stripe--third"></div>
-                                        </div>
-                                    </div>
+                        <div className="yt__container" key={music.Id}>
+                            <div className="yt__iframe">
+                                <Loading />
 
-                                    <iframe
-                                        loading="lazy"
-                                        src={music.iframe}
-                                        title="YouTube video player"
-                                        frameBorder="0"
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                        allowFullScreen
-                                    ></iframe>
-                                </div>
-                                <div className="yt__describe">
-                                    <h4>{music.title}</h4>
-                                    <div className="yt__describesmall">{music.describe}</div>
-                                    {/* Tags under iframe */}
-                                    <div className="yt__tag">
-                                        {music.tag.map((tags) => (
-                                            <div
-                                                className="tag"
-                                                onClick={() => {
-                                                    showGrid();
-                                                    arrayTag = [tags];
+                                <iframe
+                                    loading="lazy"
+                                    src={music.iframe}
+                                    title="YouTube video player"
+                                    frameBorder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowFullScreen
+                                ></iframe>
+                            </div>
+                            <div className="yt__describe">
+                                <h4>{music.title}</h4>
+                                <div className="yt__describesmall">{music.describe}</div>
+                                {/* Tags under iframe */}
+                                <div className="yt__tag">
+                                    {music.tag.map((tags) => (
+                                        <div
+                                            className="tag"
+                                            onClick={() => {
+                                                showGrid();
+                                                arrayTag = [tags];
 
-                                                    forforSA(mymusic, arrayTag, setthisArray);
+                                                forforSA(mymusic, arrayTag, setthisArray);
 
-                                                    mytags.forEach((arr: string, index: number) => {
-                                                        buttonTag.forEach((el: HTMLElement) => {
-                                                            el.classList.remove("activetag");
-                                                        });
-                                                        setTimeout(() => {
-                                                            if (arr === tags) {
-                                                                buttonTag[index].classList.add("activetag");
-                                                            }
-                                                        }, 50);
+                                                mytags.forEach((arr: string, index: number) => {
+                                                    buttonTag.forEach((el: HTMLElement) => {
+                                                        el.classList.remove("activetag");
                                                     });
+                                                    setTimeout(() => {
+                                                        if (arr === tags) {
+                                                            buttonTag[index].classList.add("activetag");
+                                                        }
+                                                    }, 50);
+                                                });
 
-                                                    window.scrollTo(0, 0);
-                                                }}
-                                            >
-                                                #{tags}{" "}
-                                            </div>
-                                        ))}
-                                    </div>
+                                                window.scrollTo(0, 0);
+                                            }}
+                                        >
+                                            #{tags}{" "}
+                                        </div>
+                                    ))}
                                 </div>
                             </div>
-                        </>
+                        </div>
                     ))}
                 </div>
             </div>

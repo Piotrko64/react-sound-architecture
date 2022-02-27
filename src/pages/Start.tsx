@@ -1,6 +1,5 @@
 import arleft from "../img/leftar.webp";
 import arright from "../img/rightar.webp";
-
 import { Helmet } from "react-helmet";
 import { startDatabase } from "../data/dataSection/startSection";
 import Section from "../components/microComponentforStart/Section";

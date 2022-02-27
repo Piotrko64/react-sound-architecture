@@ -19,6 +19,7 @@ const SoundsEffects = () => {
     let [mytags, setmytags] = useState<string[]>([]); //original array of tags
     let [goodArrayTag, setgoodArrayTag] = useState<Array<number>>([]); // array tags to manipulate
 
+    let [error, seterror] = useState<Boolean>(false);
     // Html elements
     let buttonTag: NodeListOf<HTMLButtonElement>;
     let grid: HTMLElement;
@@ -40,7 +41,8 @@ const SoundsEffects = () => {
                 (thisForEachTag = tag),
                 thisArray.forEach(
                     (mus: forSounds) => (
-                        (thisForEachMusic = mus), thisForEachMusic.tag.indexOf(thisForEachTag) !== -1 ? counterForTag++ : false
+                        (thisForEachMusic = mus),
+                        thisForEachMusic.tag.indexOf(thisForEachTag) !== -1 ? counterForTag++ : false
                     )
                 ),
                 counterTags.push(counterForTag)
@@ -64,6 +66,9 @@ const SoundsEffects = () => {
         const apisounds: string = "https://apiforsa.herokuapp.com/read/onlySE";
         fetch(apisounds)
             .then((response) => response.json())
+            .catch(() => {
+                seterror(true);
+            })
             .then((data) => {
                 setthisArray(data.reverse());
                 setsounds(data);
@@ -124,7 +129,7 @@ const SoundsEffects = () => {
                                 display: goodArrayTag[index] === 0 ? "none" : "",
                             }}
                             className="Sound__buttontag"
-                            key={index}
+                            key={index + tag}
                             onClick={() => {
                                 buttonTag[index].classList.toggle("activetag");
 
@@ -134,10 +139,6 @@ const SoundsEffects = () => {
                                     deleteTag = arrayTag.indexOf(tag);
                                     arrayTag.splice(deleteTag, 1);
                                 }
-
-                                // Search Tags
-                                let counterToPush: number = 0;
-                                let arrayToPush: Array<forSounds> = [];
 
                                 console.log(arrayTag);
                                 // // "for-for SA"
@@ -154,10 +155,17 @@ const SoundsEffects = () => {
                         </button>
                     ))}
                 </div>
-                <div style={{ textAlign: "center", fontSize: "1.5em" }}>{!thisArray ? "Loading..." : ""}</div>
+                <div style={{ textAlign: "center", fontSize: "1.5em" }}>
+                    {thisArray === [] ? "Loading..." : ""}
+                </div>
+                {error ? (
+                    <div style={{ textAlign: "center" }}>Opss...We have problem to fetch a data!</div>
+                ) : (
+                    ""
+                )}
                 <div className="Sounds__grid">
                     {thisArray.map((sound: forSounds) => (
-                        <div className="Sounds__one">
+                        <div className="Sounds__one" key={sound.Id}>
                             <div className="loading">
                                 {/* Loading with css */}
                                 <div className="loading__stripes">
@@ -166,7 +174,13 @@ const SoundsEffects = () => {
                                     <div className="loading__stripe loading__stripe--third"></div>
                                 </div>
                             </div>
-                            <iframe title={sound.iframe} style={{ border: "0" }} loading="lazy" src={sound.iframe} seamless>
+                            <iframe
+                                title={sound.iframe}
+                                style={{ border: "0" }}
+                                loading="lazy"
+                                src={sound.iframe}
+                                seamless
+                            >
                                 <a href={sound.href}>{sound.title} </a>
                             </iframe>
                         </div>

@@ -1,0 +1,60 @@
+$lr: 50px;
+$lrmax: 80px;
+.loading {
+    background: black;
+    height: 100%;
+    width: 100%;
+    max-width: 580px;
+    position: absolute;
+    z-index: 8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .loading__stripes {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100px;
+        width: 100px;
+        .loading__stripe {
+            width: 8px;
+            height: 70px;
+            background-color: white;
+            margin: 4px;
+            border-radius: 10px;
+            animation: stripeslr 1s infinite;
+        }
+        .loading__stripe--second {
+            height: 100px;
+            animation: stripescenter 1s infinite ease-in-out;
+        }
+    }
+}
+@keyframes stripeslr {
+    0% {
+        height: $lr;
+    }
+    50% {
+        height: $lrmax;
+    }
+    100% {
+        height: $lr;
+    }
+}
+@keyframes stripescenter {
+    0% {
+        height: $lrmax;
+    }
+    50% {
+        height: $lr;
+    }
+    100% {
+        height: $lrmax;
+    }
+}
+@media (max-width: 1400px) {
+    .loading {
+        max-width: 630px;
+    }
+}

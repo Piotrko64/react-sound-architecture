@@ -1,12 +1,12 @@
 /* eslint-disable no-sequences */
 import { useState, useEffect, useMemo } from "react";
-import "../styles/ambience.scss";
+
 import ambienceback from "../img/ambience.webp";
 import Baner from "../components/baner";
 import arrow from "../img/arrow.png";
 import { Helmet } from "react-helmet";
 import { forAmbience } from "../typing/datatype";
-import { forforSA } from "./forforSA";
+import { forforSA } from "./functions/forforSA";
 
 //Selected user tags
 let arrayTag: Array<string> = [];
@@ -31,8 +31,7 @@ function Ambience(): JSX.Element {
     let thisForEachTag: string; // let for one tag
     let thisForEachMusic: forAmbience;
     // Search Tags
-    let arrayToPush: Array<forAmbience> = [];
-    let counterToPush = 0;
+
     //Baner usememo
     const BanerMemo = useMemo(() => <Baner title="Ambience" image={ambienceback} />, []);
     // Function for counting iframes
@@ -140,7 +139,7 @@ function Ambience(): JSX.Element {
                                     arrayTag.splice(deleteTag, 1);
                                 }
                                 console.log(arrayTag);
-                                forforSA(mymusic, counterToPush, arrayTag, arrayToPush, setthisArray);
+                                forforSA(mymusic, arrayTag, setthisArray);
 
                                 window.scrollTo({
                                     top: 150,
@@ -191,7 +190,7 @@ function Ambience(): JSX.Element {
                                                     showGrid();
                                                     arrayTag = [tags];
 
-                                                    forforSA(mymusic, counterToPush, arrayTag, arrayToPush, setthisArray);
+                                                    forforSA(mymusic, arrayTag, setthisArray);
 
                                                     mytags.forEach((arr: string, index: number) => {
                                                         buttonTag.forEach((el: HTMLElement) => {

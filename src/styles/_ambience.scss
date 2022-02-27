@@ -1,8 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Jost:wght@300;400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
 $black: #0f0f0f;
-$blue: #222222;
-$white: white;
 
 .yt {
     min-height: 500px;
@@ -118,7 +116,7 @@ $white: white;
 
     justify-content: space-between;
 
-    color: $white;
+    color: white;
     background: $black;
     font-family: "Jost", sans-serif;
     max-width: 1300px;

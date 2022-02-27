@@ -1,39 +1,33 @@
-$black: #000000;
-$gray: #0f0f0f;
-$white: white;
-$blacksecond: #110D0D;
-
-nav
-{
+nav {
     height: 85px;
     display: grid;
     grid-template-areas: "nav__ul logo hiperlinks";
     background-color: $black;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     box-sizing: border-box;
     position: fixed;
     width: 100%;
     z-index: 90;
-    color: $white;
-    
-    .nav__logo{
+    color: white;
+
+    .nav__logo {
         display: flex;
         justify-content: center;
         align-items: center;
         grid-area: logo;
     }
-    .nav__logoimg{
+    .nav__logoimg {
         height: 45px;
         margin: auto;
-    display: flex;
+        display: flex;
     }
-    .nav__hiperlinks{
+    .nav__hiperlinks {
         grid-area: hiperlinks;
         display: flex;
         justify-content: flex-end;
         align-items: center;
     }
-    ul{
+    ul {
         list-style-type: none;
         display: flex;
         justify-content: flex-start;
@@ -44,35 +38,33 @@ nav
         .nav__hiperplus {
             margin-top: 50px;
             align-items: center;
-        img {
-            height: 40px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0;
-        }}
-        
-        li{
-           
-            
+            img {
+                height: 40px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 0;
+            }
+        }
+
+        li {
             cursor: pointer;
             display: flex;
             justify-content: center;
             align-items: center;
             z-index: 99;
-            transition: all .2s ease ;
+            transition: all 0.2s ease;
             text-align: center;
             height: 100%;
             text-align: center;
-            
-            
-            a{
+
+            a {
                 text-decoration: none;
-                color: $white;
+                color: white;
                 width: 100%;
                 height: 100%;
                 padding-right: 15px;
-            padding-left: 15px;
+                padding-left: 15px;
                 cursor: pointer;
                 padding-top: 0px;
                 padding-bottom: 0px;
@@ -80,28 +72,24 @@ nav
                 cursor: pointer;
                 text-align: center;
                 display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: all .3s ease ;
-            
+                justify-content: center;
+                align-items: center;
+                transition: all 0.3s ease;
             }
-            a.active{
-                background: $gray;
+            a.active {
+                background: $black;
             }
         }
-        
-        
-        
-        .nav__hiperplus{
+
+        .nav__hiperplus {
             display: none;
             flex-direction: column;
-            img{
+            img {
                 padding-top: 20px;
             }
         }
     }
-    .nav__btn{
-        
+    .nav__btn {
         display: none;
         justify-content: space-between;
         height: 24px;
@@ -110,131 +98,113 @@ nav
         cursor: pointer;
         z-index: 99999;
         margin-top: auto;
-        margin-bottom: auto;;
-        
+        margin-bottom: auto;
 
-        .nav__line{
-            background: $white;
+        .nav__line {
+            background: white;
             border-radius: 3px;
             height: 2px;
             width: 30px;
-            transition: transform .3s ease, opacity .3s ease;
+            transition: transform 0.3s ease, opacity 0.3s ease;
         }
-        .nav__line--second{
+        .nav__line--second {
             width: 40px;
-            
         }
-        .nav__line--first{
+        .nav__line--first {
             transform-origin: top right;
         }
-        .nav__line--third{
+        .nav__line--third {
             transform-origin: bottom right;
         }
-        
-        
     }
     .nav__line--first.active {
-            
-        
         transform: rotate(-50deg);
-    
-}
+    }
     .nav__line--second.active {
-        
-    opacity: 0;
-
-}
+        opacity: 0;
+    }
     .nav__line--third.active {
-        
-        
         transform: rotate(50deg);
-
-}
-
-.nav__hiperlinks{
-    img{
-        height: 30px;
-        cursor: pointer;
-        padding-left: 25px;
-
     }
 
-a{
-    display: flex;
-}
-}
+    .nav__hiperlinks {
+        img {
+            height: 30px;
+            cursor: pointer;
+            padding-left: 25px;
+        }
+
+        a {
+            display: flex;
+        }
+    }
 }
 
-.hoverli{
-   
+.hoverli {
     position: absolute;
     box-sizing: border-box;
     transform-origin: right;
     top: 0px;
-    transition: left .3s ease, width .3s ease, opacity .3s ease-in-out ;
+    transition: left 0.3s ease, width 0.3s ease, opacity 0.3s ease-in-out;
     width: 10px;
     height: 3px;
     left: 100%;
     z-index: 99999;
-    color:white;
+    color: white;
     margin: auto;
-    background-color: $white;
+    background-color: white;
     transform: translateY(-100%);
- pointer-events: none;
- opacity: 0;
- 
+    pointer-events: none;
+    opacity: 0;
 }
-.on{
+.on {
     opacity: 1;
 }
 
-@media(max-width: 1000px) {
-    .hoverli{opacity:0}
-    nav{
+@media (max-width: 1000px) {
+    .hoverli {
+        opacity: 0;
+    }
+    nav {
         grid-template-areas: "nav__ul logo";
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns: repeat(2, 1fr);
         height: 60px;
-        .nav__logoimg{
+        .nav__logoimg {
             height: 40px;
-            
         }
-        .nav__ul{
+        .nav__ul {
             position: absolute;
             left: -430px;
-             flex-direction: column;
-             
-             background: $black;
-             height: 100vh;
-             transition: left .3s ease;
-             top: 0;
-             width: 400px;
-             justify-content: center;
-             li{
-                 height: 50px;
-             }
-             .nav__hiperplus{
+            flex-direction: column;
+
+            background: $black;
+            height: 100vh;
+            transition: left 0.3s ease;
+            top: 0;
+            width: 400px;
+            justify-content: center;
+            li {
+                height: 50px;
+            }
+            .nav__hiperplus {
                 display: flex;
             }
         }
-        .active{
+        .active {
             left: -30px;
-            
         }
-        .nav__btn{
+        .nav__btn {
             display: flex;
         }
-        .nav__hiperlinks{
+        .nav__hiperlinks {
             display: none;
-            
         }
-        .nav__logo{
+        .nav__logo {
             justify-content: flex-end;
         }
     }
-    
-        .off{
-            opacity: 1;
-        }
 
-    
+    .off {
+        opacity: 1;
+    }
 }

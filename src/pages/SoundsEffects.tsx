@@ -1,11 +1,11 @@
 import { useEffect, useMemo, useState } from "react";
 import Baner from "../components/baner";
-import "../styles/Sounds.scss";
-import "../styles/loading.scss";
+
 import arrow from "../img/arrow.png";
 import soundback from "../img/SFX.webp";
 import { Helmet } from "react-helmet";
 import { forSounds } from "../typing/datatype";
+import { forforSA } from "./functions/forforSA";
 
 //Selected user tags
 let arrayTag: Array<string> = [];
@@ -31,10 +31,7 @@ const SoundsEffects = () => {
     let thisForEachMusic: forSounds;
 
     //Baner usememo
-    const BanerMemo = useMemo(
-        () => <Baner title="Sound Libraries" image={soundback} />,
-        []
-    );
+    const BanerMemo = useMemo(() => <Baner title="Sound Libraries" image={soundback} />, []);
     // Function for counting iframes
     function counterAll() {
         mytags.forEach(
@@ -43,10 +40,7 @@ const SoundsEffects = () => {
                 (thisForEachTag = tag),
                 thisArray.forEach(
                     (mus: forSounds) => (
-                        (thisForEachMusic = mus),
-                        thisForEachMusic.tag.indexOf(thisForEachTag) !== -1
-                            ? counterForTag++
-                            : false
+                        (thisForEachMusic = mus), thisForEachMusic.tag.indexOf(thisForEachTag) !== -1 ? counterForTag++ : false
                     )
                 ),
                 counterTags.push(counterForTag)
@@ -75,8 +69,7 @@ const SoundsEffects = () => {
                 setsounds(data);
             });
         // API SE but only tags
-        const apiambiencetags: string =
-            "https://apiforsa.herokuapp.com/read/tagsSE";
+        const apiambiencetags: string = "https://apiforsa.herokuapp.com/read/tagsSE";
         fetch(apiambiencetags)
             .then((response) => response.json())
             .then((data) => {
@@ -128,8 +121,7 @@ const SoundsEffects = () => {
                     {mytags.map((tag: string, index: number) => (
                         <button
                             style={{
-                                display:
-                                    goodArrayTag[index] === 0 ? "none" : "",
+                                display: goodArrayTag[index] === 0 ? "none" : "",
                             }}
                             className="Sound__buttontag"
                             key={index}
@@ -149,35 +141,7 @@ const SoundsEffects = () => {
 
                                 console.log(arrayTag);
                                 // // "for-for SA"
-                                // Specific iframe display after selected tags. In order for the iframe to be displayed, it must have all tags selected by the user (array: "ArrayTag")
-                                // After click in tag you can see in console selected tags
-                                // So if you want listen something with wind theme you can click in this tag and you will see only iframe with wind motive. If you add for example waves tag website display only iframes which have motives with 'wind' AND 'waves'.
-                                // In this case, iframes that contain only 'waves' will not be displayed
-                                for (let a = 0; a <= sounds.length - 1; a++) {
-                                    counterToPush = 0;
-                                    for (
-                                        let i = 0;
-                                        i <= arrayTag.length - 1;
-                                        i++
-                                    ) {
-                                        if (
-                                            sounds[a].tag.indexOf(
-                                                arrayTag[i]
-                                            ) !== -1
-                                        ) {
-                                            counterToPush++;
-                                        }
-                                        if (counterToPush === arrayTag.length) {
-                                            arrayToPush.push(sounds[a]);
-                                        }
-                                    }
-                                }
-
-                                if (arrayTag.length > 0) {
-                                    setthisArray(arrayToPush);
-                                } else {
-                                    setthisArray(sounds);
-                                }
+                                forforSA(sounds, arrayTag, setthisArray);
 
                                 window.scrollTo({
                                     top: 150,
@@ -190,9 +154,7 @@ const SoundsEffects = () => {
                         </button>
                     ))}
                 </div>
-                <div style={{ textAlign: "center", fontSize: "1.5em" }}>
-                    {!thisArray ? "Loading..." : ""}
-                </div>
+                <div style={{ textAlign: "center", fontSize: "1.5em" }}>{!thisArray ? "Loading..." : ""}</div>
                 <div className="Sounds__grid">
                     {thisArray.map((sound: forSounds) => (
                         <div className="Sounds__one">
@@ -204,13 +166,7 @@ const SoundsEffects = () => {
                                     <div className="loading__stripe loading__stripe--third"></div>
                                 </div>
                             </div>
-                            <iframe
-                                title={sound.iframe}
-                                style={{ border: "0" }}
-                                loading="lazy"
-                                src={sound.iframe}
-                                seamless
-                            >
+                            <iframe title={sound.iframe} style={{ border: "0" }} loading="lazy" src={sound.iframe} seamless>
                                 <a href={sound.href}>{sound.title} </a>
                             </iframe>
                         </div>

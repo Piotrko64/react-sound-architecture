@@ -1,4 +1,4 @@
-import { SandA } from "./../typing/datatype";
+import { SandA } from "../../typing/datatype";
 import { Dispatch } from "react";
 
 // // "for-for SA"
@@ -7,13 +7,9 @@ import { Dispatch } from "react";
 // So if you want listen something with wind theme you can click in this tag and you will see only iframe with wind motive. If you add for example waves tag website display only iframes which have motives with 'wind' AND 'waves'.
 // In this case, iframes that contain only 'waves' will not be displayed
 
-export function forforSA(
-    originalArray: SandA,
-    counterToPush: number,
-    arrayTag: Array<string>,
-    arrayToPush: SandA,
-    statethisArray: Dispatch<React.SetStateAction<SandA>>
-) {
+export function forforSA(originalArray: SandA, arrayTag: Array<string>, statethisArray: Dispatch<React.SetStateAction<SandA>>) {
+    let arrayToPush: SandA = [];
+    let counterToPush = 0;
     for (let a = 0; a <= originalArray.length - 1; a++) {
         counterToPush = 0;
         for (let i = 0; i <= arrayTag.length - 1; i++) {

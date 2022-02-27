@@ -1,5 +1,4 @@
 import { Route, Switch } from "react-router-dom";
-import "../styles/main.scss";
 
 // pages
 import Start from "../pages/Start";

@@ -1,6 +1,5 @@
-$black: #000000;
 $white: white;
-$blacksecond: #0f0f0f;
+$black: #0f0f0f;
 .background {
     background-color: #0f0f0f;
     width: 100vw;
@@ -37,7 +36,7 @@ $blacksecond: #0f0f0f;
         width: 100%;
         max-width: 1300px;
         height: 100%;
-        background-color: $blacksecond;
+        background-color: $black;
         padding: 20px;
         display: flex;
         overflow: auto;

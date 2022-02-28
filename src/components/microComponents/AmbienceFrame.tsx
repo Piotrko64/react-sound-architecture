@@ -5,10 +5,11 @@ const AmbienceFrame = (props: {
     music: forAmbience;
     showGrid: () => void;
     forforSA: () => void;
+    arrayTag: (e: any) => void;
     mytags: string[];
     buttonTag: any;
 }) => {
-    const { music, showGrid, forforSA, mytags, buttonTag } = props;
+    const { music, showGrid, forforSA, arrayTag, mytags, buttonTag } = props;
     return (
         <div className="yt__container">
             <div className="yt__iframe">
@@ -33,7 +34,7 @@ const AmbienceFrame = (props: {
                             className="tag"
                             onClick={() => {
                                 showGrid();
-
+                                arrayTag(tags);
                                 forforSA();
 
                                 mytags.forEach((arr: string, index: number) => {

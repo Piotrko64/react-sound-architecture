@@ -162,6 +162,9 @@ function Ambience(): JSX.Element {
                                     forforSA(mymusic, arrayTag, setthisArray);
                                 }}
                                 mytags={mytags}
+                                arrayTag={(e) => {
+                                    arrayTag = [e];
+                                }}
                                 buttonTag={buttonTag}
                             />
                         </CSSTransition>

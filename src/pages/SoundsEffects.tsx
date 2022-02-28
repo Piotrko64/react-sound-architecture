@@ -1,11 +1,11 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, useRef } from "react";
 import Baner from "../components/baner";
-
 import arrow from "../img/arrow.png";
 import soundback from "../img/SFX.webp";
 import { Helmet } from "react-helmet";
 import { forSounds } from "../typing/datatype";
 import { forforSA } from "./functions/forforSA";
+import { showGrid } from "./functions/showGrid";
 
 //Selected user tags
 let arrayTag: Array<string> = [];
@@ -20,10 +20,6 @@ const SoundsEffects = () => {
     let [goodArrayTag, setgoodArrayTag] = useState<Array<number>>([]); // array tags to manipulate
 
     let [error, seterror] = useState<Boolean>(false);
-    // Html elements
-    let buttonTag: NodeListOf<HTMLButtonElement>;
-    let grid: HTMLElement;
-    let arrowshow: HTMLElement;
 
     // Others
     let counterTags: Array<number> = []; //Array to counting iframes
@@ -52,14 +48,12 @@ const SoundsEffects = () => {
         setgoodArrayTag(counterTags);
     }
 
-    useEffect(() => {
-        // HTML elements
-        // I should use useRef but I would like check operation on the site with querySelector
-
-        buttonTag = document.querySelectorAll(".Sound__buttontag");
-        grid = document.querySelector(".Sounds__tags")!;
-        arrowshow = document.querySelector(".showtag__img")!;
-    });
+    const buttonTagC = useRef<Array<any>>([])!;
+    const buttonTag = buttonTagC.current!;
+    const gridYTC = useRef<HTMLDivElement>(null)!;
+    const gridYT = gridYTC.current!;
+    const arrowRefC = useRef<HTMLImageElement>(null)!;
+    const arrowRef = arrowRefC.current!;
 
     useEffect(() => {
         // API SE
@@ -100,27 +94,14 @@ const SoundsEffects = () => {
             <div
                 className="showtag"
                 onClick={() => {
-                    // Collapse effect
-                    if (grid.style.display !== "block") {
-                        grid.style.display = "block";
-                        grid.style.opacity = "1";
-                        grid.style.maxHeight = grid.scrollHeight + "px";
-                        arrowshow.classList.add("active");
-                    } else {
-                        grid.style.opacity = "0";
-                        grid.style.maxHeight = "0px";
-                        arrowshow.classList.remove("active");
-                        setTimeout(() => {
-                            grid.style.display = "none";
-                        }, 400);
-                    }
+                    showGrid(true, gridYT, arrowRef);
                 }}
             >
-                Tags <img className="showtag__img" src={arrow} alt="" />
+                Tags <img className="showtag__img" src={arrow} alt="" ref={arrowRefC} />
             </div>
 
             <div className="Sounds padding">
-                <div className="Sounds__tags">
+                <div className="Sounds__tags" ref={gridYTC}>
                     {/* Display tags */}
 
                     {mytags.map((tag: string, index: number) => (
@@ -130,6 +111,7 @@ const SoundsEffects = () => {
                             }}
                             className="Sound__buttontag"
                             key={index + tag}
+                            ref={(el) => (buttonTagC.current[index] = el)}
                             onClick={() => {
                                 buttonTag[index].classList.toggle("activetag");
 

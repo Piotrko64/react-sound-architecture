@@ -1,12 +1,14 @@
 import { useState, useEffect, useMemo, useRef } from "react";
 
 import ambienceback from "../img/ambience.webp";
-import Baner from "../components/baner";
 import arrow from "../img/arrow.png";
+import Baner from "../components/baner";
+import Loading from "../components/Loading";
 import { Helmet } from "react-helmet";
 import { forAmbience } from "../typing/datatype";
 import { forforSA } from "./functions/forforSA";
-import Loading from "../components/Loading";
+
+import { showGrid } from "./functions/showGrid";
 
 //Selected user tags
 let arrayTag: Array<string> = [];
@@ -46,14 +48,6 @@ function Ambience(): JSX.Element {
         );
 
         setgoodArrayTag(counterTags);
-    }
-
-    // Function to display section with tags
-    function showGrid() {
-        gridYT.style.display = "block";
-        gridYT.style.opacity = "1";
-        gridYT.style.maxHeight = gridYT.scrollHeight + "px";
-        arrowRef.classList.add("active");
     }
 
     const buttonTagC = useRef<Array<any>>([])!;
@@ -106,16 +100,7 @@ function Ambience(): JSX.Element {
                 className="showtag"
                 onClick={() => {
                     // Collapse
-                    if (gridYT.style.display !== "block") {
-                        showGrid();
-                    } else {
-                        gridYT.style.opacity = "0";
-                        gridYT.style.maxHeight = "0px";
-                        arrowRef.classList.remove("active");
-                        setTimeout(() => {
-                            gridYT.style.display = "none";
-                        }, 400);
-                    }
+                    showGrid(true, gridYT, arrowRef);
                 }}
             >
                 Tags <img className="showtag__img" src={arrow} alt="" ref={arrowRefC} />
@@ -132,9 +117,6 @@ function Ambience(): JSX.Element {
                             className="yt__buttontag"
                             key={tag}
                             ref={(el) => (buttonTagC.current[index] = el)}
-                            onLoad={() => {
-                                console.log("x");
-                            }}
                             onClick={() => {
                                 buttonTag[index].classList.toggle("activetag");
 
@@ -188,7 +170,7 @@ function Ambience(): JSX.Element {
                                         <div
                                             className="tag"
                                             onClick={() => {
-                                                showGrid();
+                                                showGrid(false, gridYT, arrowRef);
                                                 arrayTag = [tags];
 
                                                 forforSA(mymusic, arrayTag, setthisArray);

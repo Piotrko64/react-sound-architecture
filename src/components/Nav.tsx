@@ -28,9 +28,17 @@ const Nav = () => {
 
         allli.forEach((li) => {
             li.addEventListener("mouseenter", () => {
-                let topli = li.getBoundingClientRect().top + li.getBoundingClientRect().height + window.scrollY + "px";
+                let topli =
+                    li.getBoundingClientRect().top +
+                    li.getBoundingClientRect().height +
+                    window.scrollY +
+                    "px";
                 document.addEventListener("scroll", () => {
-                    topli = li.getBoundingClientRect().top + li.getBoundingClientRect().height + window.scrollY + "px";
+                    topli =
+                        li.getBoundingClientRect().top +
+                        li.getBoundingClientRect().height +
+                        window.scrollY +
+                        "px";
                     newHover.style.top = topli;
                 });
                 const leftli = li.getBoundingClientRect().left + "px";
@@ -74,9 +82,7 @@ const Nav = () => {
                 </div>
                 <ul className="nav__ul">
                     <li>
-                        <a style={{ color: "gray" }} href="./">
-                            Music
-                        </a>
+                        <a style={{ color: "gray" }}>Music</a>
                     </li>
                     <li>
                         <NavLink to="/SoundEffects">Sound Effects</NavLink>
@@ -86,11 +92,19 @@ const Nav = () => {
                     </li>
 
                     <div className="nav__hiperplus">
-                        <a href="https://www.youtube.com/channel/UCseRS2xV0cIl4Mm44b4rqvw" target="_blank" rel="noreferrer">
+                        <a
+                            href="https://www.youtube.com/channel/UCseRS2xV0cIl4Mm44b4rqvw"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
                             <img src={ytlogo} alt="YouTube" />
                         </a>
                         <br></br>
-                        <a href="https://soundarchitecture.bandcamp.com/releases" target="_blank" rel="noreferrer">
+                        <a
+                            href="https://soundarchitecture.bandcamp.com/releases"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
                             <img src={bandlogo} alt="bandcamp Sound Architecture" />
                         </a>
                     </div>
@@ -113,10 +127,18 @@ const Nav = () => {
                 </div>
 
                 <div className="nav__hiperlinks">
-                    <a href="https://www.youtube.com/channel/UCseRS2xV0cIl4Mm44b4rqvw" target="_blank" rel="noreferrer">
+                    <a
+                        href="https://www.youtube.com/channel/UCseRS2xV0cIl4Mm44b4rqvw"
+                        target="_blank"
+                        rel="noreferrer"
+                    >
                         <img src={ytlogo} alt="youtube SA" />
                     </a>
-                    <a href="https://soundarchitecture.bandcamp.com/releases" target="_blank" rel="noreferrer">
+                    <a
+                        href="https://soundarchitecture.bandcamp.com/releases"
+                        target="_blank"
+                        rel="noreferrer"
+                    >
                         <img src={bandlogo} alt="bandcamp SA" />
                     </a>
                 </div>

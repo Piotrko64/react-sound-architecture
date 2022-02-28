@@ -1,4 +1,4 @@
-function Licence(props: any) {
+function Licence(props: { hideLicence: () => void }) {
     return (
         <>
             <div

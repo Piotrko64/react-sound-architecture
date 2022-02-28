@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
 
 import mylogo from "../img/logosawhite.webp";
@@ -6,27 +6,16 @@ import ytlogo from "../img/ytsmall.webp";
 import bandlogo from "../img/bandsmall.webp";
 
 const Nav = () => {
+    const ul = useRef<HTMLUListElement>(null);
+    const alli = useRef<Array<any>>([])!;
+    const btn = useRef<HTMLDivElement>(null)!;
+    const btnline = useRef<Array<any>>([])!;
+    // Underline for NAV
+    const [hover, sethover] = useState<boolean>(false);
+    const [where, setwhere] = useState<Object>({ top: "0px", left: "0px", width: "0px" });
+
     useEffect(() => {
-        // important
-        // white line under li
-        const newHover = document.createElement("div")!;
-        newHover.classList.add("hoverli");
-        document.body.appendChild(newHover);
-        // const
-        const ul = document.querySelector("ul")!;
-        const allli = document.querySelectorAll("li");
-
-        const btn = document.querySelector(".nav__btn")!;
-        const btnline = document.querySelectorAll(".nav__line")!;
-        //  newHoer on and off
-        ul.addEventListener("mouseover", () => {
-            newHover.classList.add("on");
-        });
-        ul.addEventListener("mouseout", () => {
-            newHover.classList.remove("on");
-        });
-
-        allli.forEach((li) => {
+        alli.current.forEach((li) => {
             li.addEventListener("mouseenter", () => {
                 let topli =
                     li.getBoundingClientRect().top +
@@ -39,14 +28,11 @@ const Nav = () => {
                         li.getBoundingClientRect().height +
                         window.scrollY +
                         "px";
-                    newHover.style.top = topli;
                 });
                 const leftli = li.getBoundingClientRect().left + "px";
                 const widthli = li.getBoundingClientRect().width + "px";
 
-                newHover.style.top = topli;
-                newHover.style.left = leftli;
-                newHover.style.width = widthli;
+                setwhere({ top: topli, left: leftli, width: widthli });
             });
 
             li.addEventListener("click", () => {
@@ -56,16 +42,16 @@ const Nav = () => {
 
         // function
         const toggleBTN = () => {
-            ul.classList.toggle("active");
-            btnline.forEach((line) => {
+            ul.current!.classList.toggle("active");
+            btnline.current!.forEach((line) => {
                 line.classList.toggle("active");
             });
         };
-        btn.addEventListener("click", toggleBTN);
-        allli.forEach((al) =>
+        btn.current!.addEventListener("click", toggleBTN);
+        alli.current.forEach((al) =>
             al.addEventListener("click", () => {
-                ul.classList.toggle("active");
-                btnline.forEach((line) => {
+                ul.current!.classList.toggle("active");
+                btnline.current!.forEach((line) => {
                     line.classList.toggle("active");
                 });
             })
@@ -73,21 +59,33 @@ const Nav = () => {
     }, []);
     return (
         <>
-            <div className="nav__paddingtop"></div>
             <nav className="nav padding">
-                <div className="nav__btn">
-                    <div className="nav__line nav__line--first"></div>
-                    <div className="nav__line nav__line--second"></div>
-                    <div className="nav__line nav__line--third"></div>
+                <div style={where} className={`${hover ? "hoverli on" : "hoverli"}`} id="underline"></div>
+                <div className="nav__btn" ref={btn}>
+                    <div className="nav__line nav__line--first" ref={(el) => (btnline.current[0] = el)}></div>
+                    <div
+                        className="nav__line nav__line--second"
+                        ref={(el) => (btnline.current[1] = el)}
+                    ></div>
+                    <div className="nav__line nav__line--third" ref={(el) => (btnline.current[2] = el)}></div>
                 </div>
-                <ul className="nav__ul">
-                    <li>
+                <ul
+                    className="nav__ul"
+                    ref={ul}
+                    onMouseOver={() => {
+                        sethover(true);
+                    }}
+                    onMouseOut={() => {
+                        sethover(false);
+                    }}
+                >
+                    <li ref={(el) => (alli.current[0] = el)}>
                         <a style={{ color: "gray" }}>Music</a>
                     </li>
-                    <li>
+                    <li ref={(el) => (alli.current[1] = el)}>
                         <NavLink to="/SoundEffects">Sound Effects</NavLink>
                     </li>
-                    <li>
+                    <li ref={(el) => (alli.current[2] = el)}>
                         <NavLink to="/Ambience">Ambience</NavLink>
                     </li>
 

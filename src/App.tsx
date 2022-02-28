@@ -20,7 +20,7 @@ function App() {
             <Router>
                 <Nav />
                 <Main />
-                <Footer showLicence={() => handleShowLicence()} hideLicence={() => handleHideLicence()} />
+                <Footer showLicence={() => handleShowLicence()} />
             </Router>
 
             {licence ? <Licence hideLicence={() => handleHideLicence()} /> : false}

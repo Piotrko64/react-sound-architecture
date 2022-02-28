@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
+import { forSounds } from "../../typing/datatype";
 const Band = ({ value }: { value: number }) => {
-    let [newAmb, setNewAmb] = useState<any[]>([
+    let [newAmb, setNewAmb] = useState<Partial<forSounds>[]>([
         {
             iframe: "https://bandcamp.com/EmbeddedPlayer/album=2608927152/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/transparent=true/",
             href: "https://soundarchitecture.bandcamp.com/album/windy-marina-ambience",

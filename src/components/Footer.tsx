@@ -4,7 +4,7 @@ import bigyt from "../img/yt.webp";
 import bigband from "../img/band.webp";
 import ReactTooltip from "react-tooltip";
 
-const Footer = (props: any) => {
+const Footer = (props: { showLicence: () => void }) => {
     const [iscopy, setiscopy] = useState("Click to copy");
 
     const copyText = () => {
@@ -21,7 +21,11 @@ const Footer = (props: any) => {
         <>
             <footer className="footer">
                 <div className="grid__up1">
-                    <a href="https://www.youtube.com/channel/UCseRS2xV0cIl4Mm44b4rqvw" target="_blank" rel="noreferrer">
+                    <a
+                        href="https://www.youtube.com/channel/UCseRS2xV0cIl4Mm44b4rqvw"
+                        target="_blank"
+                        rel="noreferrer"
+                    >
                         <img src={bigyt} alt="youtube Sound Architecture" />
                     </a>
                 </div>
@@ -51,7 +55,11 @@ const Footer = (props: any) => {
                     <ReactTooltip className="tooltip" getContent={() => `${iscopy}`} />
                 </div>
                 <div className="grid__up3">
-                    <a href="https://soundarchitecture.bandcamp.com/releases" target="_blank" rel="noreferrer">
+                    <a
+                        href="https://soundarchitecture.bandcamp.com/releases"
+                        target="_blank"
+                        rel="noreferrer"
+                    >
                         <img src={bigband} alt="Bandcamp" />
                     </a>
                 </div>

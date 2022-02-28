@@ -30,10 +30,35 @@ function Ambience(): JSX.Element {
     let counterForTag: number = 0; // let to counting single
     let thisForEachTag: string; // let for one tag
     let thisForEachMusic: forAmbience;
-    // Search Tags
+    // UseRef
+    const buttonTagC = useRef<Array<any>>([])!;
+    const buttonTag = buttonTagC.current!;
+    const gridYTC = useRef<HTMLDivElement>(null)!;
+    const gridYT = gridYTC.current!;
+    const arrowRefC = useRef<HTMLImageElement>(null)!;
+    const arrowRef = arrowRefC.current!;
 
     //Baner usememo
     const BanerMemo = useMemo(() => <Baner title="Ambience" image={ambienceback} />, []);
+
+    // Functions
+    function chooseButton(tag: string, index: number) {
+        buttonTag[index].classList.toggle("activetag");
+
+        if (arrayTag.indexOf(tag) === -1) {
+            arrayTag.push(tag);
+        } else {
+            deleteTag = arrayTag.indexOf(tag);
+            arrayTag.splice(deleteTag, 1);
+        }
+        console.log(arrayTag);
+        forforSA(mymusic, arrayTag, setthisArray);
+
+        window.scrollTo({
+            top: 150,
+            behavior: "smooth",
+        });
+    }
     // Function for counting iframes
     function counterAll() {
         mytags.forEach(
@@ -53,12 +78,6 @@ function Ambience(): JSX.Element {
         setgoodArrayTag(counterTags);
     }
 
-    const buttonTagC = useRef<Array<any>>([])!;
-    const buttonTag = buttonTagC.current!;
-    const gridYTC = useRef<HTMLDivElement>(null)!;
-    const gridYT = gridYTC.current!;
-    const arrowRefC = useRef<HTMLImageElement>(null)!;
-    const arrowRef = arrowRefC.current!;
     useEffect(() => {
         // API AMBIENCE
         const apiambience: string = "https://apiforsa.herokuapp.com/read/onlyAMB";
@@ -121,21 +140,7 @@ function Ambience(): JSX.Element {
                             key={tag}
                             ref={(el) => (buttonTagC.current[index] = el)}
                             onClick={() => {
-                                buttonTag[index].classList.toggle("activetag");
-
-                                if (arrayTag.indexOf(tag) === -1) {
-                                    arrayTag.push(tag);
-                                } else {
-                                    deleteTag = arrayTag.indexOf(tag);
-                                    arrayTag.splice(deleteTag, 1);
-                                }
-                                console.log(arrayTag);
-                                forforSA(mymusic, arrayTag, setthisArray);
-
-                                window.scrollTo({
-                                    top: 150,
-                                    behavior: "smooth",
-                                });
+                                chooseButton(tag, index);
                             }}
                         >
                             {tag}

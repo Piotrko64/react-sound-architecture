@@ -132,7 +132,7 @@ const SoundsEffects = () => {
                                 display: goodArrayTag[index] === 0 ? "none" : "",
                             }}
                             className="Sound__buttontag"
-                            key={index + tag}
+                            key={tag}
                             ref={(el) => (buttonTagC.current[index] = el)}
                             onClick={() => {
                                 chooseButton(tag, index);
@@ -154,7 +154,7 @@ const SoundsEffects = () => {
                 <TransitionGroup className="Sounds__grid">
                     {thisArray.map((sound: forSounds) => (
                         <CSSTransition in={true} key={sound.Id} timeout={100} classNames="show">
-                            <SoundFrame sound={sound} />
+                            <SoundFrame sound={sound} key={sound.Id} />
                         </CSSTransition>
                     ))}
                 </TransitionGroup>

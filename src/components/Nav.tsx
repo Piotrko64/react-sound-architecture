@@ -39,24 +39,7 @@ const Nav = () => {
                 window.scroll(0, 0);
             });
         });
-
-        // function
-        const toggleBTN = () => {
-            ul.current!.classList.toggle("active");
-            btnline.current!.forEach((line) => {
-                line.classList.toggle("active");
-            });
-        };
-        btn.current!.addEventListener("click", toggleBTN);
-        alli.current.forEach((al) =>
-            al.addEventListener("click", () => {
-                ul.current!.classList.toggle("active");
-                btnline.current!.forEach((line) => {
-                    line.classList.toggle("active");
-                });
-            })
-        );
-    }, []);
+    }, [alli]);
     return (
         <>
             <nav className="nav padding">

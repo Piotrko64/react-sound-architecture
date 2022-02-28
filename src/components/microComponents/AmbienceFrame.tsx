@@ -31,6 +31,7 @@ const AmbienceFrame = (props: {
                 <div className="yt__tag">
                     {music.tag.map((tags: any) => (
                         <div
+                            key={tags}
                             className="tag"
                             onClick={() => {
                                 showGrid();

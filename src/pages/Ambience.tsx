@@ -1,14 +1,17 @@
 import { useState, useEffect, useMemo, useRef } from "react";
 
+import { TransitionGroup, CSSTransition } from "react-transition-group";
+
 import ambienceback from "../img/ambience.webp";
 import arrow from "../img/arrow.png";
 import Baner from "../components/baner";
-import Loading from "../components/Loading";
+
 import { Helmet } from "react-helmet";
 import { forAmbience } from "../typing/datatype";
 import { forforSA } from "./functions/forforSA";
 
 import { showGrid } from "./functions/showGrid";
+import AmbienceFrame from "../components/microComponents/AmbienceFrame";
 
 //Selected user tags
 let arrayTag: Array<string> = [];
@@ -146,57 +149,24 @@ function Ambience(): JSX.Element {
             </div>
 
             <div className="yt">
-                <div className="yt__allcontainer">
+                <TransitionGroup className="yt__allcontainer">
                     {thisArray.map((music: forAmbience) => (
-                        <div className="yt__container" key={music.Id}>
-                            <div className="yt__iframe">
-                                <Loading />
-
-                                <iframe
-                                    loading="lazy"
-                                    src={music.iframe}
-                                    title="YouTube video player"
-                                    frameBorder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowFullScreen
-                                ></iframe>
-                            </div>
-                            <div className="yt__describe">
-                                <h4>{music.title}</h4>
-                                <div className="yt__describesmall">{music.describe}</div>
-                                {/* Tags under iframe */}
-                                <div className="yt__tag">
-                                    {music.tag.map((tags) => (
-                                        <div
-                                            className="tag"
-                                            onClick={() => {
-                                                showGrid(false, gridYT, arrowRef);
-                                                arrayTag = [tags];
-
-                                                forforSA(mymusic, arrayTag, setthisArray);
-
-                                                mytags.forEach((arr: string, index: number) => {
-                                                    buttonTag.forEach((el: HTMLElement) => {
-                                                        el.classList.remove("activetag");
-                                                    });
-                                                    setTimeout(() => {
-                                                        if (arr === tags) {
-                                                            buttonTag[index].classList.add("activetag");
-                                                        }
-                                                    }, 50);
-                                                });
-
-                                                window.scrollTo(0, 0);
-                                            }}
-                                        >
-                                            #{tags}{" "}
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                        </div>
+                        <CSSTransition in={true} key={music.Id} timeout={100} classNames="show">
+                            <AmbienceFrame
+                                key={music.Id}
+                                music={music}
+                                showGrid={() => {
+                                    showGrid(false, gridYT, arrowRef);
+                                }}
+                                forforSA={() => {
+                                    forforSA(mymusic, arrayTag, setthisArray);
+                                }}
+                                mytags={mytags}
+                                buttonTag={buttonTag}
+                            />
+                        </CSSTransition>
                     ))}
-                </div>
+                </TransitionGroup>
             </div>
         </>
     );

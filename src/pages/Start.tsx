@@ -23,9 +23,7 @@ const Start = () => {
                 </div>
                 <div className="Start__content">
                     {startDatabase.map((e) => (
-                        <>
-                            <Section value={e} />
-                        </>
+                        <Section value={e} key={e.url} />
                     ))}
                 </div>
                 <div className="Prefooter">

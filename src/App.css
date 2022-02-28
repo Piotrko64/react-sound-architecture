@@ -20,6 +20,40 @@ body::-webkit-scrollbar-thumb {
 .tag {
     cursor: pointer;
 }
+
+/* CSS TRANSITION GROUP */
+/* appear */
+.show-appear {
+    opacity: 0.5;
+    transform: scale(0.95);
+}
+.show-appear-done {
+    opacity: 1;
+}
+/* enter */
+.show-enter {
+    opacity: 0.5;
+    transform: scale(0.95);
+}
+.show-enter-done {
+    opacity: 1;
+    transition: all 100ms ease;
+}
+/* exit */
+.show-exit {
+    opacity: 1;
+    transition: all 100ms ease;
+}
+.show-exit-active {
+    opacity: 0.5;
+    transform: scale(0.95);
+    transition: all 100ms ease;
+}
+.show-exit-done {
+    opacity: 0.5;
+    transform: scale(0.95);
+}
+/* MEDIA QUERIES */
 @media (max-width: 1400px) {
     .padding {
         padding-left: 25px;

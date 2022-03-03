@@ -30,7 +30,7 @@ const Footer = (props: { showLicence: () => void }) => {
                     </a>
                 </div>
                 <div className="grid__up2">
-                    {/* <div className="grid__underline">Politics private</div>  */}
+                    
 
                     <div
                         className="grid__underline"

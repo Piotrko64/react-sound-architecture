@@ -8,6 +8,7 @@ import { forSounds } from "../typing/datatype";
 import { forforSA } from "./functions/forforSA";
 import { showGrid } from "./functions/showGrid";
 import SoundFrame from "../components/microComponents/SoundFrame";
+import { counterAll } from "./functions/counterAll";
 
 //Selected user tags
 let arrayTag: Array<string> = [];
@@ -22,12 +23,6 @@ const SoundsEffects = () => {
     let [goodArrayTag, setgoodArrayTag] = useState<Array<number>>([]); // array tags to manipulate
 
     let [error, seterror] = useState<Boolean>(false);
-
-    // Others
-    let counterTags: Array<number> = []; //Array to counting iframes
-    let counterForTag: number = 0; // let to counting single
-    let thisForEachTag: string; // let for one tag
-    let thisForEachMusic: forSounds;
 
     // useRef
     const buttonTagC = useRef<Array<any>>([])!;
@@ -58,24 +53,6 @@ const SoundsEffects = () => {
             behavior: "smooth",
         });
     }
-    // Function for counting iframes
-    function counterAll() {
-        mytags.forEach(
-            (tag: string) => (
-                (counterForTag = 0),
-                (thisForEachTag = tag),
-                thisArray.forEach(
-                    (mus: forSounds) => (
-                        (thisForEachMusic = mus),
-                        thisForEachMusic.tag.indexOf(thisForEachTag) !== -1 ? counterForTag++ : false
-                    )
-                ),
-                counterTags.push(counterForTag)
-            )
-        );
-
-        setgoodArrayTag(counterTags);
-    }
 
     useEffect(() => {
         // API SE
@@ -95,12 +72,12 @@ const SoundsEffects = () => {
             .then((response) => response.json())
             .then((data) => {
                 setmytags(data);
-                counterAll();
+                counterAll(mytags, thisArray, setgoodArrayTag);
             });
-        counterAll();
+        counterAll(mytags, thisArray, setgoodArrayTag);
     }, []);
     useEffect(() => {
-        counterAll();
+        counterAll(mytags, thisArray, setgoodArrayTag);
     }, [thisArray, sounds, mytags]);
 
     return (

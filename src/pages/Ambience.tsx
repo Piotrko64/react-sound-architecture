@@ -12,6 +12,7 @@ import { forforSA } from "./functions/forforSA";
 
 import { showGrid } from "./functions/showGrid";
 import AmbienceFrame from "../components/microComponents/AmbienceFrame";
+import { counterAll } from "./functions/counterAll";
 
 //Selected user tags
 let arrayTag: Array<string> = [];
@@ -25,11 +26,6 @@ function Ambience(): JSX.Element {
     let [mytags, setmytags] = useState<string[]>([]);
     let [goodArrayTag, setgoodArrayTag] = useState<Array<number>>([]);
 
-    // Others
-    let counterTags: Array<number> = []; //Array to counting iframes
-    let counterForTag: number = 0; // let to counting single
-    let thisForEachTag: string; // let for one tag
-    let thisForEachMusic: forAmbience;
     // UseRef
     const buttonTagC = useRef<Array<any>>([])!;
     const buttonTag = buttonTagC.current!;
@@ -59,24 +55,6 @@ function Ambience(): JSX.Element {
             behavior: "smooth",
         });
     }
-    // Function for counting iframes
-    function counterAll() {
-        mytags.forEach(
-            (tag: string) => (
-                (counterForTag = 0),
-                (thisForEachTag = tag),
-                thisArray.forEach(
-                    (mus: forAmbience) => (
-                        (thisForEachMusic = mus),
-                        thisForEachMusic.tag.indexOf(thisForEachTag) !== -1 ? counterForTag++ : false
-                    )
-                ),
-                counterTags.push(counterForTag)
-            )
-        );
-
-        setgoodArrayTag(counterTags);
-    }
 
     useEffect(() => {
         // API AMBIENCE
@@ -99,13 +77,13 @@ function Ambience(): JSX.Element {
             })
             .then((data) => {
                 setmytags(data);
-                counterAll();
+                counterAll(mytags, thisArray, setgoodArrayTag);
             });
 
-        counterAll();
+        counterAll(mytags, thisArray, setgoodArrayTag);
     }, []);
     useEffect(() => {
-        counterAll();
+        counterAll(mytags, thisArray, setgoodArrayTag);
     }, [thisArray, mymusic, mytags]);
 
     return (

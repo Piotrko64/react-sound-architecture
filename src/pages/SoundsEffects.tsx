@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState, useRef } from "react";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
-import Baner from "../components/baner";
+import Baner from "../components/microComponents/baner";
 import arrow from "../img/arrow.png";
 import soundback from "../img/SFX.webp";
 import { Helmet } from "react-helmet";

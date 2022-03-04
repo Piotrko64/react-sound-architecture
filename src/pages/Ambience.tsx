@@ -4,7 +4,7 @@ import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 import ambienceback from "../img/ambience.webp";
 import arrow from "../img/arrow.png";
-import Baner from "../components/baner";
+import Baner from "../components/microComponents/baner";
 
 import { Helmet } from "react-helmet";
 import { forAmbience } from "../typing/datatype";

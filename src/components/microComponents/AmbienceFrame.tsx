@@ -1,13 +1,13 @@
 import { forAmbience } from "../../typing/datatype";
-import Loading from "../Loading";
+import Loading from "./Loading";
 
 const AmbienceFrame = (props: {
     music: forAmbience;
     showGrid: () => void;
     forforSA: () => void;
-    arrayTag: (e: any) => void;
+    arrayTag: (e: string) => void;
     mytags: string[];
-    buttonTag: any;
+    buttonTag: HTMLButtonElement[];
 }) => {
     const { music, showGrid, forforSA, arrayTag, mytags, buttonTag } = props;
     return (
@@ -29,7 +29,7 @@ const AmbienceFrame = (props: {
                 <div className="yt__describesmall">{music.describe}</div>
                 {/* Tags under iframe */}
                 <div className="yt__tag">
-                    {music.tag.map((tags: any) => (
+                    {music.tag.map((tags: string) => (
                         <div
                             key={tags}
                             className="tag"

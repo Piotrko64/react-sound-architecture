@@ -5,7 +5,7 @@ function Licence(props: { hideLicence: () => void }) {
                 className="background"
                 onClick={() => {
                     props.hideLicence();
-                    console.log("xs");
+                    
                 }}
             ></div>
             <div className="Licence">

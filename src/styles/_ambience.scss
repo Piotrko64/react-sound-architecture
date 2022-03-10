@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Jost:wght@300;400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
 
-
 .yt {
     min-height: 500px;
     background: $black;
@@ -87,6 +86,7 @@
         .yt__tag {
             margin-top: 40px;
             display: flex;
+            flex-flow: row wrap;
             padding-top: 10px;
             padding-bottom: 10px;
             border-top: 1.5px solid white;

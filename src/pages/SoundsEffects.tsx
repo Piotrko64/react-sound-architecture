@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState, useRef } from "react";
-import { TransitionGroup, CSSTransition } from "react-transition-group";
+
 import Baner from "../components/microComponents/baner";
 import arrow from "../img/arrow.png";
 import soundback from "../img/SFX.webp";
@@ -128,13 +128,11 @@ const SoundsEffects = () => {
                 ) : (
                     ""
                 )}
-                <TransitionGroup className="Sounds__grid">
+                <div className="Sounds__grid">
                     {thisArray.map((sound: forSounds) => (
-                        <CSSTransition in={true} key={sound.Id} timeout={100} classNames="show">
-                            <SoundFrame sound={sound} key={sound.Id} />
-                        </CSSTransition>
+                        <SoundFrame sound={sound} key={sound.Id} />
                     ))}
-                </TransitionGroup>
+                </div>
             </div>
         </>
     );

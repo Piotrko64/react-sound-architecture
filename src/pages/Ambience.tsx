@@ -1,7 +1,5 @@
 import { useState, useEffect, useMemo, useRef } from "react";
 
-import { TransitionGroup, CSSTransition } from "react-transition-group";
-
 import ambienceback from "../img/ambience.webp";
 import arrow from "../img/arrow.png";
 import Baner from "../components/microComponents/baner";
@@ -132,27 +130,25 @@ function Ambience(): JSX.Element {
             </div>
 
             <div className="yt">
-                <TransitionGroup className="yt__allcontainer">
+                <div className="yt__allcontainer">
                     {thisArray.map((music: forAmbience) => (
-                        <CSSTransition in={true} key={music.Id} timeout={100} classNames="show">
-                            <AmbienceFrame
-                                key={music.Id}
-                                music={music}
-                                showGrid={() => {
-                                    showGrid(false, gridYT, arrowRef);
-                                }}
-                                forforSA={() => {
-                                    forforSA(mymusic, arrayTag, setthisArray);
-                                }}
-                                mytags={mytags}
-                                arrayTag={(e) => {
-                                    arrayTag = [e];
-                                }}
-                                buttonTag={buttonTag}
-                            />
-                        </CSSTransition>
+                        <AmbienceFrame
+                            key={music.Id}
+                            music={music}
+                            showGrid={() => {
+                                showGrid(false, gridYT, arrowRef);
+                            }}
+                            forforSA={() => {
+                                forforSA(mymusic, arrayTag, setthisArray);
+                            }}
+                            mytags={mytags}
+                            arrayTag={(e) => {
+                                arrayTag = [e];
+                            }}
+                            buttonTag={buttonTag}
+                        />
                     ))}
-                </TransitionGroup>
+                </div>
             </div>
         </>
     );

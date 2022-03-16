@@ -9,7 +9,8 @@ const Start = () => {
         <>
             <Helmet>
                 <title>Sound Architecture</title>
-                <meta name="description" content="SA" />
+                <meta name="description" content="Welcome I share here my own sound libraries which you can check out on bandcamp: https://soundarchitecture.bandcamp.com
+I would like to upload more complex ambiance videos in the future which would consist of greater number of different tracks and sound effects to design true ambience." />
             </Helmet>
             <div className="Start ">
                 <div className="Start__background padding">

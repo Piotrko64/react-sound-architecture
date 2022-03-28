@@ -7,7 +7,6 @@ import bandlogo from "../img/bandsmall.webp";
 
 const Nav = () => {
     useEffect(() => {
-        // important
         // white line under li
         const newHover = document.createElement("div")!;
         newHover.classList.add("hoverli");
@@ -18,7 +17,7 @@ const Nav = () => {
 
         const btn = document.querySelector(".nav__btn")!;
         const btnline = document.querySelectorAll(".nav__line")!;
-        //  newHoer on and off
+        //  newHover on and off
         ul.addEventListener("mouseover", () => {
             newHover.classList.add("on");
         });

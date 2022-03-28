@@ -9,6 +9,7 @@ import { forforSA } from "./functions/forforSA";
 import { showGrid } from "./functions/showGrid";
 import SoundFrame from "../components/microComponents/SoundFrame";
 import { counterAll } from "./functions/counterAll";
+import { SE, tagsSE } from "../data/dataApi/api";
 
 //Selected user tags
 let arrayTag: Array<string> = [];
@@ -16,13 +17,13 @@ let deleteTag: number;
 
 const SoundsEffects = () => {
     // useState
-    let [sounds, setsounds] = useState<forSounds[]>([]); // original array iframes
-    let [thisArray, setthisArray] = useState<forSounds[]>([]); // array to manipulate
+    let [sounds, setSounds] = useState<forSounds[]>([]); // original array iframes
+    let [thisArray, setThisArray] = useState<forSounds[]>([]); // array to manipulate
 
-    let [mytags, setmytags] = useState<string[]>([]); //original array of tags
-    let [goodArrayTag, setgoodArrayTag] = useState<Array<number>>([]); // array tags to manipulate
+    let [myTags, setMyTags] = useState<string[]>([]); //original array of tags
+    let [goodArrayTag, setGoodArrayTag] = useState<Array<number>>([]); // array tags to manipulate
 
-    let [error, seterror] = useState<Boolean>(false);
+    let [error, setError] = useState<Boolean>(false);
 
     // useRef
     const buttonTagC = useRef<Array<any>>([])!;
@@ -46,7 +47,7 @@ const SoundsEffects = () => {
             arrayTag.splice(deleteTag, 1);
         }
         console.log(arrayTag);
-        forforSA(sounds, arrayTag, setthisArray);
+        forforSA(sounds, arrayTag, setThisArray);
 
         window.scrollTo({
             top: 150,
@@ -56,29 +57,29 @@ const SoundsEffects = () => {
 
     useEffect(() => {
         // API SE
-        const apisounds: string = "https://apiforsa.herokuapp.com/read/onlySE";
+        const apisounds: string = SE;
         fetch(apisounds)
             .then((response) => response.json())
             .catch(() => {
-                seterror(true);
+                setError(true);
             })
             .then((data) => {
-                setthisArray(data.reverse());
-                setsounds(data);
+                setThisArray(data.reverse());
+                setSounds(data);
             });
         // API SE but only tags
-        const apiambiencetags: string = "https://apiforsa.herokuapp.com/read/tagsSE";
+        const apiambiencetags: string = tagsSE;
         fetch(apiambiencetags)
             .then((response) => response.json())
             .then((data) => {
-                setmytags(data);
-                counterAll(mytags, thisArray, setgoodArrayTag);
+                setMyTags(data);
+                counterAll(myTags, thisArray, setGoodArrayTag);
             });
-        counterAll(mytags, thisArray, setgoodArrayTag);
+        counterAll(myTags, thisArray, setGoodArrayTag);
     }, []);
     useEffect(() => {
-        counterAll(mytags, thisArray, setgoodArrayTag);
-    }, [thisArray, sounds, mytags]);
+        counterAll(myTags, thisArray, setGoodArrayTag);
+    }, [thisArray, sounds, myTags]);
 
     return (
         <>
@@ -103,7 +104,7 @@ const SoundsEffects = () => {
                 <div className="Sounds__tags" ref={gridYTC}>
                     {/* Display tags */}
 
-                    {mytags.map((tag: string, index: number) => (
+                    {myTags.map((tag: string, index: number) => (
                         <button
                             style={{
                                 display: goodArrayTag[index] === 0 ? "none" : "",

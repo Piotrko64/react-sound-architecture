@@ -2,18 +2,18 @@ import React, { useState } from "react";
 import Nav from "./components/Nav";
 import Main from "./components/Main";
 import Footer from "./components/Footer";
-import "./App.css";
+import "./App.scss";
 import "./index.scss";
 import { BrowserRouter as Router } from "react-router-dom";
 import Licence from "./components/forFooter";
 
 function App() {
-    const [licence, setlicence] = useState(false);
+    const [licence, setLicence] = useState(false);
     const handleShowLicence = () => {
-        setlicence(true);
+        setLicence(true);
     };
     const handleHideLicence = () => {
-        setlicence(false);
+        setLicence(false);
     };
     return (
         <div>

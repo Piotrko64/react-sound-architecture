@@ -11,6 +11,7 @@ import { forforSA } from "./functions/forforSA";
 import { showGrid } from "./functions/showGrid";
 import AmbienceFrame from "../components/microComponents/AmbienceFrame";
 import { counterAll } from "./functions/counterAll";
+import { AMB, tagsAMB } from "../data/dataApi/api";
 
 //Selected user tags
 let arrayTag: Array<string> = [];
@@ -18,11 +19,11 @@ let deleteTag: number;
 
 function Ambience(): JSX.Element {
     // useState
-    let [mymusic, setmymusic] = useState<forAmbience[]>([]); // original array iframes
-    let [thisArray, setthisArray] = useState<forAmbience[]>([]); // array to manipulate
-    let [error, seterror] = useState<Boolean>(false);
-    let [mytags, setmytags] = useState<string[]>([]);
-    let [goodArrayTag, setgoodArrayTag] = useState<Array<number>>([]);
+    let [myMusic, setMyMusic] = useState<forAmbience[]>([]); // original array iframes
+    let [thisArray, setThisArray] = useState<forAmbience[]>([]); // array to manipulate
+    let [error, setError] = useState<Boolean>(false);
+    let [myTags, setMyTags] = useState<string[]>([]);
+    let [goodArrayTag, setGoodArrayTag] = useState<Array<number>>([]);
 
     // UseRef
     const buttonTagC = useRef<Array<any>>([])!;
@@ -46,7 +47,7 @@ function Ambience(): JSX.Element {
             arrayTag.splice(deleteTag, 1);
         }
         console.log(arrayTag);
-        forforSA(mymusic, arrayTag, setthisArray);
+        forforSA(myMusic, arrayTag, setThisArray);
 
         window.scrollTo({
             top: 150,
@@ -56,33 +57,33 @@ function Ambience(): JSX.Element {
 
     useEffect(() => {
         // API AMBIENCE
-        const apiambience: string = "https://apiforsa.herokuapp.com/read/onlyAMB";
+        const apiambience: string = AMB;
         fetch(apiambience)
             .then((response) => response.json())
             .catch(() => {
-                seterror(true);
+                setError(true);
             })
             .then((data) => {
-                setthisArray(data.reverse());
-                setmymusic(data);
+                setThisArray(data.reverse());
+                setMyMusic(data);
             });
         // API AMBIENCE only tags
-        const apiambiencetags: string = "https://apiforsa.herokuapp.com/read/tagsAMB";
+        const apiambiencetags: string = tagsAMB;
         fetch(apiambiencetags)
             .then((response) => response.json())
             .catch(() => {
-                seterror(true);
+                setError(true);
             })
             .then((data) => {
-                setmytags(data);
-                counterAll(mytags, thisArray, setgoodArrayTag);
+                setMyTags(data);
+                counterAll(myTags, thisArray, setGoodArrayTag);
             });
 
-        counterAll(mytags, thisArray, setgoodArrayTag);
+        counterAll(myTags, thisArray, setGoodArrayTag);
     }, []);
     useEffect(() => {
-        counterAll(mytags, thisArray, setgoodArrayTag);
-    }, [thisArray, mymusic, mytags]);
+        counterAll(myTags, thisArray, setGoodArrayTag);
+    }, [thisArray, myMusic, myTags]);
 
     return (
         <>
@@ -107,7 +108,7 @@ function Ambience(): JSX.Element {
             <div>
                 <div className="yt__tags" ref={gridYTC}>
                     {/* Tags */}
-                    {mytags.map((tag: string, index: number) => (
+                    {myTags.map((tag: string, index: number) => (
                         <button
                             style={{
                                 display: goodArrayTag[index] === 0 ? "none" : "",
@@ -139,9 +140,9 @@ function Ambience(): JSX.Element {
                                 showGrid(false, gridYT, arrowRef);
                             }}
                             forforSA={() => {
-                                forforSA(mymusic, arrayTag, setthisArray);
+                                forforSA(myMusic, arrayTag, setThisArray);
                             }}
-                            mytags={mytags}
+                            myTags={myTags}
                             arrayTag={(e) => {
                                 arrayTag = [e];
                             }}

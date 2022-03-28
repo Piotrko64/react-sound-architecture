@@ -17,13 +17,13 @@ let deleteTag: number;
 
 const SoundsEffects = () => {
     // useState
-    let [sounds, setSounds] = useState<dataMusic[]>([]); // original array iframes
-    let [thisArray, setThisArray] = useState<dataMusic[]>([]); // array to manipulate
+    const [sounds, setSounds] = useState<dataMusic[]>([]); // original array iframes
+    const [thisArray, setThisArray] = useState<dataMusic[]>([]); // array to manipulate
 
-    let [myTags, setMyTags] = useState<string[]>([]); //original array of tags
-    let [goodArrayTag, setGoodArrayTag] = useState<Array<number>>([]); // array tags to manipulate
+    const [myTags, setMyTags] = useState<string[]>([]); //original array of tags
+    const [goodArrayTag, setGoodArrayTag] = useState<Array<number>>([]); // array tags to manipulate
 
-    let [error, setError] = useState<Boolean>(false);
+    const [error, setError] = useState<Boolean>(false);
 
     // useRef
     const buttonTagC = useRef<Array<any>>([])!;

@@ -19,11 +19,11 @@ let deleteTag: number;
 
 function Ambience(): JSX.Element {
     // useState
-    let [myMusic, setMyMusic] = useState<dataMusic[]>([]); // original array iframes
-    let [thisArray, setThisArray] = useState<dataMusic[]>([]); // array to manipulate
-    let [error, setError] = useState<Boolean>(false);
-    let [myTags, setMyTags] = useState<string[]>([]);
-    let [goodArrayTag, setGoodArrayTag] = useState<Array<number>>([]);
+    const [myMusic, setMyMusic] = useState<dataMusic[]>([]); // original array iframes
+    const [thisArray, setThisArray] = useState<dataMusic[]>([]); // array to manipulate
+    const [error, setError] = useState<Boolean>(false);
+    const [myTags, setMyTags] = useState<string[]>([]);
+    const [goodArrayTag, setGoodArrayTag] = useState<Array<number>>([]);
 
     // UseRef
     const buttonTagC = useRef<Array<any>>([])!;

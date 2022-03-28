@@ -1,8 +1,8 @@
-import { forAmbience, forSounds } from "../../typing/datatype";
+import { dataMusic } from "../../typing/datatype";
 
 export const counterAll = (
     tags: string[],
-    arrayObject: forSounds[] | forAmbience[],
+    arrayObject: dataMusic[],
     setArrayTag: (e: Array<number>) => void
 ) => {
     let counterForTag: number = 0;
@@ -12,7 +12,7 @@ export const counterAll = (
         (tag: string) => (
             (counterForTag = 0),
             (thisForEachTag = tag),
-            arrayObject.forEach((mus: forSounds) =>
+            arrayObject.forEach((mus: dataMusic) =>
                 mus.tag.indexOf(thisForEachTag) !== -1 ? counterForTag++ : false
             ),
             counterTags.push(counterForTag)

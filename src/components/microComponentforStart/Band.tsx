@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import { forSounds } from "../../typing/datatype";
+import { SE } from "../../data/dataApi/api";
+import { dataMusic } from "../../typing/datatype";
 const Band = ({ value }: { value: number }) => {
-    let [newAmb, setNewAmb] = useState<Partial<forSounds>[]>([
+    let [newAmb, setNewAmb] = useState<Partial<dataMusic>[]>([
         {
             iframe: "https://bandcamp.com/EmbeddedPlayer/album=2608927152/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/transparent=true/",
             href: "https://soundarchitecture.bandcamp.com/album/windy-marina-ambience",
@@ -20,7 +21,7 @@ const Band = ({ value }: { value: number }) => {
     ]);
     useEffect(() => {
         // API SE
-        const apisounds: string = "https://apiforsa.herokuapp.com/read/onlySE";
+        const apisounds: string = SE;
         fetch(apisounds)
             .then((response) => response.json())
             .then((data) => {

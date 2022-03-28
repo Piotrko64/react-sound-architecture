@@ -1,9 +1,9 @@
-import { forSounds } from "../../typing/datatype";
+import { dataMusic } from "../../typing/datatype";
 import Loading from "./Loading";
 
-const SoundFrame = (props: { sound: forSounds }) => {
+const SoundFrame = (props: { sound: dataMusic }) => {
     return (
-        <div className="Sounds__one" key={props.sound.Id}>
+        <div className="Sounds__one" key={props.sound.id}>
             <Loading />
             <iframe
                 title={props.sound.iframe}

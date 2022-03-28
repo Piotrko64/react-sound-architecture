@@ -4,7 +4,7 @@ import Baner from "../components/microComponents/baner";
 import arrow from "../img/arrow.png";
 import soundback from "../img/SFX.webp";
 import { Helmet } from "react-helmet";
-import { forSounds } from "../typing/datatype";
+import { dataMusic } from "../typing/datatype";
 import { forforSA } from "./functions/forforSA";
 import { showGrid } from "./functions/showGrid";
 import SoundFrame from "../components/microComponents/SoundFrame";
@@ -17,8 +17,8 @@ let deleteTag: number;
 
 const SoundsEffects = () => {
     // useState
-    let [sounds, setSounds] = useState<forSounds[]>([]); // original array iframes
-    let [thisArray, setThisArray] = useState<forSounds[]>([]); // array to manipulate
+    let [sounds, setSounds] = useState<dataMusic[]>([]); // original array iframes
+    let [thisArray, setThisArray] = useState<dataMusic[]>([]); // array to manipulate
 
     let [myTags, setMyTags] = useState<string[]>([]); //original array of tags
     let [goodArrayTag, setGoodArrayTag] = useState<Array<number>>([]); // array tags to manipulate
@@ -130,8 +130,8 @@ const SoundsEffects = () => {
                     ""
                 )}
                 <div className="Sounds__grid">
-                    {thisArray.map((sound: forSounds) => (
-                        <SoundFrame sound={sound} key={sound.Id} />
+                    {thisArray.map((sound: dataMusic) => (
+                        <SoundFrame sound={sound} key={sound.id} />
                     ))}
                 </div>
             </div>

@@ -5,7 +5,7 @@ import arrow from "../img/arrow.png";
 import Baner from "../components/microComponents/baner";
 
 import { Helmet } from "react-helmet";
-import { forAmbience } from "../typing/datatype";
+import { dataMusic } from "../typing/datatype";
 import { forforSA } from "./functions/forforSA";
 
 import { showGrid } from "./functions/showGrid";
@@ -19,8 +19,8 @@ let deleteTag: number;
 
 function Ambience(): JSX.Element {
     // useState
-    let [myMusic, setMyMusic] = useState<forAmbience[]>([]); // original array iframes
-    let [thisArray, setThisArray] = useState<forAmbience[]>([]); // array to manipulate
+    let [myMusic, setMyMusic] = useState<dataMusic[]>([]); // original array iframes
+    let [thisArray, setThisArray] = useState<dataMusic[]>([]); // array to manipulate
     let [error, setError] = useState<Boolean>(false);
     let [myTags, setMyTags] = useState<string[]>([]);
     let [goodArrayTag, setGoodArrayTag] = useState<Array<number>>([]);
@@ -132,9 +132,9 @@ function Ambience(): JSX.Element {
 
             <div className="yt">
                 <div className="yt__allcontainer">
-                    {thisArray.map((music: forAmbience) => (
+                    {thisArray.map((music: dataMusic) => (
                         <AmbienceFrame
-                            key={music.Id}
+                            key={music.id}
                             music={music}
                             showGrid={() => {
                                 showGrid(false, gridYT, arrowRef);

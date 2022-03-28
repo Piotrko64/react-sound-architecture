@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { AMB } from "../../data/dataApi/api";
-import { forAmbience } from "../../typing/datatype";
+import { dataMusic } from "../../typing/datatype";
 const YT = ({ value }: { value: number }) => {
     let [type] = useState();
-    let [newAmb, setNewAmb] = useState<Partial<forAmbience>[]>([
+    let [newAmb, setNewAmb] = useState<Partial<dataMusic>[]>([
         {
             iframe: "https://www.youtube.com/embed/y8EvClrhZVc",
         },

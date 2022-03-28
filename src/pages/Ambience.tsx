@@ -5,7 +5,7 @@ import arrow from "../img/arrow.png";
 import Baner from "../components/microComponents/baner";
 
 import { Helmet } from "react-helmet";
-import { dataMusic } from "../typing/datatype";
+import { dataMusic } from "../types/dataMusic.interface";
 import { forforSA } from "./functions/forforSA";
 
 import { showGrid } from "./functions/showGrid";
@@ -66,6 +66,7 @@ function Ambience(): JSX.Element {
             .then((data) => {
                 setThisArray(data.reverse());
                 setMyMusic(data);
+                console.clear();
             });
         // API AMBIENCE only tags
         const apiambiencetags: string = tagsAMB;
@@ -80,7 +81,7 @@ function Ambience(): JSX.Element {
             });
 
         counterAll(myTags, thisArray, setGoodArrayTag);
-    }, []);
+    }, [myTags, thisArray]);
     useEffect(() => {
         counterAll(myTags, thisArray, setGoodArrayTag);
     }, [thisArray, myMusic, myTags]);

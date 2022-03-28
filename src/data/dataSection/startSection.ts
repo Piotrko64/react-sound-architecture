@@ -1,4 +1,4 @@
-import { startData } from "./../../typing/datatype";
+import { startData } from "../../types/startData.interface";
 import soundback from "../../img/SFX.webp";
 import musicback from "../../img/notesstart.webp";
 import ambienceback from "../../img/ambience.webp";

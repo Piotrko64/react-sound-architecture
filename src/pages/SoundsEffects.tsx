@@ -4,7 +4,7 @@ import Baner from "../components/microComponents/baner";
 import arrow from "../img/arrow.png";
 import soundback from "../img/SFX.webp";
 import { Helmet } from "react-helmet";
-import { dataMusic } from "../typing/datatype";
+import { dataMusic } from "../types/dataMusic.interface";
 import { forforSA } from "./functions/forforSA";
 import { showGrid } from "./functions/showGrid";
 import SoundFrame from "../components/microComponents/SoundFrame";
@@ -78,7 +78,7 @@ const SoundsEffects = () => {
                 counterAll(myTags, thisArray, setGoodArrayTag);
             });
         counterAll(myTags, thisArray, setGoodArrayTag);
-    }, []);
+    }, [myTags, thisArray]);
 
     useEffect(() => {
         counterAll(myTags, thisArray, setGoodArrayTag);

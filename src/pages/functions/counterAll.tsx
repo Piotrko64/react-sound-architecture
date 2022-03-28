@@ -1,4 +1,4 @@
-import { dataMusic } from "../../typing/datatype";
+import { dataMusic } from "../../types/dataMusic.interface";
 
 export const counterAll = (
     tags: string[],

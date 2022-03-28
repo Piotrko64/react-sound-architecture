@@ -1,6 +1,6 @@
 import { Suspense, lazy, useRef } from "react";
 import arrow from "../../img/arrow.png";
-import { startData } from "../../typing/datatype";
+import { startData } from "../../types/startData.interface";
 
 const Band = lazy(() => import("../../components/microComponentforStart/Band"));
 const YT = lazy(() => import("../../components/microComponentforStart/YT"));

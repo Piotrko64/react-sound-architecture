@@ -1,4 +1,4 @@
-import { dataMusic } from "../../typing/datatype";
+import { dataMusic } from "../../types/dataMusic.interface";
 import Loading from "./Loading";
 
 const SoundFrame = (props: { sound: dataMusic }) => {

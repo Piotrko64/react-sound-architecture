@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { SE } from "../../data/dataApi/api";
-import { dataMusic } from "../../typing/datatype";
+import { dataMusic } from "../../types/dataMusic.interface";
 const Band = ({ value }: { value: number }) => {
     let [newAmb, setNewAmb] = useState<Partial<dataMusic>[]>([
         {

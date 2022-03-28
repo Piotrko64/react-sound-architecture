@@ -9,22 +9,20 @@ import Licence from "./components/forFooter";
 
 function App() {
     const [licence, setLicence] = useState(false);
-    const handleShowLicence = () => {
-        setLicence(true);
+    const handleChangeLicence = () => {
+        setLicence(!licence);
     };
-    const handleHideLicence = () => {
-        setLicence(false);
-    };
+
     return (
-        <div>
+        <>
             <Router>
                 <Nav />
                 <Main />
-                <Footer showLicence={() => handleShowLicence()} />
+                <Footer showLicence={() => handleChangeLicence()} />
             </Router>
 
-            {licence ? <Licence hideLicence={() => handleHideLicence()} /> : false}
-        </div>
+            {licence && <Licence hideLicence={() => handleChangeLicence()} />}
+        </>
     );
 }
 

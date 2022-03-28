@@ -13,7 +13,7 @@ import AmbienceFrame from "../components/microComponents/AmbienceFrame";
 import { counterAll } from "./functions/counterAll";
 import { AMB, tagsAMB } from "../data/dataApi/api";
 
-//Selected user tags
+// Selected user tags
 let arrayTag: Array<string> = [];
 let deleteTag: number;
 

@@ -1,20 +1,22 @@
 import { NavLink } from "react-router-dom";
-
 import mylogo from "../img/logosawhite.webp";
 import ytlogo from "../img/ytsmall.webp";
 import bandlogo from "../img/bandsmall.webp";
+import { useState } from "react";
 
 const Nav = () => {
+    const [nav, setNav] = useState<boolean>(false);
+    console.log(nav);
     return (
         <>
             <div className="nav__paddingtop"></div>
             <nav className="nav padding">
-                <div className="nav__btn">
+                <div className="nav__btn" onClick={() => setNav(!nav)}>
                     <div className="nav__line nav__line--first"></div>
                     <div className="nav__line nav__line--second"></div>
                     <div className="nav__line nav__line--third"></div>
                 </div>
-                <ul className="nav__ul">
+                <ul className={nav ? "nav__ul" : "nav__ul active"}>
                     <li>
                         <a style={{ color: "gray" }} href="./">
                             Music

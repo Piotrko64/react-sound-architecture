@@ -202,10 +202,11 @@ nav {
             .nav__hiperplus {
                 display: flex;
             }
+            &.active {
+                left: -30px;
+            }
         }
-        .active {
-            left: -30px;
-        }
+
         .nav__btn {
             display: flex;
         }

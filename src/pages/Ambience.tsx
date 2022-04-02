@@ -39,7 +39,7 @@ function Ambience(): JSX.Element {
     // Functions
     function chooseButton(tag: string, index: number) {
         buttonTag[index].classList.toggle("activetag");
-
+        console.log(thisArray);
         if (arrayTag.indexOf(tag) === -1) {
             arrayTag.push(tag);
         } else {
@@ -66,7 +66,6 @@ function Ambience(): JSX.Element {
             .then((data) => {
                 setThisArray(data.reverse());
                 setMyMusic(data);
-                console.clear();
             });
         // API AMBIENCE only tags
         const apiambiencetags: string = tagsAMB;

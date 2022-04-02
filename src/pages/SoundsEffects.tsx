@@ -66,7 +66,6 @@ const SoundsEffects = () => {
             .then((data) => {
                 setThisArray(data.reverse());
                 setSounds(data);
-                console.clear();
             });
 
         // API SE but only tags
@@ -82,7 +81,7 @@ const SoundsEffects = () => {
 
     useEffect(() => {
         counterAll(myTags, thisArray, setGoodArrayTag);
-    }, [thisArray, sounds, myTags]);
+    }, []);
 
     return (
         <>

@@ -4,7 +4,7 @@ import Baner from "../components/microComponents/baner";
 import arrow from "../img/arrow.png";
 import soundback from "../img/SFX.webp";
 import { Helmet } from "react-helmet";
-import { forSounds } from "../typing/datatype";
+import { forSounds } from "../types/datatype";
 import { forforSA } from "./functions/forforSA";
 import { showGrid } from "./functions/showGrid";
 import SoundFrame from "../components/microComponents/SoundFrame";
@@ -16,13 +16,13 @@ let deleteTag: number;
 
 const SoundsEffects = () => {
     // useState
-    let [sounds, setsounds] = useState<forSounds[]>([]); // original array iframes
-    let [thisArray, setthisArray] = useState<forSounds[]>([]); // array to manipulate
+    const [sounds, setsounds] = useState<forSounds[]>([]); // original array iframes
+    const [thisArray, setthisArray] = useState<forSounds[]>([]); // array to manipulate
 
-    let [mytags, setmytags] = useState<string[]>([]); //original array of tags
-    let [goodArrayTag, setgoodArrayTag] = useState<Array<number>>([]); // array tags to manipulate
+    const [mytags, setmytags] = useState<string[]>([]); //original array of tags
+    const [goodArrayTag, setgoodArrayTag] = useState<Array<number>>([]); // array tags to manipulate
 
-    let [error, seterror] = useState<Boolean>(false);
+    const [error, seterror] = useState<Boolean>(false);
 
     // useRef
     const buttonTagC = useRef<Array<any>>([])!;
@@ -121,13 +121,9 @@ const SoundsEffects = () => {
                     ))}
                 </div>
                 <div style={{ textAlign: "center", fontSize: "1.5em" }}>
-                    {thisArray === [] ? "Loading..." : ""}
+                    {thisArray.length === 0 && "Loading..."}
                 </div>
-                {error ? (
-                    <div style={{ textAlign: "center" }}>Opss...We have problem to fetch a data!</div>
-                ) : (
-                    ""
-                )}
+                {error && <div style={{ textAlign: "center" }}>Opss...We have problem to fetch a data!</div>}
                 <div className="Sounds__grid">
                     {thisArray.map((sound: forSounds) => (
                         <SoundFrame sound={sound} key={sound.Id} />

@@ -1,4 +1,4 @@
-import { forSounds } from "../../typing/datatype";
+import { forSounds } from "../../types/datatype";
 import Loading from "./Loading";
 
 const SoundFrame = (props: { sound: forSounds }) => {

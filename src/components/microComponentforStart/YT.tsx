@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { forAmbience } from "../../typing/datatype";
+import { forSounds } from "../../types/datatype";
 const YT = ({ value }: { value: number }) => {
     let [type] = useState();
-    let [newAmb, setNewAmb] = useState<Partial<forAmbience>[]>([
+    let [newAmb, setNewAmb] = useState<Partial<forSounds>[]>([
         {
             iframe: "https://www.youtube.com/embed/y8EvClrhZVc",
         },

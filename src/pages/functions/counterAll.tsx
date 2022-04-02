@@ -1,8 +1,8 @@
-import { forAmbience, forSounds } from "../../typing/datatype";
+import { forSounds } from "../../types/datatype";
 
 export const counterAll = (
     tags: string[],
-    arrayObject: forSounds[] | forAmbience[],
+    arrayObject: forSounds[],
     setArrayTag: (e: Array<number>) => void
 ) => {
     let counterForTag: number = 0;

@@ -5,7 +5,7 @@ import arrow from "../img/arrow.png";
 import Baner from "../components/microComponents/baner";
 
 import { Helmet } from "react-helmet";
-import { forAmbience } from "../typing/datatype";
+import { forSounds } from "../types/datatype";
 import { forforSA } from "./functions/forforSA";
 
 import { showGrid } from "./functions/showGrid";
@@ -18,11 +18,11 @@ let deleteTag: number;
 
 function Ambience(): JSX.Element {
     // useState
-    let [mymusic, setmymusic] = useState<forAmbience[]>([]); // original array iframes
-    let [thisArray, setthisArray] = useState<forAmbience[]>([]); // array to manipulate
-    let [error, seterror] = useState<Boolean>(false);
-    let [mytags, setmytags] = useState<string[]>([]);
-    let [goodArrayTag, setgoodArrayTag] = useState<Array<number>>([]);
+    const [mymusic, setmymusic] = useState<forSounds[]>([]); // original array iframes
+    const [thisArray, setthisArray] = useState<forSounds[]>([]); // array to manipulate
+    const [error, seterror] = useState<Boolean>(false);
+    const [mytags, setmytags] = useState<string[]>([]);
+    const [goodArrayTag, setgoodArrayTag] = useState<Array<number>>([]);
 
     // UseRef
     const buttonTagC = useRef<Array<any>>([])!;
@@ -125,13 +125,13 @@ function Ambience(): JSX.Element {
                     ))}
                 </div>
                 <div style={{ textAlign: "center", fontSize: "1.5em" }}>
-                    {thisArray === [] ? "Loading..." : ""}
+                    {thisArray.length === 0 && "Loading..."}
                 </div>
             </div>
 
             <div className="yt">
                 <div className="yt__allcontainer">
-                    {thisArray.map((music: forAmbience) => (
+                    {thisArray.map((music: forSounds) => (
                         <AmbienceFrame
                             key={music.Id}
                             music={music}

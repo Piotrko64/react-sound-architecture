@@ -1,8 +1,8 @@
-import { forAmbience } from "../../typing/datatype";
+import { forSounds } from "../../types/datatype";
 import Loading from "./Loading";
 
 const AmbienceFrame = (props: {
-    music: forAmbience;
+    music: forSounds;
     showGrid: () => void;
     forforSA: () => void;
     arrayTag: (e: string) => void;

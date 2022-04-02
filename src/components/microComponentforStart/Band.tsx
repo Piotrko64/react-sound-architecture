@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { forSounds } from "../../typing/datatype";
+import { forSounds } from "../../types/datatype";
 const Band = ({ value }: { value: number }) => {
     let [newAmb, setNewAmb] = useState<Partial<forSounds>[]>([
         {

@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 import mylogo from "../img/logosawhite.webp";
@@ -6,76 +6,15 @@ import ytlogo from "../img/ytsmall.webp";
 import bandlogo from "../img/bandsmall.webp";
 
 const Nav = () => {
-    useEffect(() => {
-        // important
-        // white line under li
-        const newHover = document.createElement("div")!;
-        newHover.classList.add("hoverli");
-        document.body.appendChild(newHover);
-        // const
-        const ul = document.querySelector("ul")!;
-        const allli = document.querySelectorAll("li");
-
-        const btn = document.querySelector(".nav__btn")!;
-        const btnline = document.querySelectorAll(".nav__line")!;
-        //  newHoer on and off
-        ul.addEventListener("mouseover", () => {
-            newHover.classList.add("on");
-        });
-        ul.addEventListener("mouseout", () => {
-            newHover.classList.remove("on");
-        });
-
-        allli.forEach((li) => {
-            li.addEventListener("mouseenter", () => {
-                let topli =
-                    li.getBoundingClientRect().top +
-                    li.getBoundingClientRect().height +
-                    window.scrollY +
-                    "px";
-                document.addEventListener("scroll", () => {
-                    topli =
-                        li.getBoundingClientRect().top +
-                        li.getBoundingClientRect().height +
-                        window.scrollY +
-                        "px";
-                    newHover.style.top = topli;
-                });
-                const leftli = li.getBoundingClientRect().left + "px";
-                const widthli = li.getBoundingClientRect().width + "px";
-
-                newHover.style.top = topli;
-                newHover.style.left = leftli;
-                newHover.style.width = widthli;
-            });
-
-            li.addEventListener("click", () => {
-                window.scroll(0, 0);
-            });
-        });
-
-        // function
-        const toggleBTN = () => {
-            ul.classList.toggle("active");
-            btnline.forEach((line) => {
-                line.classList.toggle("active");
-            });
-        };
-        btn.addEventListener("click", toggleBTN);
-        allli.forEach((al) =>
-            al.addEventListener("click", () => {
-                ul.classList.toggle("active");
-                btnline.forEach((line) => {
-                    line.classList.toggle("active");
-                });
-            })
-        );
-    }, []);
+    const [nav, setNav] = useState<boolean>(false);
+    function handleToggle() {
+        setNav(!nav);
+    }
     return (
         <>
             <div className="nav__paddingtop"></div>
-            <nav className="nav padding">
-                <div className="nav__btn">
+            <nav className={nav ? "nav padding" : "nav padding active"}>
+                <div className="nav__btn" onClick={() => handleToggle()}>
                     <div className="nav__line nav__line--first"></div>
                     <div className="nav__line nav__line--second"></div>
                     <div className="nav__line nav__line--third"></div>

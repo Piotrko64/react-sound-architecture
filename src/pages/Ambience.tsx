@@ -127,10 +127,10 @@ function Ambience(): JSX.Element {
                     ))}
                 </div>
                 <div style={{ textAlign: "center", fontSize: "1.5em" }}>
-                    {thisArray === [] ? "Loading..." : ""}
+                    {thisArray.length === 0 ? "Loading..." : ""}
                 </div>
             </div>
-
+            {error && <div style={{ textAlign: "center" }}>Opss...We have problem to fetch a data!</div>}
             <div className="yt">
                 <div className="yt__allcontainer">
                     {thisArray.map((music: dataMusic) => (

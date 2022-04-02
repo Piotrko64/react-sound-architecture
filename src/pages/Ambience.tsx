@@ -57,8 +57,8 @@ function Ambience(): JSX.Element {
 
     useEffect(() => {
         // API AMBIENCE
-        const apiambience: string = AMB;
-        fetch(apiambience)
+
+        fetch(AMB)
             .then((response) => response.json())
             .catch(() => {
                 setError(true);
@@ -80,7 +80,7 @@ function Ambience(): JSX.Element {
             });
 
         counterAll(myTags, thisArray, setGoodArrayTag);
-    }, [myTags, thisArray]);
+    }, []);
     useEffect(() => {
         counterAll(myTags, thisArray, setGoodArrayTag);
     }, [thisArray, myMusic, myTags]);

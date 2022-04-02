@@ -9,7 +9,7 @@ import { forforSA } from "./functions/forforSA";
 import { showGrid } from "./functions/showGrid";
 import SoundFrame from "../components/microComponents/SoundFrame";
 import { counterAll } from "./functions/counterAll";
-import { tagsSE } from "../data/dataApi/api";
+import { SE, tagsSE } from "../data/dataApi/api";
 
 //Selected user tags
 let arrayTag: Array<string> = [];
@@ -57,8 +57,8 @@ const SoundsEffects = () => {
 
     useEffect(() => {
         // API SE
-        const apisounds: string = "https://apiforsa.herokuapp.com/read/onlySE";
-        fetch(apisounds)
+
+        fetch(SE)
             .then((response) => response.json())
             .catch(() => {
                 seterror(true);
@@ -76,7 +76,7 @@ const SoundsEffects = () => {
                 counterAll(mytags, thisArray, setgoodArrayTag);
             });
         counterAll(mytags, thisArray, setgoodArrayTag);
-    });
+    }, []);
     useEffect(() => {
         counterAll(mytags, thisArray, setgoodArrayTag);
     }, [thisArray, sounds, mytags]);

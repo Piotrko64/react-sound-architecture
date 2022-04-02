@@ -9,6 +9,9 @@ const Nav = () => {
     function handleToggle() {
         setNav(!nav);
     }
+    function windowUp() {
+        window.scroll(0, 0);
+    }
     return (
         <>
             <div className="nav__paddingtop"></div>
@@ -24,10 +27,10 @@ const Nav = () => {
                             Music
                         </a>
                     </li>
-                    <li>
+                    <li onClick={windowUp}>
                         <NavLink to="/SoundEffects">Sound Effects</NavLink>
                     </li>
-                    <li>
+                    <li onClick={windowUp}>
                         <NavLink to="/Ambience">Ambience</NavLink>
                     </li>
 

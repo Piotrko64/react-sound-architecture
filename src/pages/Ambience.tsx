@@ -127,7 +127,7 @@ function Ambience(): JSX.Element {
                     ))}
                 </div>
                 <div style={{ textAlign: "center", fontSize: "1.5em" }}>
-                    {thisArray.length === 0 ? "Loading..." : ""}
+                    {thisArray.length === 0 && "Loading..."}
                 </div>
             </div>
             {error && <div style={{ textAlign: "center" }}>Opss...We have problem to fetch a data!</div>}

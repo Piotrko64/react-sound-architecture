@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { AMB } from "../../data/dataApi/api";
 import { forSounds } from "../../types/datatype";
 const YT = ({ value }: { value: number }) => {
     let [type] = useState();
@@ -11,7 +12,7 @@ const YT = ({ value }: { value: number }) => {
         },
     ]);
     useEffect(() => {
-        const apisounds: string = "https://apiforsa.herokuapp.com/read/onlyAMB";
+        const apisounds: string = AMB;
 
         fetch(apisounds)
             .then((response) => response.json())

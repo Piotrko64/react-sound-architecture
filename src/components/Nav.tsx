@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-
 import mylogo from "../img/logosawhite.webp";
 import ytlogo from "../img/ytsmall.webp";
 import bandlogo from "../img/bandsmall.webp";
@@ -19,7 +18,7 @@ const Nav = () => {
                     <div className="nav__line nav__line--second"></div>
                     <div className="nav__line nav__line--third"></div>
                 </div>
-                <ul className="nav__ul">
+                <ul className={nav ? "nav__ul" : "nav__ul active"}>
                     <li>
                         <a style={{ color: "gray" }} href="./">
                             Music

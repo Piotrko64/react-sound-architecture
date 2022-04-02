@@ -11,18 +11,19 @@ import { forforSA } from "./functions/forforSA";
 import { showGrid } from "./functions/showGrid";
 import AmbienceFrame from "../components/microComponents/AmbienceFrame";
 import { counterAll } from "./functions/counterAll";
+import { AMB, tagsAMB } from "../data/dataApi/api";
 
-//Selected user tags
+// Selected user tags
 let arrayTag: Array<string> = [];
 let deleteTag: number;
 
 function Ambience(): JSX.Element {
     // useState
-    const [mymusic, setmymusic] = useState<forSounds[]>([]); // original array iframes
-    const [thisArray, setthisArray] = useState<forSounds[]>([]); // array to manipulate
-    const [error, seterror] = useState<Boolean>(false);
-    const [mytags, setmytags] = useState<string[]>([]);
-    const [goodArrayTag, setgoodArrayTag] = useState<Array<number>>([]);
+    const [myMusic, setMyMusic] = useState<forSounds[]>([]); // original array iframes
+    const [thisArray, setThisArray] = useState<forSounds[]>([]); // array to manipulate
+    const [error, setError] = useState<Boolean>(false);
+    const [myTags, setMyTags] = useState<string[]>([]);
+    const [goodArrayTag, setGoodArrayTag] = useState<Array<number>>([]);
 
     // UseRef
     const buttonTagC = useRef<Array<any>>([])!;
@@ -38,7 +39,7 @@ function Ambience(): JSX.Element {
     // Functions
     function chooseButton(tag: string, index: number) {
         buttonTag[index].classList.toggle("activetag");
-
+        console.log(thisArray);
         if (arrayTag.indexOf(tag) === -1) {
             arrayTag.push(tag);
         } else {
@@ -46,7 +47,7 @@ function Ambience(): JSX.Element {
             arrayTag.splice(deleteTag, 1);
         }
         console.log(arrayTag);
-        forforSA(mymusic, arrayTag, setthisArray);
+        forforSA(myMusic, arrayTag, setThisArray);
 
         window.scrollTo({
             top: 150,
@@ -56,33 +57,33 @@ function Ambience(): JSX.Element {
 
     useEffect(() => {
         // API AMBIENCE
-        const apiambience: string = "https://apiforsa.herokuapp.com/read/onlyAMB";
+        const apiambience: string = AMB;
         fetch(apiambience)
             .then((response) => response.json())
             .catch(() => {
-                seterror(true);
+                setError(true);
             })
             .then((data) => {
-                setthisArray(data.reverse());
-                setmymusic(data);
+                setThisArray(data.reverse());
+                setMyMusic(data);
             });
         // API AMBIENCE only tags
-        const apiambiencetags: string = "https://apiforsa.herokuapp.com/read/tagsAMB";
+        const apiambiencetags: string = tagsAMB;
         fetch(apiambiencetags)
             .then((response) => response.json())
             .catch(() => {
-                seterror(true);
+                setError(true);
             })
             .then((data) => {
-                setmytags(data);
-                counterAll(mytags, thisArray, setgoodArrayTag);
+                setMyTags(data);
+                counterAll(myTags, thisArray, setGoodArrayTag);
             });
 
-        counterAll(mytags, thisArray, setgoodArrayTag);
-    }, []);
+        counterAll(myTags, thisArray, setGoodArrayTag);
+    }, [myTags, thisArray]);
     useEffect(() => {
-        counterAll(mytags, thisArray, setgoodArrayTag);
-    }, [thisArray, mymusic, mytags]);
+        counterAll(myTags, thisArray, setGoodArrayTag);
+    }, [thisArray, myMusic, myTags]);
 
     return (
         <>
@@ -107,7 +108,7 @@ function Ambience(): JSX.Element {
             <div>
                 <div className="yt__tags" ref={gridYTC}>
                     {/* Tags */}
-                    {mytags.map((tag: string, index: number) => (
+                    {myTags.map((tag: string, index: number) => (
                         <button
                             style={{
                                 display: goodArrayTag[index] === 0 ? "none" : "",
@@ -128,7 +129,7 @@ function Ambience(): JSX.Element {
                     {thisArray.length === 0 && "Loading..."}
                 </div>
             </div>
-
+            {error && <div style={{ textAlign: "center" }}>Opss...We have problem to fetch a data!</div>}
             <div className="yt">
                 <div className="yt__allcontainer">
                     {thisArray.map((music: forSounds) => (
@@ -139,9 +140,9 @@ function Ambience(): JSX.Element {
                                 showGrid(false, gridYT, arrowRef);
                             }}
                             forforSA={() => {
-                                forforSA(mymusic, arrayTag, setthisArray);
+                                forforSA(myMusic, arrayTag, setThisArray);
                             }}
-                            mytags={mytags}
+                            myTags={myTags}
                             arrayTag={(e) => {
                                 arrayTag = [e];
                             }}

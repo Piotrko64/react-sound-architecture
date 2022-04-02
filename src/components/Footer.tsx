@@ -5,15 +5,15 @@ import bigband from "../img/band.webp";
 import ReactTooltip from "react-tooltip";
 
 const Footer = (props: { showLicence: () => void }) => {
-    const [iscopy, setiscopy] = useState("Click to copy");
+    const [isCopy, setIsCopy] = useState("Click to copy");
 
     const copyText = () => {
         const timeCopy = () => {
-            setiscopy("Click to copy email");
+            setIsCopy("Click to copy email");
         };
 
         navigator.clipboard.writeText("soundarchitecture@outlook.com");
-        setiscopy("Email has been copied!");
+        setIsCopy("Email has been copied!");
 
         setTimeout(timeCopy, 3000);
     };
@@ -30,8 +30,6 @@ const Footer = (props: { showLicence: () => void }) => {
                     </a>
                 </div>
                 <div className="grid__up2">
-                    
-
                     <div
                         className="grid__underline"
                         onClick={() => {
@@ -41,7 +39,7 @@ const Footer = (props: { showLicence: () => void }) => {
                         License Agreement
                     </div>
 
-                    <div className="footer__email" data-tip={iscopy}>
+                    <div className="footer__email" data-tip={isCopy}>
                         <div
                             className="grid__underline copyText"
                             onClick={() => {
@@ -52,7 +50,7 @@ const Footer = (props: { showLicence: () => void }) => {
                         </div>
                     </div>
 
-                    <ReactTooltip className="tooltip" getContent={() => `${iscopy}`} />
+                    <ReactTooltip className="tooltip" getContent={() => `${isCopy}`} />
                 </div>
                 <div className="grid__up3">
                     <a

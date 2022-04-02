@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { SE } from "../../data/dataApi/api";
 import { forSounds } from "../../types/datatype";
 const Band = ({ value }: { value: number }) => {
     let [newAmb, setNewAmb] = useState<Partial<forSounds>[]>([
@@ -20,7 +21,7 @@ const Band = ({ value }: { value: number }) => {
     ]);
     useEffect(() => {
         // API SE
-        const apisounds: string = "https://apiforsa.herokuapp.com/read/onlySE";
+        const apisounds: string = SE;
         fetch(apisounds)
             .then((response) => response.json())
             .then((data) => {

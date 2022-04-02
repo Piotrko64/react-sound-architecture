@@ -4,7 +4,7 @@
 
 Preview link to SA => [https://soundarchitecture.netlify.app](https://soundarchitecture.netlify.app)
 
-The project was created with [Cracortan](https://github.com/Cracortan)
+The project was created for [Cracortan](https://github.com/Cracortan)
 
 Pss! Also visit his music pages on [Youtube](https://www.youtube.com/channel/UCseRS2xV0cIl4Mm44b4rqvw) and [bandcamp](https://soundarchitecture.bandcamp.com)
 

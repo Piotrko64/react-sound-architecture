@@ -6,10 +6,10 @@ const AmbienceFrame = (props: {
     showGrid: () => void;
     forforSA: () => void;
     arrayTag: (e: string) => void;
-    mytags: string[];
+    myTags: string[];
     buttonTag: HTMLButtonElement[];
 }) => {
-    const { music, showGrid, forforSA, arrayTag, mytags, buttonTag } = props;
+    const { music, showGrid, forforSA, arrayTag, myTags, buttonTag } = props;
     return (
         <div className="yt__container">
             <div className="yt__iframe">
@@ -38,7 +38,7 @@ const AmbienceFrame = (props: {
                                 arrayTag(tags);
                                 forforSA();
 
-                                mytags.forEach((arr: string, index: number) => {
+                                myTags.forEach((arr: string, index: number) => {
                                     buttonTag.forEach((el: HTMLElement) => {
                                         el.classList.remove("activetag");
                                     });

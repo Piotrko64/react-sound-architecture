@@ -200,6 +200,9 @@ nav {
             justify-content: center;
             li {
                 height: 50px;
+                a::after {
+                    display: none;
+                }
             }
             .nav__hiperplus {
                 display: flex;

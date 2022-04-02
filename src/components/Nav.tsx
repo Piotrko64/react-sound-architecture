@@ -5,12 +5,13 @@ import ytlogo from "../img/ytsmall.webp";
 import bandlogo from "../img/bandsmall.webp";
 
 const Nav = () => {
-    const [nav, setNav] = useState<boolean>(false);
+    const [nav, setNav] = useState<boolean>(true);
     function handleToggle() {
         setNav(!nav);
     }
     function windowUp() {
         window.scroll(0, 0);
+        setNav(true);
     }
     return (
         <>
